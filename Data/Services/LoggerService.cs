@@ -14,47 +14,47 @@ public interface ILoggerService
 
 public class LoggerService : ILoggerService
 {
-    private readonly RwaContext _context;
+    private readonly BudgetManagerContext _context;
 
-    public LoggerService(RwaContext context)
+    public LoggerService(BudgetManagerContext context)
     {
         _context = context;
     }
 
     public Task Log(string message, ThreatLvl lvl = ThreatLvl.Low)
     {
-        var log = new Log
-        {
-            Lvl = lvl.ToInt(),
-            Message = message,
-        };
-
-        lock (log)
-        {
-            _context.Logs.Add(log);
-            _context.SaveChanges();
-        }
+        // var log = new Log
+        // {
+        //     Lvl = lvl.ToInt(),
+        //     Message = message,
+        // };
+        //
+        // lock (log)
+        // {
+        //     _context.Logs.Add(log);
+        //     _context.SaveChanges();
+        // }
 
         return Task.CompletedTask;
     }
 
     public Task LogMany(string[] messages, ThreatLvl lvl = ThreatLvl.Low)
     {
-        var logs = new List<Log>(messages.Length);
-        foreach (var m in messages)
-        {
-            logs.Add(new()
-            {
-                Lvl = lvl.ToInt(),
-                Message = m
-            });
-        }
-
-        lock (logs)
-        {
-            _context.Logs.AddRange(logs);
-            _context.SaveChanges();
-        }
+        // var logs = new List<Log>(messages.Length);
+        // foreach (var m in messages)
+        // {
+        //     logs.Add(new()
+        //     {
+        //         Lvl = lvl.ToInt(),
+        //         Message = m
+        //     });
+        // }
+        //
+        // lock (logs)
+        // {
+        //     _context.Logs.AddRange(logs);
+        //     _context.SaveChanges();
+        // }
 
         return Task.CompletedTask;
     }

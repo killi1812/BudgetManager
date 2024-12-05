@@ -11,10 +11,11 @@ public class MapperProfile : Profile
     {
            CreateMap<User, UserVM>()
             .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => src.Guid.ToString()))
-            .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.Username));
+            .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.Email));
         CreateMap<UserDto, User>();
 
-        CreateMap<RegisterVM, NewUserDto>()
-            .ForMember(dest => dest.Admin, opt => opt.MapFrom(src => false));
+        CreateMap<RegisterVM, NewUserDto>();
+        CreateMap<NewUserDto, User>();
+        CreateMap<RegisterVM, NewUserDto>();
     }
 }

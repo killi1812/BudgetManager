@@ -16,12 +16,10 @@
                 var user = this.ViewContext.HttpContext.User;
                 bool loggedIn = false;
                 string username = "";
-                bool isAdmin = false;
                 if (user != null && !string.IsNullOrEmpty(user.Identity.Name))
                 {
                     loggedIn = true;
                     username = user.Identity.Name;
-                    isAdmin = user.Claims.FirstOrDefault(c => c.Type == "IsAdmin")?.Value == "True";
                 }
 
                 string? guid = ViewContext.HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
@@ -36,21 +34,9 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    @if (isAdmin)
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pictures" asp-action="Upload">Upload</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="UserUploads">Your Uploads</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Pictures" asp-action="Tags">Tags Table</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="User" asp-action="Users">Users</a>
-                        </li>
-                    }
+                    <li class="nav-item">
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Categories">Categories</a>
+                    </li>
                 </ul>
             </div>
             <form class="d-flex" role="search" asp-controller="Pictures" asp-action="Search">

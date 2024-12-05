@@ -1,31 +1,34 @@
-CREATE DATABASE BudgetingAndExpenseTracker
+CREATE DATABASE BudgetManager
 GO
 
-USE BudgetingAndExpenseTracker
-go
+USE BudgetManager
+GO
 
 CREATE TABLE [Role] 
 (
     IDRole bigint primary key identity,
     RoleType nvarchar(150)
 )
+GO
 
 CREATE TABLE [User] 
 (
     IDUser bigint primary key identity,
-    FirstName nvarchar(150),
-    LastName nvarchar(150),
-    JMBAG nvarchar(20),
-    Email nvarchar(150),
-    PhoneNumbeer nvarchar(50),
-    PassHash nvarchar(max),
-    PassSalt nvarchar(max),
+    Guid     UNIQUEIDENTIFIER NOT NULL,
+    FirstName nvarchar(150) NOT NULL,
+    LastName nvarchar(150) NOT NULL,
+    JMBAG nvarchar(20) NOT NULL,
+    Email nvarchar(150) NOT NULL,
+    PhoneNumber nvarchar(50),
+    PassHash nvarchar(255) NOT NULL,
     RoleID bigint references [Role](IDRole)
 )
+GO
 
 CREATE TABLE [Statistics]
 (
 	IDStatistics bigint primary key identity,
+    Guid     UNIQUEIDENTIFIER NOT NULL,
 	TotalSpent decimal,
 	TotalIncome decimal,
 	SpendingPercent decimal,
@@ -36,6 +39,7 @@ CREATE TABLE [Statistics]
 CREATE TABLE BankAccountAPI
 (
 	IDBankAccountAPI bigint primary key identity,
+    Guid     UNIQUEIDENTIFIER NOT NULL,
 	BankName nvarchar(100),
 	Balance decimal,
 	[URL] nvarchar(max),
@@ -46,6 +50,7 @@ CREATE TABLE BankAccountAPI
 CREATE TABLE Savings
 (
 	IDSavings bigint primary key identity,
+    Guid     UNIQUEIDENTIFIER NOT NULL,
 	Goal decimal,
 	[Current] decimal,
 	[Date] date,
@@ -55,6 +60,7 @@ CREATE TABLE Savings
 CREATE TABLE Income
 (
 	IDIncome bigint primary key identity,
+    Guid     UNIQUEIDENTIFIER NOT NULL,
 	[Sum] decimal,
 	[Source] nvarchar,
 	[Date] date,
@@ -65,12 +71,15 @@ CREATE TABLE Income
 CREATE TABLE Category
 (
 	IDCategory bigint primary key identity,
+    Guid     UNIQUEIDENTIFIER NOT NULL,
 	CategoryName nvarchar(max)
 )
+GO
 
 CREATE TABLE Expense 
 (
 	IDExpense bigint primary key identity,
+    Guid     UNIQUEIDENTIFIER NOT NULL,
 	[Sum] decimal,
 	[Description] nvarchar(max),
 	[Date] date,
@@ -81,7 +90,16 @@ CREATE TABLE Expense
 CREATE TABLE Budget
 (
 	IDBudget bigint primary key identity,
+    Guid     UNIQUEIDENTIFIER NOT NULL,
 	[Sum] decimal,
 	UserID bigint references [User](IDUser),
 	CategoryID bigint references Category(IDCategory)
 )
+
+CREATE TABLE Log
+(
+    id      int identity (1,1) primary key not null,
+    date    datetime not null,
+    message NVARCHAR(max)                  not null,
+    Lvl     int      not null
+);

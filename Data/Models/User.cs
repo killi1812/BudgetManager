@@ -1,14 +1,39 @@
-﻿namespace Data.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class User
+namespace Data.Models;
+
+public partial class User
 {
-    public int Id { get; set; }
+    public long Iduser { get; set; }
 
-    public Guid Guid { get; set; } = Guid.NewGuid();
+    public Guid Guid { get; set; } = System.Guid.NewGuid();
 
-    public string Username { get; set; } = null!;
+    public string FirstName { get; set; } = null!;
 
-    public bool Admin { get; set; }
+    public string LastName { get; set; } = null!;
 
-    public string Password { get; set; } = null!;
+    public string Jmbag { get; set; } = null!;
+
+    public string Email { get; set; } = null!;
+
+    public string? PhoneNumber { get; set; }
+
+    public string PassHash { get; set; } = null!;
+
+    public long? RoleId { get; set; }
+
+    public virtual ICollection<BankAccountApi> BankAccountApis { get; set; } = new List<BankAccountApi>();
+
+    public virtual ICollection<Budget> Budgets { get; set; } = new List<Budget>();
+
+    public virtual ICollection<Expense> Expenses { get; set; } = new List<Expense>();
+
+    public virtual ICollection<Income> Incomes { get; set; } = new List<Income>();
+
+    public virtual Role? Role { get; set; }
+
+    public virtual ICollection<Saving> Savings { get; set; } = new List<Saving>();
+
+    public virtual ICollection<Statistic> Statistics { get; set; } = new List<Statistic>();
 }

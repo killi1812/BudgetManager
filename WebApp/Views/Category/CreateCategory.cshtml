@@ -1,0 +1,20 @@
+@model CategoryVM
+
+@{
+    ViewBag.Title = "Edit category";
+    Layout = "_Layout";
+}
+
+<form>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Category name</label>
+        <input asp-for="Name" class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary" asp-controller="Category" asp-action="EditCategoryAction">Create</button>
+
+    @section Scripts {
+        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    }
+</form>

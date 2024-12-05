@@ -1,4 +1,5 @@
 using AutoMapper;
+using Data.Models;
 using Data.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -29,5 +30,17 @@ public class CategoryController : Controller
        var category = await _categoryService.Get(Guid.Parse(guid));
        var vm = _mapper.Map<CategoryVM>(category);
        return View(vm);
+   }
+
+   public IActionResult CreateCategory()
+   {
+       return View();
+   }
+
+   public async Task<IActionResult> EditCategoryAction(CategoryVM newCate)
+   {
+       var newCategory = _mapper.Map<Category>(newCate);
+       await _categoryService.Create(newCategory);
+       return Redirect(nameof(Categories));
    }
 }

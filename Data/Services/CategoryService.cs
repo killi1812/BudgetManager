@@ -21,9 +21,11 @@ public class CategoryService : ICategoryService
         _context = context;
     }
 
-    public Task<Category> Create(Category newCategory)
+    public async Task<Category> Create(Category newCategory)
     {
-        throw new NotImplementedException();
+        await _context.Categories.AddAsync(newCategory);
+        await _context.SaveChangesAsync();
+        return await _context.Categories.FirstOrDefaultAsync(c => c.Guid == newCategory.Guid);
     }
 
     public Task<Category> Get(Guid guid)

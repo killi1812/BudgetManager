@@ -1,0 +1,16 @@
+@model System.Collections.Generic.List<WebApp.ViewModels.CategoryVM>
+
+@{
+    ViewBag.Title = "Categories";
+    Layout = "_Layout";
+}
+
+<h2>Categories </h2>
+<div>
+    @foreach (var category in Model)
+    {
+        <span href="@Url.ActionLink("EditCategory","Category",new {guid = category.Guid})">
+           @category.Name
+        </span>
+    }
+</div>

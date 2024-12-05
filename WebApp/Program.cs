@@ -8,7 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<RwaContext>(o => { o.UseSqlServer(builder.Configuration["ConnectionStrings:db"]); });
+
+builder.Services.AddDbContext<RwaContext>(options => {
+    options.UseSqlServer("name=ConnectionStrings:BazaRWAConnStr");
+}); 
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>

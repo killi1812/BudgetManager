@@ -1,4 +1,5 @@
 using Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Data.Services;
 
@@ -13,6 +14,13 @@ public interface ICategoryService
 
 public class CategoryService : ICategoryService
 {
+    private readonly BudgetManagerContext _context;
+
+    public CategoryService(BudgetManagerContext context)
+    {
+        _context = context;
+    }
+
     public Task<Category> Create(Category newCategory)
     {
         throw new NotImplementedException();
@@ -33,8 +41,9 @@ public class CategoryService : ICategoryService
         throw new NotImplementedException();
     }
 
-    public Task<List<Category>> GetAll()
+    public async Task<List<Category>> GetAll()
     {
-        throw new NotImplementedException();
+       var cats   = await _context.Categories.AsNoTracking().ToListAsync();
+       return cats;
     }
 }

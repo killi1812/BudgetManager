@@ -73,7 +73,7 @@ public class UserServices : IUserServices
         if (user == null)
             throw new NotFoundException($"User {email}  not found");
 
-        var result = BCrypt.Net.BCrypt.Verify(password, user.FirstName);
+        var result = BCrypt.Net.BCrypt.Verify(password, user.PassHash);
         if (!result)
             throw new UnauthorizedException($"Wrong password for user: {email}");
 

@@ -9,8 +9,12 @@
 <div>
     @foreach (var category in Model)
     {
-        <span href="@Url.ActionLink("EditCategory","Category",new {guid = category.Guid})">
-           @category.Name
-        </span>
+        <ul>
+            <li >
+                <a href="@Url.ActionLink("EditCategory", "Category", new { guid = category.Guid })">
+                    @category.Name
+                </a>
+            </li>
+        </ul>
     }
 </div>

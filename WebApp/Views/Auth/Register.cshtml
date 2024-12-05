@@ -4,9 +4,9 @@
 }
 <form >
     <div class="mb-3">
-        <label asp-for="Username" class="form-label">Username</label>
-        <input type="text" class="form-control" asp-for="Username">
-        <span asp-validation-for="Username" class="text-danger"></span>
+        <label asp-for="Email" class="form-label">Email</label>
+        <input type="text" class="form-control" asp-for="Email">
+        <span asp-validation-for="Email" class="text-danger"></span>
     </div>
     <div class="mb-3">
         <label asp-for="Password" class="form-label">Password</label>
@@ -15,10 +15,29 @@
     </div>
 
     <div class="mb-3">
-        <label asp-for="Password2" class="form-label">Password</label>
-        <input asp-for="Password2" type="password" class="form-control">
-        <span asp-validation-for="Password2" class="text-danger"></span>
+        <label asp-for="FirstName" class="form-label">First Name</label>
+        <input asp-for="FirstName" type="text" class="form-control">
+        <span asp-validation-for="FirstName" class="text-danger"></span>
     </div>
+    
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label">Last Name</label>
+        <input asp-for="LastName" type="text" class="form-control">
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+    
+<div class="mb-3">
+        <label asp-for="Jmbag" class="form-label">Jmbag</label>
+        <input asp-for="Jmbag" type="text" class="form-control">
+        <span asp-validation-for="Jmbag" class="text-danger"></span>
+    </div>
+    
+<div class="mb-3">
+        <label asp-for="PhoneNumber" class="form-label">Phone</label>
+        <input asp-for="PhoneNumber" type="text" class="form-control">
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
     <button type="submit" class="btn btn-primary" asp-controller="Auth" asp-action="RegisterAction">Submit</button>
 </form>
 

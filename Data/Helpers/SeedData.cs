@@ -13,7 +13,7 @@ public static class SeedDataClass
         ArgumentNullException.ThrowIfNull(app, nameof(app));
         using var scope = app.ApplicationServices.CreateScope();
         IServiceProvider services = scope.ServiceProvider;
-        var context = services.GetRequiredService<RwaContext>();
+        var context = services.GetRequiredService<BudgetManagerContext>();
         if (context.Users.Any())
             return app;
         await SeedUsers(services);
@@ -24,31 +24,15 @@ public static class SeedDataClass
     {
         var UserServices = services.GetRequiredService<IUserServices>();
 
-        await UserServices.CreateUser(new NewUserDto
+       await UserServices.CreateUser(new NewUserDto
         {
-            Username = "admin",
-            Password = "admin",
-            Admin = true
-        });
-        await UserServices.CreateUser(new NewUserDto
-        {
-            Username = "admin2",
-            Password = "admin",
-            Admin = true
-        });
-        await UserServices.CreateUser(new NewUserDto
-        {
-            Username = "pero",
+            FirstName = "Pero",
+            LastName = "Peric",
             Password = "123",
-            Admin = false
+            Email = "pero@app.hr",
+            Jmbag = "1123987213897"
         });
-        await UserServices.CreateUser(new NewUserDto
-        {
-            Username = "user",
-            Password = "user",
-            Admin = false
-        });
-    }
+   }
 
     private static void SeedPictures()
     {

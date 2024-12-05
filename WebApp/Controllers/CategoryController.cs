@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApp.ViewModels;
 
 namespace WebApp.Controllers;
-[Authorize]
+//[Authorize]
 public class CategoryController : Controller
 {
     private readonly ICategoryService _categoryService;

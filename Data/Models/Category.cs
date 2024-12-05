@@ -1,6 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+
 namespace Data.Models;
 
-public class Category
+public partial class Category
 {
-    
+    public long Idcategory { get; set; }
+
+    public Guid Guid { get; set; } = System.Guid.NewGuid();
+
+    public string? CategoryName { get; set; }
+
+    public virtual ICollection<Budget> Budgets { get; set; } = new List<Budget>();
+
+    public virtual ICollection<Expense> Expenses { get; set; } = new List<Expense>();
 }

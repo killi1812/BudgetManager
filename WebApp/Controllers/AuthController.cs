@@ -44,12 +44,6 @@ public class AuthController : Controller
 
     public async Task<IActionResult> RegisterAction(RegisterVM vm)
     {
-        if (vm.Password != vm.Password2)
-        {
-            ViewData["error"] = "Passwords do not match";
-            return Redirect(nameof(Register));
-        }
-
         await _userServices.CreateUser(_mapper.Map<NewUserDto>(vm));
         return Redirect(nameof(Login));
     }

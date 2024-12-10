@@ -8,10 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
-builder.Services.AddDbContext<RwaContext>(options => {
-    options.UseSqlServer("name=ConnectionStrings:BazaRWAConnStr");
-}); 
+builder.Services.AddDbContext<BudgetManagerContext>(o => { o.UseSqlServer(builder.Configuration["ConnectionStrings:db"]); });
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -33,11 +30,12 @@ builder.Services.AddAuthentication()
 
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<ILoggerService, LoggerService>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();

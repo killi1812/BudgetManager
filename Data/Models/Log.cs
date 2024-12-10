@@ -1,10 +1,13 @@
-﻿namespace Data.Models;
+﻿using System;
+using System.Collections.Generic;
 
-public class Log
+namespace Data.Models;
+
+public partial class Log
 {
     public int Id { get; set; }
 
-    public DateTime Date { get; set; } = DateTime.Now;
+    public DateTime Date { get; set; }
 
     public string Message { get; set; } = null!;
 

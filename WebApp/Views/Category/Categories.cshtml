@@ -5,14 +5,21 @@
     Layout = "_Layout";
 }
 
-<h2>Categories </h2>
+<h2 class="mb-5">Categories </h2>
+<a class="btn btn-success mb-5" href="@Url.ActionLink("CreateCategory","Category")">
+    Add new category
+</a>
 <div>
     @foreach (var category in Model)
     {
         <ul>
-            <li >
-                <a href="@Url.ActionLink("EditCategory", "Category", new { guid = category.Guid })">
+            <li class="d-flex flex-row gap-3">
+                <a class="text-body text-decoration-none" href="@Url.ActionLink("EditCategory", "Category", new { guid = category.Guid })">
                     @category.Name
+                </a>
+                <input type="color" class="form-control form-control-color" disabled value="@category.Color"> 
+                <a class="btn btn-danger" href="@Url.ActionLink("DeleteCategory","Category",new {guid = category.Guid})">
+                   delete 
                 </a>
             </li>
         </ul>

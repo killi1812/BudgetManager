@@ -5,16 +5,24 @@
     Layout = "_Layout";
 }
 
-<form>
-    <div class="mb-3">
-        <label asp-for="Name" class="form-label">Category name</label>
+<form  asp-controller="Category" asp-action="CreateCategoryAction">
+    <div class="mb-4">
+        <label asp-for="Name" class="form-label"></label>
         <input asp-for="Name" class="form-control"/>
         <span asp-validation-for="Name" class="text-danger"></span>
     </div>
 
-    <button type="submit" class="btn btn-primary" asp-controller="Category" asp-action="EditCategoryAction">Create</button>
+    <div class="mb-4">
+        <label asp-for="Color" class="form-label"></label>
+        <input asp-for="Color" type="color" class="form-control form-control-color">
+    </div>
 
-    @section Scripts {
-        @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
-    }
+    <div>
+        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="button" class="btn btn-danger">Cancle</button>
+    </div>
 </form>
+
+@section Scripts {
+@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

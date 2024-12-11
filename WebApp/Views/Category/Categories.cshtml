@@ -14,9 +14,10 @@
     {
         <ul>
             <li class="d-flex flex-row gap-3">
-                <a href="@Url.ActionLink("EditCategory", "Category", new { guid = category.Guid })">
+                <a class="text-body text-decoration-none" href="@Url.ActionLink("EditCategory", "Category", new { guid = category.Guid })">
                     @category.Name
                 </a>
+                <input type="color" class="form-control form-control-color" disabled value="@category.Color"> 
                 <a class="btn btn-danger" href="@Url.ActionLink("DeleteCategory","Category",new {guid = category.Guid})">
                    delete 
                 </a>

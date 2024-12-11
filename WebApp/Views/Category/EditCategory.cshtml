@@ -20,9 +20,9 @@
         <input asp-for="Color" type="color" class="form-control form-control-color">
     </div>
 
-    <div>
+    <div class="d-flex gap-3">
         <button type="submit" class="btn btn-success">Submit</button>
-        <button type="button" class="btn btn-danger">Cancle</button>
+        <a type="button" class="btn btn-danger" href="@Url.ActionLink("Categories", "Category")">Cancel</a>
     </div>
 </form>
 

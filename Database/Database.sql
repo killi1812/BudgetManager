@@ -72,7 +72,8 @@ CREATE TABLE Category
 (
 	IDCategory bigint primary key identity,
     Guid     UNIQUEIDENTIFIER NOT NULL,
-	CategoryName nvarchar(max)
+	CategoryName nvarchar(255),
+	Color nvarchar(20)
 )
 GO
 

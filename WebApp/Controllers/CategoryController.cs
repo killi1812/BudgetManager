@@ -40,7 +40,14 @@ public class CategoryController : Controller
    public async Task<IActionResult> EditCategoryAction(CategoryVM newCate)
    {
        var newCategory = _mapper.Map<Category>(newCate);
-       await _categoryService.Create(newCategory);
+       newCategory.Guid = Guid.Parse(newCate.Guid);
+       await _categoryService.Edit(newCategory);
+       return Redirect(nameof(Categories));
+   }
+
+   public async Task<IActionResult> DeleteCategory(string guid)
+   {
+       await _categoryService.Delete(Guid.Parse(guid));
        return Redirect(nameof(Categories));
    }
 }

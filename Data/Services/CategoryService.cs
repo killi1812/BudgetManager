@@ -1,3 +1,4 @@
+using Data.Helpers;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,8 +9,9 @@ public interface ICategoryService
     Task<Category> Create(Category newCategory);
     Task<Category> Get(Guid guid);
     Task Delete(Guid guid);
-    Task<Category> Create(Guid guid,Category newCategory);
+    Task<Category> Create(Guid guid, Category newCategory);
     Task<List<Category>> GetAll();
+    Task<Category> Edit(Category newCategory);
 }
 
 public class CategoryService : ICategoryService
@@ -28,14 +30,21 @@ public class CategoryService : ICategoryService
         return await _context.Categories.FirstOrDefaultAsync(c => c.Guid == newCategory.Guid);
     }
 
-    public Task<Category> Get(Guid guid)
+    public async Task<Category> Get(Guid guid)
     {
-        throw new NotImplementedException();
+        var cat = await _context.Categories
+            .FirstOrDefaultAsync(c => c.Guid == guid);
+        if (cat == null) throw new NotFoundException($"Category with guid: {guid} not found");
+        return cat;
     }
 
-    public Task Delete(Guid guid)
+    public async Task Delete(Guid guid)
     {
-        throw new NotImplementedException();
+        var cat = await _context.Categories
+            .FirstOrDefaultAsync(c => c.Guid == guid);
+        if (cat == null) throw new NotFoundException($"Category with guid: {guid} not found");
+        _context.Remove(cat);
+        await _context.SaveChangesAsync();
     }
 
     public Task<Category> Create(Guid guid, Category newCategory)
@@ -45,7 +54,18 @@ public class CategoryService : ICategoryService
 
     public async Task<List<Category>> GetAll()
     {
-       var cats   = await _context.Categories.AsNoTracking().ToListAsync();
-       return cats;
+        var cats = await _context.Categories.AsNoTracking().ToListAsync();
+        return cats;
+    }
+
+    public async Task<Category> Edit(Category newCategory)
+    {
+        var cat = await _context.Categories
+            .FirstOrDefaultAsync(c => c.Guid == newCategory.Guid);
+        if (cat == null) throw new NotFoundException($"Category with guid: {newCategory.Guid} not found");
+        cat.CategoryName = newCategory.CategoryName;
+        await _context.SaveChangesAsync();
+        return await _context.Categories.AsNoTracking().FirstOrDefaultAsync(c => c.Guid == newCategory.Guid) ??
+               throw new NotFoundException($"Category with guid: {newCategory.Guid} not found");
     }
 }

@@ -1,11 +1,18 @@
 @model WebApp.ViewModels.CategoryVM
 
 @{
-    ViewBag.Title = "Edit category" + @Model.Name;
+    ViewBag.Title = "Edit category";
     Layout = "_Layout";
 }
 
-<h2>@Model.Name</h2>
-<form>
-   <input/> 
+<h2 class="mb-5">Edit Category</h2>
+<form asp-action="EditCategoryAction" asp-controller="Category">
+    <div class="mb-4">
+        <input asp-for="Guid" hidden/>
+        <input asp-for="Name" class="form-control"/>
+    </div>
+    <div>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <button type="button" class="btn btn-danger">Cancle</button>
+    </div>
 </form>

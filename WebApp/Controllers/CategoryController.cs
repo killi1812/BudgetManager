@@ -37,6 +37,13 @@ public class CategoryController : Controller
        return View();
    }
 
+   public async Task<IActionResult> CreateCategoryAction(CategoryVM newCate)
+   {
+       var newCategory = _mapper.Map<Category>(newCate);
+       await _categoryService.Create(newCategory);
+       return Redirect(nameof(Categories));
+   }
+
    public async Task<IActionResult> EditCategoryAction(CategoryVM newCate)
    {
        var newCategory = _mapper.Map<Category>(newCate);

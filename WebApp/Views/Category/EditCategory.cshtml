@@ -7,12 +7,25 @@
 
 <h2 class="mb-5">Edit Category</h2>
 <form asp-action="EditCategoryAction" asp-controller="Category">
+
+    <input asp-for="Guid" hidden/>
     <div class="mb-4">
-        <input asp-for="Guid" hidden/>
+        <label asp-for="Name" class="form-label"></label>
         <input asp-for="Name" class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
+
+    <div class="mb-4">
+        <label asp-for="Color" class="form-label"></label>
+        <input asp-for="Color" type="color" class="form-control form-control-color">
+    </div>
+
     <div>
         <button type="submit" class="btn btn-success">Submit</button>
         <button type="button" class="btn btn-danger">Cancle</button>
     </div>
 </form>
+
+@section Scripts {
+@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

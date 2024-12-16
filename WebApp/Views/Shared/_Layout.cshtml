@@ -25,7 +25,8 @@
                 string? guid = ViewContext.HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
             }
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Budget Manager</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                    aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -34,13 +35,20 @@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Categories">Categories</a>
-                    </li>
+                    @if (loggedIn)
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Category" asp-action="Categories">Categories</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Income" asp-action="Incomes">Incomes</a>
+                        </li>
+                    }
                 </ul>
             </div>
             <form class="d-flex" role="search" asp-controller="Pictures" asp-action="Search">
-                <input name="query" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" value="@ViewData["query"]">
+                <input name="query" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                       value="@ViewData["query"]">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
             <ul class="navbar-nav flex-grow-1">
@@ -53,16 +61,19 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="@Url.Action("Logout", "Auth", new { redirectUrl = Context.Request.Path + Context.Request.QueryString })">Logout</a>
+                        <a class="nav-link text-dark"
+                           href="@Url.Action("Logout", "Auth", new { redirectUrl = Context.Request.Path + Context.Request.QueryString })">Logout</a>
                     </li>
                 }
                 else
                 {
                     <li class="nav-item">
-                        <a class="nav-link text-dark" href="@Url.Action("Login", "Auth", new { returnUrl = Context.Request.Path + Context.Request.QueryString })">Login</a>
+                        <a class="nav-link text-dark"
+                           href="@Url.Action("Login", "Auth", new { returnUrl = Context.Request.Path + Context.Request.QueryString })">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Auth" asp-action="Register">Register</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Auth"
+                           asp-action="Register">Register</a>
                     </li>
                 }
             </ul>
@@ -99,13 +110,13 @@ else
     const input = document.querySelector("input[name='query']");
     const elms = document.getElementsByClassName("link-btn")
     for (let i = 0; i < elms.length; i++) {
-        elms[i].addEventListener("click", function() {
+        elms[i].addEventListener("click", function () {
             input.value = elms[i].innerText + "=";
         });
 
-    } 
+    }
 
 </script>
 @await RenderSectionAsync("Scripts", required: false)
-</body >
-</html >
+</body>
+</html>

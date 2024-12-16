@@ -2,6 +2,7 @@ using AutoMapper;
 using Data.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.ViewModels;
 
 namespace WebApp.Controllers;
 
@@ -17,9 +18,20 @@ public class IncomeController: Controller
         _mapper = mapper;
     }
 
-    public async Task<IActionResult> ListIncome()
+    public async Task<IActionResult> Incomes()
     {
         var incomes = await _incomeService.GetAll();
-       return View()
+        var vms = _mapper.Map<List<IncomeVM>>(incomes);
+        return View(vms);
+    }
+
+    public IActionResult EditIncome(Guid guid)
+    {
+        throw new NotImplementedException();
+    }
+
+    public IActionResult CreateIncome()
+    {
+        throw new NotImplementedException();
     }
 }

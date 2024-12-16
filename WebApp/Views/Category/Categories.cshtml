@@ -10,10 +10,11 @@
     Add new category
 </a>
 <div>
+
+    <ul>
     @foreach (var category in Model)
     {
-        <ul>
-            <li class="d-flex flex-row gap-3">
+            <li class="d-flex flex-row gap-3 mb-2">
                 <a class="text-body text-decoration-none" href="@Url.ActionLink("EditCategory", "Category", new { guid = category.Guid })">
                     @category.Name
                 </a>
@@ -22,6 +23,7 @@
                    delete 
                 </a>
             </li>
-        </ul>
     }
+
+    </ul>
 </div>

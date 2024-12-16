@@ -43,15 +43,15 @@ public class IncomeController : Controller
         var newIncome = _mapper.Map<Income>(incomeVm);
         //TODO take user that creates request
         //newIncome.UserId = 1;
-        var income =  await _incomeService.Create(newIncome);
-        var vm = _mapper.Map<IncomeVM>(income);
-        // return RedirectToAction(nameof(EditIncome), new { guid = vm.Guid});
+        await _incomeService.Create(newIncome);
         return Redirect(nameof(Incomes));
     }
 
-    public IActionResult EditIncomeAction(IncomeVM incomeVm)
+    public async Task<IActionResult> EditIncomeAction(IncomeVM incomeVm)
     {
-        throw new NotImplementedException();
+        var incomeUpdate = _mapper.Map<Income>(incomeVm);
+        await _incomeService.Update(Guid.Parse(incomeVm.Guid), incomeUpdate);
+        return Redirect(nameof(Incomes));
     }
 
     public async Task<IActionResult> DeleteIncome(string guid)

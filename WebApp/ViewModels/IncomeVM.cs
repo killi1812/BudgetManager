@@ -4,9 +4,10 @@ namespace WebApp.ViewModels;
 
 public class IncomeVM
 {
-    public Guid Guid { get; set; }
+    [Required]
+    public string Guid { get; set; }
 
-    [Display(Name = "Guid", Description = "Amount of money for income")]
+    [Display(Name = "Sum", Description = "Amount of money for income")]
     [Required(ErrorMessage = "Sum for income is required")]
     public decimal Sum { get; set; }
 

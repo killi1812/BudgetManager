@@ -31,5 +31,10 @@ public class MapperProfile : Profile
             .ForMember(dest => dest.Idincome, opt => opt.Ignore())
             .ForMember(dest => dest.User, opt => opt.Ignore())
             .ForMember(dest => dest.UserId, opt => opt.Ignore());
+        CreateMap<Income, IncomeVM>()
+            .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => src.Guid.ToString()));
+        CreateMap<IncomeVM, Income>()
+            .ForMember(dest => dest.Guid, opt => opt.Ignore())
+            .ForMember(dest => dest.Idincome, opt => opt.Ignore());
     }
 }

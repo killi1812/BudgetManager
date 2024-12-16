@@ -1,0 +1,42 @@
+@model WebApp.ViewModels.IncomeVM
+
+@{
+ViewData["Title"] = "Create income";
+}
+
+<h2 class="mb-5">Create new income</h2>
+
+<form asp-controller="Income" asp-action="CreateIncomeAction">
+    <div class="mb-4">
+        <label asp-for="Sum" class="form-label"></label>
+        <input asp-for="Sum" type="number" class="form-control"/>
+        <span asp-validation-for="Sum" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="Source" class="form-label"></label>
+        <input asp-for="Source" class="form-control"/>
+        <span asp-validation-for="Source" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="Date" class="form-label"></label>
+        <input asp-for="Date" type="date" class="form-control"/>
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="Frequency" class="form-label"></label>
+        <input asp-for="Frequency" class="form-control"/>
+        <span asp-validation-for="Frequency" class="text-danger"></span>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="button" class="btn btn-danger">Cancel</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

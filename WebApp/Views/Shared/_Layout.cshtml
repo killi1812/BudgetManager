@@ -46,12 +46,7 @@
                     }
                 </ul>
             </div>
-            <form class="d-flex" role="search" asp-controller="Pictures" asp-action="Search">
-                <input name="query" class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                       value="@ViewData["query"]">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            <ul class="navbar-nav flex-grow-1">
+           <ul class="navbar-nav flex-grow-1">
                 <div class="m-auto">
                 </div>
                 @if (loggedIn)

@@ -42,8 +42,8 @@ CREATE TABLE BankAccountAPI
     Guid     UNIQUEIDENTIFIER NOT NULL,
 	BankName nvarchar(100),
 	Balance decimal,
-	[URL] nvarchar(max),
-	APIKey nvarchar(max),
+	[URL] nvarchar(255),
+	APIKey nvarchar(255),
 	UserID bigint references [User](IDUser)
 )
 
@@ -62,9 +62,9 @@ CREATE TABLE Income
 	IDIncome bigint primary key identity,
     Guid     UNIQUEIDENTIFIER NOT NULL,
 	[Sum] decimal,
-	[Source] nvarchar,
+	[Source] nvarchar(255),
 	[Date] date,
-	Frequency nvarchar,
+	Frequency nvarchar(255),
 	UserID bigint references [User](IDUser)
 )
 
@@ -82,7 +82,7 @@ CREATE TABLE Expense
 	IDExpense bigint primary key identity,
     Guid     UNIQUEIDENTIFIER NOT NULL,
 	[Sum] decimal,
-	[Description] nvarchar(max),
+	[Description] nvarchar(500),
 	[Date] date,
 	CategoryID bigint references Category(IDCategory),
 	UserID bigint references [User](IDUser)
@@ -101,6 +101,6 @@ CREATE TABLE Log
 (
     id      int identity (1,1) primary key not null,
     date    datetime not null,
-    message NVARCHAR(max)                  not null,
+    message NVARCHAR(500)                  not null,
     Lvl     int      not null
 );

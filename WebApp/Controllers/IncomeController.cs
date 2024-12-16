@@ -41,6 +41,11 @@ public class IncomeController : Controller
     public async Task<IActionResult> CreateIncomeAction(IncomeVM incomeVm)
     {
         var newIncome = _mapper.Map<Income>(incomeVm);
+       //TOOD Add dis to all request mby somhow make ti defulat 
+        var guid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
+        if (guid == null)
+            return BadRequest("User not found");
+
         //TODO take user that creates request
         //newIncome.UserId = 1;
         await _incomeService.Create(newIncome);

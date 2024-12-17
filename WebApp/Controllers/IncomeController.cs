@@ -12,11 +12,13 @@ public class IncomeController : Controller
 {
     private readonly IIncomeService _incomeService;
     private readonly IMapper _mapper;
+    private readonly IUserServices _userServices;
 
-    public IncomeController(IIncomeService incomeService, IMapper mapper)
+    public IncomeController(IIncomeService incomeService, IMapper mapper, IUserServices userServices)
     {
         _incomeService = incomeService;
         _mapper = mapper;
+        _userServices = userServices;
     }
 
     public async Task<IActionResult> Incomes()
@@ -41,13 +43,13 @@ public class IncomeController : Controller
     public async Task<IActionResult> CreateIncomeAction(IncomeVM incomeVm)
     {
         var newIncome = _mapper.Map<Income>(incomeVm);
-       //TOOD Add dis to all request mby somhow make ti defulat 
+        
         var guid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
         if (guid == null)
             return BadRequest("User not found");
-
-        //TODO take user that creates request
-        //newIncome.UserId = 1;
+        var user =  await _userServices.GetUser(Guid.Parse(guid));
+        newIncome.UserId = user.Iduser;
+        
         await _incomeService.Create(newIncome);
         return Redirect(nameof(Incomes));
     }

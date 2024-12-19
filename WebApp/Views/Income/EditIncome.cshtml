@@ -26,10 +26,10 @@
         <input asp-for="Date" type="date" class="form-control"/>
         <span asp-validation-for="Date" class="text-danger"></span>
     </div>
-
+    
     <div class="mb-4">
         <label asp-for="Frequency" class="form-label"></label>
-        <input asp-for="Frequency" class="form-control"/>
+        <select asp-for="Frequency" class="form-control" asp-items="Model.Frequencies"></select>
         <span asp-validation-for="Frequency" class="text-danger"></span>
     </div>
 

@@ -37,7 +37,7 @@ public class IncomeController : Controller
 
     public IActionResult CreateIncome()
     {
-        return View();
+        return View( new IncomeVM());
     }
 
     public async Task<IActionResult> CreateIncomeAction(IncomeVM incomeVm)

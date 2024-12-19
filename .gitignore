@@ -210,6 +210,7 @@ Backup*/
 UpgradeLog*.XML
 UpgradeLog*.htm
 *.old
+appsettings.json
 
 # SQL Server files
 *.mdf

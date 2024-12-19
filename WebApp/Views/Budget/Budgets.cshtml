@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Data.ViewModels.BudgetVM>
+
+@{
+    ViewData["Title"] = "Budgets";
+}
+
+<h1>Budgets</h1>
+
+<p>
+    <a asp-action="CreateBudget">Create New Budget</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Sum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().CategoryId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryId)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditBudget", new { guid = item.Guid }) |
+                @Html.ActionLink("Details", "DetailsBudget", new { guid = item.Guid }) |
+                @Html.ActionLink("Delete", "DeleteBudget", new { guid = item.Guid })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -23,7 +23,11 @@ public class IncomeController : Controller
 
     public async Task<IActionResult> Incomes()
     {
-        var incomes = await _incomeService.GetAll();
+        var guid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
+                if (guid == null)
+                    return BadRequest("User not found");
+                
+        var incomes = await _incomeService.GetAll(Guid.Parse(guid));
         var vms = _mapper.Map<List<IncomeVM>>(incomes);
         return View(vms);
     }

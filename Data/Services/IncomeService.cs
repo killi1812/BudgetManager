@@ -7,7 +7,7 @@ namespace Data.Services;
 
 public interface IIncomeService
 {
-    public Task<List<Income>> GetAll();
+    public Task<List<Income>> GetAll(Guid guid);
     public Task<Income> Create(Income newIncome);
     public Task<Income> Get(Guid guid);
     public Task Delete(Guid guid);
@@ -25,9 +25,9 @@ public class IncomeService : IIncomeService
         _mapper = mapper;
     }
 
-    public async Task<List<Income>> GetAll()
+    public async Task<List<Income>> GetAll(Guid guid)
     {
-        var incomes =await _context.Incomes.AsNoTracking().ToListAsync();
+        var incomes =await _context.Incomes.AsNoTracking().Where(i => i.User != null && i.User.Guid == guid).ToListAsync();
         return incomes;
     }
 

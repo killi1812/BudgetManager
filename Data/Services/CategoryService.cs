@@ -9,8 +9,7 @@ public interface ICategoryService
     Task<Category> Create(Category newCategory);
     Task<Category> Get(Guid guid);
     Task Delete(Guid guid);
-    Task<Category> Create(Guid guid, Category newCategory);
-    Task<List<Category>> GetAll();
+    Task<List<Category>> GetAll(Guid userGuid);
     Task<Category> Edit(Category newCategory);
 }
 
@@ -47,14 +46,11 @@ public class CategoryService : ICategoryService
         await _context.SaveChangesAsync();
     }
 
-    public Task<Category> Create(Guid guid, Category newCategory)
+    public async Task<List<Category>> GetAll(Guid guid)
     {
-        throw new NotImplementedException();
-    }
-
-    public async Task<List<Category>> GetAll()
-    {
-        var cats = await _context.Categories.AsNoTracking().ToListAsync();
+        //TODO needs to get only categorys from selected user
+        var cats = await _context.Categories
+            .AsNoTracking().ToListAsync();
         return cats;
     }
 

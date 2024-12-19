@@ -1,0 +1,26 @@
+@model List<WebApp.ViewModels.IncomeVM>
+
+@{
+    ViewData["Title"] = "Your incomes";
+}
+<h2>Your incomes</h2>
+
+<a class="btn btn-success mb-5" href="@Url.ActionLink("CreateIncome","Income")">
+    Add new income 
+</a>
+<ul>
+@foreach(var income in Model)
+{
+    <li class="d-flex flex-row gap-3 mb-2">
+        <a class="text-body text-decoration-none" href="@Url.ActionLink("EditIncome", "Income", new { guid = income.Guid })">
+            @income.Source
+        </a>
+        <span>@income.Sum</span>
+        <span>@income.Date</span>
+        <span>@income.Frequency</span>
+        <a class="btn btn-danger" href="@Url.ActionLink("DeleteIncome","Income",new {guid = income.Guid})">
+            delete
+        </a>
+    </li>
+}
+</ul>

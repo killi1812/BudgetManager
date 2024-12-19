@@ -1,0 +1,44 @@
+@model WebApp.ViewModels.IncomeVM
+
+@{
+    ViewBag.Title = "Edit income";
+    Layout = "_Layout";
+}
+
+<h2 class="mb-5">Edit Income</h2>
+<form asp-action="EditIncomeAction" asp-controller="Income">
+
+    <input asp-for="Guid" hidden/>
+    <div class="mb-4">
+        <label asp-for="Sum" class="form-label"></label>
+        <input asp-for="Sum" class="form-control"/>
+        <span asp-validation-for="Sum" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="Source" class="form-label"></label>
+        <input asp-for="Source" class="form-control"/>
+        <span asp-validation-for="Source" class="text-danger"></span>
+    </div>
+
+    <div class="mb-4">
+        <label asp-for="Date" class="form-label"></label>
+        <input asp-for="Date" type="date" class="form-control"/>
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+    
+    <div class="mb-4">
+        <label asp-for="Frequency" class="form-label"></label>
+        <select asp-for="Frequency" class="form-control" asp-items="Model.Frequencies"></select>
+        <span asp-validation-for="Frequency" class="text-danger"></span>
+    </div>
+
+    <div class="d-flex gap-3">
+        <button type="submit" class="btn btn-success">Submit</button>
+        <a type="button" class="btn btn-danger" href="@Url.ActionLink("Incomes", "Income")">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

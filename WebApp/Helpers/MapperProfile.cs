@@ -1,6 +1,8 @@
 using AutoMapper;
 using Data.Dto;
+using Data.Enums;
 using Data.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WebApp.ViewModels;
 
 namespace WebApp.Helpers;
@@ -9,7 +11,7 @@ public class MapperProfile : Profile
 {
     public MapperProfile()
     {
-           CreateMap<User, UserVM>()
+        CreateMap<User, UserVM>()
             .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => src.Guid.ToString()))
             .ForMember(dest => dest.Username, opt => opt.MapFrom(src => src.Email));
         CreateMap<UserDto, User>();
@@ -24,7 +26,17 @@ public class MapperProfile : Profile
             .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Name));
         CreateMap<Category, CategoryVM>()
             .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => src.Guid.ToString()))
-            .ForMember(dest => dest.Name,opt => opt.MapFrom(src => src.CategoryName));
+            .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.CategoryName));
 
+        CreateMap<Income, Income>()
+            .ForMember(dest => dest.Guid, opt => opt.Ignore())
+            .ForMember(dest => dest.Idincome, opt => opt.Ignore())
+            .ForMember(dest => dest.User, opt => opt.Ignore())
+            .ForMember(dest => dest.UserId, opt => opt.Ignore());
+        CreateMap<Income, IncomeVM>()
+            .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => src.Guid.ToString()));
+        CreateMap<IncomeVM, Income>()
+            .ForMember(dest => dest.Guid, opt => opt.Ignore())
+            .ForMember(dest => dest.Idincome, opt => opt.Ignore());
     }
 }

@@ -2,6 +2,7 @@ using AutoMapper;
 using Data.Dto;
 using Data.Enums;
 using Data.Models;
+using Data.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WebApp.ViewModels;
 
@@ -38,5 +39,16 @@ public class MapperProfile : Profile
         CreateMap<IncomeVM, Income>()
             .ForMember(dest => dest.Guid, opt => opt.Ignore())
             .ForMember(dest => dest.Idincome, opt => opt.Ignore());
+
+        CreateMap<Budget, BudgetVM>()
+            .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => src.Guid.ToString()))
+            .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
+            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.Jmbag));
+
+        CreateMap<BudgetVM, Budget>()
+            .ForMember(dest => dest.Guid, opt => opt.Ignore())
+            .ForMember(dest => dest.User, opt => opt.Ignore())
+            .ForMember(dest => dest.Category, opt => opt.Ignore());
+
     }
 }

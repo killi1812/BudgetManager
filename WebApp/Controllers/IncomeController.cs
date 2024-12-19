@@ -24,9 +24,9 @@ public class IncomeController : Controller
     public async Task<IActionResult> Incomes()
     {
         var guid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
-                if (guid == null)
-                    return BadRequest("User not found");
-                
+        if (guid == null)
+            return BadRequest("User not found");
+
         var incomes = await _incomeService.GetAll(Guid.Parse(guid));
         var vms = _mapper.Map<List<IncomeVM>>(incomes);
         return View(vms);
@@ -41,19 +41,19 @@ public class IncomeController : Controller
 
     public IActionResult CreateIncome()
     {
-        return View( new IncomeVM());
+        return View(new IncomeVM());
     }
 
     public async Task<IActionResult> CreateIncomeAction(IncomeVM incomeVm)
     {
         var newIncome = _mapper.Map<Income>(incomeVm);
-        
+
         var guid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
         if (guid == null)
             return BadRequest("User not found");
-        var user =  await _userServices.GetUser(Guid.Parse(guid));
+        var user = await _userServices.GetUser(Guid.Parse(guid));
         newIncome.UserId = user.Iduser;
-        
+
         await _incomeService.Create(newIncome);
         return Redirect(nameof(Incomes));
     }

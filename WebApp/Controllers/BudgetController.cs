@@ -4,39 +4,34 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
+using Data.Services;
+using WebApp.ViewModels;
 
 namespace WebApp.Controllers
 {
     public class BudgetController : Controller
     {
-        private readonly IRepository<Budget> _budgetRepository;
-        private readonly IRepository<Category> _categoryRepository;
-        private readonly IRepository<User> _userRepository;
+        private readonly IBudgetService _budgetService;
+        private readonly IMapper _mapper;
 
-        public BudgetController(
-            IRepository<Budget> budgetRepository,
-            IRepository<Category> categoryRepository,
-            IRepository<User> userRepository)
+        public BudgetController(IBudgetService budgetService, IMapper mapper)
         {
-            _budgetRepository = budgetRepository;
-            _categoryRepository = categoryRepository;
-            _userRepository = userRepository;
+            _budgetService = budgetService;
+            _mapper = mapper;
         }
 
         // GET: BudgetController
         public ActionResult Index()
         {
-            var budgets = _budgetRepository.GetAll().Select(b => new BudgetDto
-            {
-                Idbudget = b.Idbudget,
-                Sum = b.Sum,
-                UserId = b.UserId,
-                CategoryId = b.CategoryId,
-                Category = b.Category,
-                User = b.User
-            });
+            //ovo ti dohvati guid od usera koji je nap request, To nam treba da ne vadimo sve buđete od svih usera
+            var guid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
+            if (guid == null)
+                return BadRequest("User not found");
 
-            return View(budgets);
+            var budgets = _budgetService.GetAll(Guid.Parse(guid));
+            var vms = _mapper.Map<List<BudgetVM>>(budgets);
+            return View(vms);
         }
 
         // GET: BudgetController/Details/5
@@ -177,14 +172,5 @@ namespace WebApp.Controllers
                 return View();
             }
         }
-    }
-
-    public interface IRepository<T>
-    {
-        IEnumerable<T> GetAll();
-        T GetById(long id);
-        void Add(T entity);
-        void Update(T entity);
-        void Delete(T entity);
     }
 }

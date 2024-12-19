@@ -4,7 +4,8 @@ namespace WebApp.ViewModels
 {
     public class BudgetVM
     {
-        public long Idbudget { get; set; }
+        //GUID je id 
+        public string Guid { get; set; }
 
         public decimal? Sum { get; set; }
 
@@ -16,8 +17,9 @@ namespace WebApp.ViewModels
 
         public string? UserName { get; set; }
 
-        public IEnumerable<UserVM>? Users { get; set; }
+        //TODO ovo ostavi za kasnije 
+        //public IEnumerable<UserVM>? Users { get; set; }
 
-        public IEnumerable<CategoryVM>? Categories { get; set; }
+        //public IEnumerable<CategoryVM>? Categories { get; set; }
     }
 }

@@ -7,7 +7,7 @@
 <h1>Edit Budget</h1>
 
 <form asp-action="Edit" method="post">
-    <input type="hidden" asp-for="Idbudget" />
+    <input type="hidden" asp-for="Guid" />
 
     <div class="form-group">
         <label asp-for="Sum" class="control-label">Budget Amount</label>
@@ -16,19 +16,19 @@
     </div>
 
     <div class="form-group">
-        <label asp-for="UserId" class="control-label">User</label>
-        <select asp-for="UserId" class="form-control" asp-items="@(new SelectList(Model.Users, "UserId", "UserName"))">
-            <option value="">-- Select User --</option>
-        </select>
-        <span asp-validation-for="UserId" class="text-danger"></span>
+        @* <label asp-for="UserId" class="control-label">User</label> *@
+        @* <select asp-for="UserId" class="form-control" asp-items="@(new SelectList(Model.Users, "UserId", "UserName"))"> *@
+        @*     <option value="">-- Select User --</option> *@
+        @* </select> *@
+        @* <span asp-validation-for="UserId" class="text-danger"></span> *@
     </div>
 
     <div class="form-group">
-        <label asp-for="CategoryId" class="control-label">Category</label>
-        <select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(Model.Categories, "CategoryId", "CategoryName"))">
-            <option value="">-- Select Category --</option>
-        </select>
-        <span asp-validation-for="CategoryId" class="text-danger"></span>
+        @* <label asp-for="CategoryId" class="control-label">Category</label> *@
+        @* <select asp-for="CategoryId" class="form-control" asp-items="@(new SelectList(Model.Categories, "CategoryId", "CategoryName"))"> *@
+        @*     <option value="">-- Select Category --</option> *@
+        @* </select> *@
+        @* <span asp-validation-for="CategoryId" class="text-danger"></span> *@
     </div>
 
     <div class="form-group">

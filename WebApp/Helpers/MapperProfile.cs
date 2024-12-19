@@ -38,5 +38,12 @@ public class MapperProfile : Profile
         CreateMap<IncomeVM, Income>()
             .ForMember(dest => dest.Guid, opt => opt.Ignore())
             .ForMember(dest => dest.Idincome, opt => opt.Ignore());
+
+        CreateMap<Budget, Budget>();
+        CreateMap<Budget, BudgetVM>()
+            .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => src.Guid.ToString()))
+            .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName));
+        CreateMap<BudgetVM, Budget>()
+            .ForMember(dest => dest.Guid, opt => opt.Ignore());
     }
 }

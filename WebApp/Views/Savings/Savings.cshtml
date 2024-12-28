@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Data.ViewModels.SavingsVM>
+
+@{
+    ViewData["Title"] = "Savings";
+}
+
+<h1>Savings</h1>
+
+<p>
+    <a asp-action="CreateSaving">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Goal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Current)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Guid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Goal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Current)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Guid)
+            </td>
+                <td>
+                    @item.Date?.ToString("dd.MM.yyyy")
+                </td>
+            <td>
+                @Html.ActionLink("Edit", "EditSaving", new { guid = item.Guid }) |
+                    @Html.ActionLink("Details", "DetailsSavingsAction", new { guid = item.Guid }) |
+                    @Html.ActionLink("Delete", "DeleteSaving", new { guid = item.Guid })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

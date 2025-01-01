@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Data.ViewModels.BudgetVM>
+﻿@model IEnumerable<BudgetVM>
 
 @{
     ViewData["Title"] = "Budgets";
@@ -13,13 +13,10 @@
     <thead>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.First().Sum)
+            @Html.DisplayNameFor(model => model.Sum)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.First().UserId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.First().CategoryId)
+            @Html.DisplayNameFor(model => model.CategoryName)
         </th>
         <th></th>
     </tr>
@@ -32,14 +29,11 @@
                     @Html.DisplayFor(modelItem => item.Sum)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.UserId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryId)
+                    @Html.DisplayFor(modelItem => item.CategoryName)
                 </td>
                 <td class="d-flex gap-3">
                     <a class="btn btn-primary"
-                       href="@Url.ActionLink("EditBudgetAction", "Budget", new { guid = item.Guid })"> Edit </a>
+                       href="@Url.ActionLink("EditBudget", "Budget", new { guid = item.Guid })"> Edit </a>
                     <a class="btn btn-danger"
                        href="@Url.ActionLink("DeleteBudget", "Budget", new { guid = item.Guid })"> Delete </a>
                 </td>

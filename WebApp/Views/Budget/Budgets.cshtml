@@ -7,41 +7,43 @@
 <h1>Budgets</h1>
 
 <p>
-    <a asp-action="CreateBudget">Create New Budget</a>
+    <a class="btn btn-success" asp-action="CreateBudget">Create New Budget</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Sum)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().CategoryId)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().Sum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().CategoryId)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryId)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditBudget", new { guid = item.Guid }) |
-                @Html.ActionLink("Details", "DetailsBudget", new { guid = item.Guid }) |
-                @Html.ActionLink("Delete", "DeleteBudget", new { guid = item.Guid })
-            </td>
-        </tr>
-}
+    @foreach (var item in Model)
+    {
+            <tr onclick="location.href = '@Url.ActionLink("DetailsBudget", "Budget", new { guid = item.Guid })' ">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryId)
+                </td>
+                <td class="d-flex gap-3">
+                    <a class="btn btn-primary"
+                       href="@Url.ActionLink("EditBudgetAction", "Budget", new { guid = item.Guid })"> Edit </a>
+                    <a class="btn btn-danger"
+                       href="@Url.ActionLink("DeleteBudget", "Budget", new { guid = item.Guid })"> Delete </a>
+                </td>
+            </tr>
+    }
     </tbody>
 </table>

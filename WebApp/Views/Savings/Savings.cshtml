@@ -7,31 +7,26 @@
 <h1>Savings</h1>
 
 <p>
-    <a asp-action="CreateSaving">Create New</a>
+    <a class="btn btn-success" asp-action="CreateSaving">Create New</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Goal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Current)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Guid)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Goal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Current)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+    @foreach (var item in Model)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Goal)
@@ -40,20 +35,14 @@
                 @Html.DisplayFor(modelItem => item.Current)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
+                @item.Date?.ToString("dd.MM.yyyy")
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Guid)
-            </td>
-                <td>
-                    @item.Date?.ToString("dd.MM.yyyy")
-                </td>
-            <td>
-                @Html.ActionLink("Edit", "EditSaving", new { guid = item.Guid }) |
-                    @Html.ActionLink("Details", "DetailsSavingsAction", new { guid = item.Guid }) |
-                    @Html.ActionLink("Delete", "DeleteSaving", new { guid = item.Guid })
+            <td class="d-flex gap-3">
+                <a class="btn btn-primary" href="@Url.ActionLink("EditSaving", "Savings", new { guid = item.Guid })"> Edit</a>
+                <a class="btn btn-primary" href="@Url.ActionLink("DetailsSavingsAction", "Savings", new { guid = item.Guid })">Details</a>
+                <a class="btn btn-danger" href="@Url.ActionLink("DeleteSaving", "Savings", new { guid = item.Guid })">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

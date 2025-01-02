@@ -59,7 +59,7 @@ public class BudgetService : IBudgetService
 
     public async Task<Budget> Edit(Guid guid, Budget updatedBudget)
     {
-        var budget = await _context.Budgets.FirstOrDefaultAsync(b => b.Guid == updatedBudget.Guid);
+        var budget = await _context.Budgets.FirstOrDefaultAsync(b => b.Guid == guid);
         if (budget == null) throw new NotFoundException($"Budget with guid: {updatedBudget.Guid} not found");
 
         budget.Sum = updatedBudget.Sum;
@@ -67,7 +67,7 @@ public class BudgetService : IBudgetService
         budget.CategoryId = updatedBudget.CategoryId;
 
         await _context.SaveChangesAsync();
-        return await _context.Budgets.AsNoTracking().FirstOrDefaultAsync(b => b.Guid == updatedBudget.Guid)
+        return await _context.Budgets.AsNoTracking().FirstOrDefaultAsync(b => b.Guid == guid)
                ?? throw new NotFoundException($"Budget with guid: {updatedBudget.Guid} not found");
     }
 }

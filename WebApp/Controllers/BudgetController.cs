@@ -62,6 +62,12 @@ public class BudgetController : Controller
     public async Task<IActionResult> EditBudgetAction(BudgetVM updatedBudget)
     {
         var budget = _mapper.Map<Budget>(updatedBudget);
+        
+        budget.Category = await _categoryService.Get(Guid.Parse(updatedBudget.CategoryGuid));
+        budget.CategoryId = budget.Category.Idcategory;
+        budget.User = await _userServices.GetUser(HttpContext.GetUserGuid());
+        budget.UserId = budget.User.Iduser;
+        
         await _budgetService.Edit(Guid.Parse(updatedBudget.Guid), budget);
         return Redirect(nameof(Budgets));
     }

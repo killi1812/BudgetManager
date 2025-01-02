@@ -1,4 +1,4 @@
-﻿@model Data.ViewModels.BudgetVM
+﻿@model BudgetVM
 
 <h1>Budget Details</h1>
 
@@ -6,12 +6,8 @@
     <div class="col-md-8">
         <dl class="row">
 
-
             <dt class="col-sm-3">Sum</dt>
             <dd class="col-sm-9">@Model.Sum</dd>
-
-            <dt class="col-sm-3">CategoryId</dt>
-            <dd class="col-sm-9">@Model.CategoryId</dd>
 
             <dt class="col-sm-3">Category</dt>
             <dd class="col-sm-9">@Model.CategoryName</dd>
@@ -39,7 +35,7 @@
         const data = {
             labels: ['Remaining', 'User'],
             datasets: [{
-                data: [budgetSum, 0], 
+                data: [budgetSum, 0],
                 backgroundColor: ['#007bff', '#dcdcdc'],
                 borderWidth: 1
             }]
@@ -69,4 +65,5 @@
         new Chart(ctx, config);
     </script>
 }
+
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

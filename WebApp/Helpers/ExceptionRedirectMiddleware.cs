@@ -44,6 +44,7 @@ public class ExceptionRedirectMiddleware
                 redirectUrl = $"/Error/Error401?message={Uri.EscapeDataString(exception.Message)}";
                 break;
             default:
+                Console.WriteLine(exception);
                 context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
                 _loggerService.Log(exception.Message, ThreatLvl.High);
                 redirectUrl = $"/Error/Error500?message={Uri.EscapeDataString(exception.Message)}";

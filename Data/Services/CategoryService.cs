@@ -60,6 +60,7 @@ public class CategoryService : ICategoryService
             .FirstOrDefaultAsync(c => c.Guid == newCategory.Guid);
         if (cat == null) throw new NotFoundException($"Category with guid: {newCategory.Guid} not found");
         cat.CategoryName = newCategory.CategoryName;
+        cat.Color = newCategory.Color;
         await _context.SaveChangesAsync();
         return await _context.Categories.AsNoTracking().FirstOrDefaultAsync(c => c.Guid == newCategory.Guid) ??
                throw new NotFoundException($"Category with guid: {newCategory.Guid} not found");

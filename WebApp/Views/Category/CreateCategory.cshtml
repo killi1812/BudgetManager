@@ -1,11 +1,12 @@
 @model CategoryVM
 
 @{
-    ViewBag.Title = "Edit category";
+    ViewBag.Title = "Create category";
     Layout = "_Layout";
 }
-
-<form  asp-controller="Category" asp-action="CreateCategoryAction">
+<h1>Create category</h1>
+<hr/>
+<form asp-controller="Category" asp-action="CreateCategoryAction">
     <div class="mb-4">
         <label asp-for="Name" class="form-label"></label>
         <input asp-for="Name" class="form-control"/>
@@ -19,10 +20,10 @@
 
     <div>
         <button type="submit" class="btn btn-primary">Create</button>
-        <button type="button" class="btn btn-danger">Cancle</button>
+        <a type="button" class="btn btn-danger" asp-action="Categories">Cancel</a>
     </div>
 </form>
 
 @section Scripts {
-@{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

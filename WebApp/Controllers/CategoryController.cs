@@ -3,6 +3,7 @@ using Data.Models;
 using Data.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Helpers;
 using WebApp.ViewModels;
 
 namespace WebApp.Controllers;
@@ -21,11 +22,8 @@ public class CategoryController : Controller
 
     public async Task<IActionResult> Categories()
     {
-        var guid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
-        if (guid == null)
-            return BadRequest("User not found");
-
-        var categories = await _categoryService.GetAll(Guid.Parse(guid));
+        var guid = HttpContext.GetUserGuid();
+        var categories = await _categoryService.GetAll(guid);
         var vm = _mapper.Map<List<CategoryVM>>(categories);
         return View(vm);
     }
@@ -34,6 +32,7 @@ public class CategoryController : Controller
     {
         var category = await _categoryService.Get(Guid.Parse(guid));
         var vm = _mapper.Map<CategoryVM>(category);
+        
         return View(vm);
     }
 
@@ -61,5 +60,18 @@ public class CategoryController : Controller
     {
         await _categoryService.Delete(Guid.Parse(guid));
         return Redirect(nameof(Categories));
+    }
+
+    public async Task<IActionResult> CategoryProps()
+    {
+        var userGuid = HttpContext.GetUserGuid();
+        var categories = await _categoryService.GetAll(userGuid);
+        var props = categories.Select(c => new PropDto
+        {
+            Text = c.CategoryName,
+            Value = c.Guid.ToString(),
+        }).ToList();
+        
+        return Json(props);
     }
 }

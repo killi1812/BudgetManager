@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Data.Models;
 using Data.Services;
-using Data.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Helpers;
 using WebApp.ViewModels;
 
 namespace WebApp.Controllers;
@@ -12,12 +12,14 @@ namespace WebApp.Controllers;
 public class SavingsController : Controller
 {
     private readonly ISavingService _savingService;
+    private readonly IUserServices _userServices;
     private readonly IMapper _mapper;
 
-    public SavingsController(ISavingService savingService, IMapper mapper)
+    public SavingsController(ISavingService savingService, IMapper mapper, IUserServices userServices)
     {
         _savingService = savingService;
         _mapper = mapper;
+        _userServices = userServices;
     }
 
     public async Task<IActionResult> Savings()
@@ -37,8 +39,6 @@ public class SavingsController : Controller
             return BadRequest("GUID is required");
 
         var saving = await _savingService.Get(Guid.Parse(guid));
-        if (saving == null)
-            return NotFound($"Saving with GUID {guid} not found");
 
         var vm = _mapper.Map<SavingsVM>(saving);
         return View(vm);
@@ -53,6 +53,10 @@ public class SavingsController : Controller
     {
         newSaving.Date = DateTime.Now;
         var saving = _mapper.Map<Saving>(newSaving);
+
+        saving.User = await _userServices.GetUser(HttpContext.GetUserGuid());
+        saving.UserId = saving.User.Iduser;
+
         await _savingService.Create(saving);
         return Redirect(nameof(Savings));
     }
@@ -60,46 +64,34 @@ public class SavingsController : Controller
     public async Task<IActionResult> EditSavingsAction(SavingsVM updatedSaving)
     {
         var saving = _mapper.Map<Saving>(updatedSaving);
-        saving.Guid = Guid.Parse(updatedSaving.Guid.ToString());
+
+        saving.User = await _userServices.GetUser(HttpContext.GetUserGuid());
+        saving.UserId = saving.User.Iduser;
+
+        saving.Guid = Guid.Parse(updatedSaving.Guid);
         await _savingService.Edit(saving);
         return Redirect(nameof(Savings));
     }
 
-    public async Task<IActionResult> DeleteSaving(string guid)
+    public async Task<IActionResult> DeleteSavingsAction(string guid)
     {
-        if (string.IsNullOrEmpty(guid))
-            return BadRequest("GUID is required");
-
-        var saving = await _savingService.Get(Guid.Parse(guid));
-        if (saving == null)
-            return NotFound($"Saving with GUID {guid} not found");
-
-        var vm = _mapper.Map<SavingsVM>(saving);
-        return View("DeleteSaving", vm);
-    }
-
-    public async Task<IActionResult> DeleteSavingsAction(SavingsVM savingToDelete)
-    {
-        if (savingToDelete == null || savingToDelete.Guid == Guid.Empty)
+        if (String.IsNullOrEmpty(guid))
         {
             return BadRequest("Invalid saving data");
         }
 
-        await _savingService.Delete(savingToDelete.Guid);
+        await _savingService.Delete(Guid.Parse(guid));
         return RedirectToAction(nameof(Savings));
     }
 
-    public async Task<IActionResult> DetailsSavingsAction(string guid)
+    public async Task<IActionResult> DetailsSaving(string guid)
     {
         if (string.IsNullOrEmpty(guid))
             return BadRequest("Saving GUID is required");
 
         var saving = await _savingService.Get(Guid.Parse(guid));
-        if (saving == null)
-            return NotFound($"Saving with GUID {guid} not found");
-
         var vm = _mapper.Map<SavingsVM>(saving);
 
-        return View("DetailsSaving", vm);
+        return View(vm);
     }
 }

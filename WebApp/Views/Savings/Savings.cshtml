@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Data.ViewModels.SavingsVM>
+﻿@model IEnumerable<SavingsVM>
 
 @{
     ViewData["Title"] = "Savings";
@@ -7,32 +7,27 @@
 <h1>Savings</h1>
 
 <p>
-    <a asp-action="CreateSaving">Create New</a>
+    <a class="btn btn-success" asp-action="CreateSaving">Create New</a>
 </p>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Goal)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Current)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Guid)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Date)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Goal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Current)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
+    @foreach (var item in Model)
+    {
+        <tr onclick="location.href = '@Url.ActionLink("DetailsSaving", "Savings", new { guid = item.Guid })' ">
             <td>
                 @Html.DisplayFor(modelItem => item.Goal)
             </td>
@@ -40,20 +35,30 @@
                 @Html.DisplayFor(modelItem => item.Current)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.UserId)
+                @item.Date?.ToString("dd.MM.yyyy")
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Guid)
-            </td>
-                <td>
-                    @item.Date?.ToString("dd.MM.yyyy")
-                </td>
-            <td>
-                @Html.ActionLink("Edit", "EditSaving", new { guid = item.Guid }) |
-                    @Html.ActionLink("Details", "DetailsSavingsAction", new { guid = item.Guid }) |
-                    @Html.ActionLink("Delete", "DeleteSaving", new { guid = item.Guid })
+            <td class="d-flex gap-3">
+                <a class="btn btn-primary" href="@Url.ActionLink("EditSaving", "Savings", new { guid = item.Guid })">
+                    Edit</a>
+                <a class="btn btn-danger"
+                   href="@Url.ActionLink("DeleteSavingsAction", "Savings", new { guid = item.Guid })"
+                   onclick="confirmDelete()">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        //TODO: Delets even if canceled
+        function confirmDelete(event) {
+            if (!confirm("Are you sure you want to delete it?")) {
+                event.stopPropagation();
+                return false;
+            }
+            return true;
+        }
+
+    </script>
+}

@@ -8,7 +8,6 @@
 
 <h1>CreateBudget</h1>
 
-<h4>BudgetVM</h4>
 <hr/>
 <div class="row mb-3">
     <div class="col-md-4">
@@ -35,10 +34,6 @@
 <script>
    document.addEventListener("DOMContentLoaded", function() {
     const dropdown = document.getElementById("dropdown");
-
-    dropdown.addEventListener("change", function(event) {
-        console.log("Selected value:", selectedValue);
-    });
 
     function populateDropdown(items) {
         const option = document.createElement("option");

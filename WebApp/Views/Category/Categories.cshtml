@@ -5,25 +5,38 @@
     Layout = "_Layout";
 }
 
-<h2 class="mb-5">Categories </h2>
-<a class="btn btn-success mb-5" href="@Url.ActionLink("CreateCategory","Category")">
+<h1 class="mb-3">Categories</h1>
+<a class="btn btn-success mb-3" href="@Url.ActionLink("CreateCategory", "Category")">
     Add new category
 </a>
 <div>
-
-    <ul>
-    @foreach (var category in Model)
-    {
-            <li class="d-flex flex-row gap-3 mb-2">
-                <a class="text-body text-decoration-none" href="@Url.ActionLink("EditCategory", "Category", new { guid = category.Guid })">
-                    @category.Name
-                </a>
-                <input type="color" class="form-control form-control-color" disabled value="@category.Color"> 
-                <a class="btn btn-danger" href="@Url.ActionLink("DeleteCategory","Category",new {guid = category.Guid})">
-                   delete 
-                </a>
-            </li>
-    }
-
-    </ul>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Model)
+            {
+                <tr>
+                    <td>
+                        <a class="text-body text-decoration-none" href="@Url.ActionLink("EditCategory", "Category", new { guid = category.Guid })">
+                            @category.Name
+                        </a>
+                    </td>
+                    <td>
+                        <input type="color" class="form-control form-control-color" disabled value="@category.Color">
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="@Url.ActionLink("DeleteCategory", "Category", new { guid = category.Guid })">
+                            Delete
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

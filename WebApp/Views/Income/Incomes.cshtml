@@ -6,21 +6,36 @@
 <h2>Your incomes</h2>
 
 <a class="btn btn-success mb-5" href="@Url.ActionLink("CreateIncome","Income")">
-    Add new income 
+    Add new income
 </a>
-<ul>
-@foreach(var income in Model)
-{
-    <li class="d-flex flex-row gap-3 mb-2">
-        <a class="text-body text-decoration-none" href="@Url.ActionLink("EditIncome", "Income", new { guid = income.Guid })">
-            @income.Source
-        </a>
-        <span>@income.Sum</span>
-        <span>@income.Date</span>
-        <span>@income.Frequency</span>
-        <a class="btn btn-danger" href="@Url.ActionLink("DeleteIncome","Income",new {guid = income.Guid})">
-            delete
-        </a>
-    </li>
-}
-</ul>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Source</th>
+            <th>Sum</th>
+            <th>Date</th>
+            <th>Frequency</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var income in Model)
+        {
+            <tr>
+                <td>
+                    <a class="text-body text-decoration-none" href="@Url.ActionLink("EditIncome", "Income", new { guid = income.Guid })">
+                        @income.Source
+                    </a>
+                </td>
+                <td>@income.Sum</td>
+                <td>@income.Date</td>
+                <td>@income.Frequency</td>
+                <td>
+                    <a class="btn btn-danger" href="@Url.ActionLink("DeleteIncome","Income",new {guid = income.Guid})">
+                        delete
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

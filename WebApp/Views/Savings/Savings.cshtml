@@ -27,7 +27,7 @@
     <tbody>
     @foreach (var item in Model)
     {
-        <tr>
+        <tr onclick="location.href = '@Url.ActionLink("DetailsSaving", "Savings", new { guid = item.Guid })' ">
             <td>
                 @Html.DisplayFor(modelItem => item.Goal)
             </td>
@@ -39,7 +39,6 @@
             </td>
             <td class="d-flex gap-3">
                 <a class="btn btn-primary" href="@Url.ActionLink("EditSaving", "Savings", new { guid = item.Guid })"> Edit</a>
-                <a class="btn btn-primary" href="@Url.ActionLink("DetailsSavingsAction", "Savings", new { guid = item.Guid })">Details</a>
                 <a class="btn btn-danger" href="@Url.ActionLink("DeleteSaving", "Savings", new { guid = item.Guid })">Delete</a>
             </td>
         </tr>

@@ -89,7 +89,7 @@ public class SavingsController : Controller
         return RedirectToAction(nameof(Savings));
     }
 
-    public async Task<IActionResult> DetailsSavingsAction(string guid)
+    public async Task<IActionResult> DetailsSaving(string guid)
     {
         if (string.IsNullOrEmpty(guid))
             return BadRequest("Saving GUID is required");
@@ -100,6 +100,6 @@ public class SavingsController : Controller
 
         var vm = _mapper.Map<SavingsVM>(saving);
 
-        return View("DetailsSaving", vm);
+        return View( vm);
     }
 }

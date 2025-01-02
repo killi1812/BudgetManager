@@ -44,9 +44,17 @@ public class AuthController : Controller
 
     public async Task<IActionResult> RegisterAction(RegisterVM vm)
     {
-        await _userServices.CreateUser(_mapper.Map<NewUserDto>(vm));
+        if (!ModelState.IsValid)
+        {
+            return View("Register", vm);
+        }
+
+        var newUserDto = _mapper.Map<NewUserDto>(vm);
+        await _userServices.CreateUser(newUserDto);
         return Redirect(nameof(Login));
     }
+
+
 
 
     public IActionResult Logout(string redirectUrl = "/Home/Index")

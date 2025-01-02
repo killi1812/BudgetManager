@@ -7,7 +7,7 @@ public partial class Category
 {
     public long Idcategory { get; set; }
 
-    public Guid Guid { get; set; } = System.Guid.NewGuid();
+    public Guid Guid { get; set; }
 
     public string? CategoryName { get; set; }
 

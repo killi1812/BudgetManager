@@ -25,6 +25,8 @@ public interface IUserServices
     public Task<User> GetUser(Guid parse);
     public Task EditUser(Guid userGuid, User user);
     public Task<List<User>> GetUsers(Guid userGuid);
+    Task UpdateProfileDetails(Guid userGuid, UserDto userDto);
+    Task UpdateProfilePicture(Guid userGuid, string profilePictureUrl);
     Task DeleteUser(Guid adminGuid, Guid guid);
 }
 
@@ -46,22 +48,37 @@ public class UserServices : IUserServices
 
     public async Task CreateUser(NewUserDto userDto)
     {
-        var userExist = await _context.Users.FirstOrDefaultAsync(u => u.Jmbag == userDto.Jmbag);
+        var userExist = await _context.Users
+            .FirstOrDefaultAsync(u => u.Jmbag == userDto.Jmbag || u.Email == userDto.Email || u.Username == userDto.Username);
         if (userExist != null)
         {
-           _loggerService.Log($"User {userDto.Jmbag} already exists", ThreatLvl.Medium);
+            _loggerService.Log($"User with JMBAG {userDto.Jmbag}, Email {userDto.Email}, or Username {userDto.Username} already exists");
             throw new Exception("User already exists");
         }
 
-        var user = new User();
-        user = _mapper.Map<User>(userDto);
-        user.PassHash = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
+        var user = new User
+        {
+            Guid = Guid.NewGuid(),
+            FirstName = userDto.FirstName,
+            LastName = userDto.LastName,
+            Jmbag = userDto.Jmbag,
+            Email = userDto.Email,
+            Username = userDto.Username,
+            PassHash = BCrypt.Net.BCrypt.HashPassword(userDto.Password),
+            RoleId = userDto.RoleId ?? _context.Roles.FirstOrDefault(r => r.RoleType == "DefaultRole")?.Idrole,
+            CreatedAt = DateTime.UtcNow,
+            ProfilePicture = userDto.ProfilePictureUrl
+        };
 
-        _loggerService.Log($"User {user.FirstName} {user.LastName} created");
+        if (user.RoleId == null)
+            throw new Exception("Default Role is missing in the database.");
 
         _context.Users.Add(user);
         await _context.SaveChangesAsync();
     }
+
+
+
 
 
     public async Task<(ClaimsIdentity claimsIdentity, AuthenticationProperties authProperties)> LoginCookie(
@@ -154,4 +171,28 @@ public class UserServices : IUserServices
         _context.Users.Remove(user);
         return _context.SaveChangesAsync();
     }
+    public async Task UpdateProfileDetails(Guid userGuid, UserDto userDto)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Guid == userGuid);
+        if (user == null) throw new Exception("User not found");
+
+        user.Username = userDto.Username;
+        user.ProfilePicture = userDto.ProfilePictureUrl; // Use ProfilePicture instead of ProfilePictureUrl
+
+        await _context.SaveChangesAsync();
+    }
+
+
+    public async Task UpdateProfilePicture(Guid userGuid, string profilePictureUrl)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(u => u.Guid == userGuid);
+        if (user == null) throw new Exception("User not found");
+
+        user.ProfilePicture = profilePictureUrl; // Use ProfilePicture instead of ProfilePictureUrl
+
+        await _context.SaveChangesAsync();
+    }
+
+
+
 }

@@ -21,6 +21,7 @@ CREATE TABLE [User] (
     PhoneNumber NVARCHAR(50),
     PassHash NVARCHAR(255) NOT NULL,
     ProfilePicture TEXT,
+    Username NVARCHAR(50) NOT NULL
     CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
     RoleID BIGINT REFERENCES [Role](IDRole)
 )

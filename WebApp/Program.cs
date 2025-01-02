@@ -33,6 +33,8 @@ builder.Services.AddScoped<ILoggerService, LoggerService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IIncomeService, IncomeService>();
 builder.Services.AddScoped<IBudgetService, BudgetService>();
+builder.Services.AddScoped<ExpenseService, ExpenseService>();
+
 
 var app = builder.Build();
 

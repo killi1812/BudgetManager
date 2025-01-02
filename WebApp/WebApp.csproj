@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
@@ -14,9 +14,14 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Data\Data.csproj" />
-    </ItemGroup>
+	</ItemGroup>
 
-    <ItemGroup>
+	<ItemGroup>
+		<Reference Include="System.Linq" />
+	</ItemGroup>
+
+	<ItemGroup>
+      <_ContentIncludedByDefault Remove="appsettings.json" />
       <_ContentIncludedByDefault Remove="Views\Pictures\Details.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Pictures\Edit.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Pictures\SearchResults.cshtml" />

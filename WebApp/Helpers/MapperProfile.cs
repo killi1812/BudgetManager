@@ -50,5 +50,14 @@ public class MapperProfile : Profile
             .ForMember(dest => dest.User, opt => opt.Ignore())
             .ForMember(dest => dest.Category, opt => opt.Ignore());
 
+        CreateMap<Expense, ExpenseVM>()
+            .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => src.Guid.ToString()))
+            .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
+            .ForMember(dest => dest.PayerName, opt => opt.MapFrom(src => src.Payer.FirstName + " " + src.Payer.LastName))
+            .ForMember(dest => dest.Status, opt => opt.MapFrom(src => src.Status));
+
+        CreateMap<ExpenseVM, Expense>()
+            .ForMember(dest => dest.Guid, opt => opt.Ignore());
+
     }
 }

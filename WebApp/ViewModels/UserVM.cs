@@ -6,4 +6,5 @@ public class UserVM
     public string Username { get; set; } = null!;
     public bool Admin { get; set; } = false;
     public List<string> Downloads { get; set; } = new();
+    public string ProfilePictureUrl { get; set; } = "/images/default.png";
 }

@@ -24,13 +24,14 @@ public static class SeedDataClass
     {
         var UserServices = services.GetRequiredService<IUserServices>();
 
-       await UserServices.CreateUser(new NewUserDto
+        await UserServices.CreateUser(new NewUserDto
         {
             FirstName = "Pero",
             LastName = "Peric",
             Password = "123",
             Email = "pero@app.hr",
-            Jmbag = "1123987213897"
+            Jmbag = "1123987213897",
+            Username = "pp"
         });
    }
 

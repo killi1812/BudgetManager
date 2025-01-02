@@ -15,7 +15,7 @@
             <tr>
                 <th>Name</th>
                 <th>Color</th>
-                <th>Actions</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -23,14 +23,13 @@
             {
                 <tr>
                     <td>
-                        <a class="text-body text-decoration-none" href="@Url.ActionLink("EditCategory", "Category", new { guid = category.Guid })">
                             @category.Name
-                        </a>
                     </td>
                     <td>
                         <input type="color" class="form-control form-control-color" disabled value="@category.Color">
                     </td>
-                    <td>
+                    <td class="d-flex gap-3">
+                        <a class="btn btn-primary" href="@Url.ActionLink("EditCategory", "Category", new { guid = category.Guid })"> Edit </a>
                         <a class="btn btn-danger" href="@Url.ActionLink("DeleteCategory", "Category", new { guid = category.Guid })">
                             Delete
                         </a>

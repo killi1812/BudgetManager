@@ -5,8 +5,7 @@
 }
 
 <h1 class="mb-3">Budgets</h1>
-
-    <a class="btn btn-success mb-3" asp-action="CreateBudget">Create New Budget</a>
+<a class="btn btn-success mb-3" asp-action="CreateBudget">Create New Budget</a>
 <table class="table">
     <thead>
     <tr>
@@ -22,20 +21,20 @@
     <tbody>
     @foreach (var item in Model)
     {
-            <tr onclick="location.href = '@Url.ActionLink("DetailsBudget", "Budget", new { guid = item.Guid })' ">
-                <td>
-                    @Html.DisplayFor(modelItem => item.Sum)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.CategoryName)
-                </td>
-                <td class="d-flex gap-3">
-                    <a class="btn btn-primary"
-                       href="@Url.ActionLink("EditBudget", "Budget", new { guid = item.Guid })"> Edit </a>
-                    <a class="btn btn-danger"
-                       href="@Url.ActionLink("DeleteBudget", "Budget", new { guid = item.Guid })"> Delete </a>
-                </td>
-            </tr>
+        <tr onclick="location.href = '@Url.ActionLink("DetailsBudget", "Budget", new { guid = item.Guid })' ">
+            <td>
+                @Html.DisplayFor(modelItem => item.Sum)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td class="d-flex gap-3">
+                <a class="btn btn-primary" href="@Url.ActionLink("EditBudget", "Budget", new { guid = item.Guid })">
+                    Edit </a>
+                <a class="btn btn-danger"
+                   href="@Url.ActionLink("DeleteBudget", "Budget", new { guid = item.Guid })"> Delete </a>
+            </td>
+        </tr>
     }
     </tbody>
 </table>

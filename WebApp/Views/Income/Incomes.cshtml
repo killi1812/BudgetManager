@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Your incomes";
 }
-<h2 class="mb-3">Your incomes</h2>
+<h1 class="mb-3">Your incomes</h1>
 
 <a class="btn btn-success mb-3" href="@Url.ActionLink("CreateIncome","Income")">
     Add new income
@@ -15,7 +15,7 @@
             <th>Sum</th>
             <th>Date</th>
             <th>Frequency</th>
-            <th>Actions</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -23,16 +23,15 @@
         {
             <tr>
                 <td>
-                    <a class="text-body text-decoration-none" href="@Url.ActionLink("EditIncome", "Income", new { guid = income.Guid })">
                         @income.Source
-                    </a>
                 </td>
                 <td>@income.Sum</td>
                 <td>@income.Date</td>
                 <td>@income.Frequency</td>
-                <td>
-                    <a class="btn btn-danger" href="@Url.ActionLink("DeleteIncome","Income",new {guid = income.Guid})">
-                        delete
+                <td class="d-flex gap-3">
+                    <a class="btn btn-primary" href="@Url.ActionLink("EditIncome", "Income", new { guid = income.Guid })"> Edit </a>
+                    <a class="btn btn-danger" href="@Url.ActionLink("DeleteIncome", "Income", new { guid = income.Guid })">
+                        Delete
                     </a>
                 </td>
             </tr>

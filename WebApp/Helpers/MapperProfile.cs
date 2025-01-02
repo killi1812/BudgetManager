@@ -50,13 +50,5 @@ public class MapperProfile : Profile
             .ForMember(dest => dest.User, opt => opt.Ignore())
             .ForMember(dest => dest.Category, opt => opt.Ignore());
 
-        CreateMap<Saving, SavingsVM>()
-            .ForMember(dest => dest.Guid, opt => opt.MapFrom(src => src.Guid.ToString()))
-            .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.Jmbag));
-
-        CreateMap<SavingsVM, Saving>()
-            .ForMember(dest => dest.Guid, opt => opt.Ignore())
-            .ForMember(dest => dest.User, opt => opt.Ignore());
-
     }
 }

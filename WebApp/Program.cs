@@ -8,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-Console.WriteLine(builder.Configuration["ConnectionStrings:db"]);
 builder.Services.AddDbContext<BudgetManagerContext>(o => { o.UseSqlServer(builder.Configuration["ConnectionStrings:db"]); });
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddDistributedMemoryCache();

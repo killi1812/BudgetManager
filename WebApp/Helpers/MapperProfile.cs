@@ -2,7 +2,6 @@ using AutoMapper;
 using Data.Dto;
 using Data.Enums;
 using Data.Models;
-using Data.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WebApp.ViewModels;
 

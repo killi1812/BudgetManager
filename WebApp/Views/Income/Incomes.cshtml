@@ -19,18 +19,20 @@
         </tr>
     </thead>
     <tbody>
-        @foreach(var income in Model)
+        @foreach (var income in Model)
         {
             <tr>
                 <td>
-                        @income.Source
+                    @income.Source
                 </td>
                 <td>@income.Sum</td>
                 <td>@income.Date</td>
                 <td>@income.Frequency</td>
                 <td class="d-flex gap-3">
                     <a class="btn btn-primary" href="@Url.ActionLink("EditIncome", "Income", new { guid = income.Guid })"> Edit </a>
-                    <a class="btn btn-danger" href="@Url.ActionLink("DeleteIncome", "Income", new { guid = income.Guid })">
+                    <a class="btn btn-danger"
+                       href="@Url.ActionLink("DeleteIncome", "Income", new { guid = income.Guid })"
+                       onclick="return confirmDelete(event)">
                         Delete
                     </a>
                 </td>
@@ -38,3 +40,21 @@
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('.btn-danger').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+        });
+
+        function confirmDelete(event) {
+            if (!confirm("Are you sure you want to delete this income?")) {
+                event.preventDefault(); 
+                return false;
+            }
+            return true;
+        }
+    </script>
+}

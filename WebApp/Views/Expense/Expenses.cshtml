@@ -1,0 +1,62 @@
+﻿@model List<WebApp.ViewModels.ExpenseVM>
+@using System.Linq
+
+<div>
+    <h1>@(ViewBag.Status == "Paid" ? "Paid Expenses" : "Unpaid Expenses")</h1>
+
+    <!-- Buttons for switching between Paid and Unpaid -->
+    <div>
+        <a asp-action="Expenses" asp-route-status="Unpaid"
+           class="btn @(ViewBag.Status == "Unpaid" ? "btn-primary" : "btn-secondary")">
+            Unpaid
+        </a>
+        <a asp-action="Expenses" asp-route-status="Paid"
+           class="btn @(ViewBag.Status == "Paid" ? "btn-primary" : "btn-secondary")">
+            Paid
+        </a>
+    </div>
+
+    <!-- Expense Table -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th>Category</th>
+                @if (ViewBag.Status == "Unpaid")
+                {
+                    <th>Actions</th>
+                }
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model != null && Model.Count > 0)
+            {
+                @foreach (var expense in Model)
+                {
+                    <tr>
+                        <td>@expense.Description</td>
+                        <td>@expense.Sum</td>
+                        <td>@expense.Date.ToString("yyyy-MM-dd")</td>
+                        <td>@expense.CategoryName</td>
+                        @if (ViewBag.Status == "Unpaid")
+                        {
+                            <td>
+                                <a asp-action="MarkAsPaid" asp-route-guid="@expense.Guid" class="btn btn-success">
+                                    Mark as Paid
+                                </a>
+                            </td>
+                        }
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td colspan="5" class="text-center">No @(ViewBag.Status == "Paid" ? "Paid" : "Unpaid") Expenses Found</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

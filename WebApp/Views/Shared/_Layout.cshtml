@@ -43,12 +43,16 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Income" asp-action="Incomes">Incomes</a>
                         </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Budget" asp-action="Budgets">Budget</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Savings" asp-action="Savings">Savings</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Budget" asp-action="Budgets">Budget</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Savings" asp-action="Savings">Savings</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Expense" asp-action="Expenses">Expenses</a>
+                        </li>
                     }
                 </ul>
                 <ul class="navbar-nav flex-grow-1">
@@ -57,7 +61,8 @@
                     @if (loggedIn)
                     {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="@Url.Action("Account", "User", new { guid })">@username</a>
+                            <a class="nav-link text-dark"
+                               href="@Url.Action("Account", "User", new { guid })">@username</a>
                         </li>
 
                         <li class="nav-item">
@@ -100,7 +105,8 @@ else
 }
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2024 - Fran Cvok - Dominik Despot - Luka Petrečija - Algebra - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        &copy; 2024 - Fran Cvok - Dominik Despot - Luka Petrečija - Algebra - <a asp-area="" asp-controller="Home"
+                                                                                 asp-action="Privacy">Privacy</a>
     </div>
 </footer>
 

@@ -8,7 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<BudgetManagerContext>(o => { o.UseSqlServer(builder.Configuration["ConnectionStrings:db"]); });
+builder.Services.AddDbContext<BudgetManagerContext>(o =>
+{
+    o.UseSqlServer(builder.Configuration["ConnectionStrings:db"]);
+});
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -34,6 +37,7 @@ builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IIncomeService, IncomeService>();
 builder.Services.AddScoped<IBudgetService, BudgetService>();
 builder.Services.AddScoped<ISavingService, SavingService>();
+builder.Services.AddScoped<ExpenseService, ExpenseService>();
 
 var app = builder.Build();
 

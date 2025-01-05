@@ -21,19 +21,29 @@ public partial class User
 
     public string PassHash { get; set; } = null!;
 
-    public long? RoleId { get; set; }
+    public string? ProfilePicture { get; set; }
+
+    public string Username { get; set; } = null!;
+
+    public DateTime? CreatedAt { get; set; }
 
     public virtual ICollection<BankAccountApi> BankAccountApis { get; set; } = new List<BankAccountApi>();
 
     public virtual ICollection<Budget> Budgets { get; set; } = new List<Budget>();
 
-    public virtual ICollection<Expense> Expenses { get; set; } = new List<Expense>();
+    public virtual ICollection<Expense> ExpensePayers { get; set; } = new List<Expense>();
+
+    public virtual ICollection<Expense> ExpenseUsers { get; set; } = new List<Expense>();
+
+    public virtual ICollection<Friend> FriendFriendUsers { get; set; } = new List<Friend>();
+
+    public virtual ICollection<Friend> FriendUsers { get; set; } = new List<Friend>();
 
     public virtual ICollection<Income> Incomes { get; set; } = new List<Income>();
-
-    public virtual Role? Role { get; set; }
 
     public virtual ICollection<Saving> Savings { get; set; } = new List<Saving>();
 
     public virtual ICollection<Statistic> Statistics { get; set; } = new List<Statistic>();
+
+    public virtual ICollection<UserAchievement> UserAchievements { get; set; } = new List<UserAchievement>();
 }

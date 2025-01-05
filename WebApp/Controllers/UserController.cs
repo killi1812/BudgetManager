@@ -4,6 +4,7 @@ using Data.Models;
 using Data.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using WebApp.ViewModels;
 
 namespace WebApp.Controllers;
@@ -67,5 +68,26 @@ public class UserController : Controller
         var users = await _userServices.GetUsers(userGuid);
         var usersVm = _mapper.Map<List<UserVM>>(users);
         return View(usersVm);
+    }
+    public async Task<IActionResult> UpdateProfilePicture(IFormFile profilePicture)
+    {
+        if (profilePicture == null || profilePicture.Length == 0)
+            return BadRequest("Invalid file");
+
+        var userGuid = Guid.Parse(HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value);
+
+        // Save the file to a directory (e.g., wwwroot/images/profile_pictures/)
+        var fileName = $"{userGuid}_{profilePicture.FileName}";
+        var filePath = Path.Combine("wwwroot", "images", "profile_pictures", fileName);
+
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await profilePicture.CopyToAsync(stream);
+        }
+
+        // Update the user's profile picture URL in the database
+        await _userServices.UpdateProfilePicture(userGuid, $"/images/profile_pictures/{fileName}");
+
+        return RedirectToAction("Account");
     }
 }

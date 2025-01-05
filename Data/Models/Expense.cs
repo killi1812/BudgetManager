@@ -19,7 +19,13 @@ public partial class Expense
 
     public long? UserId { get; set; }
 
+    public long? PayerId { get; set; }
+
+    public string? Status { get; set; }
+
     public virtual Category? Category { get; set; }
+
+    public virtual User? Payer { get; set; }
 
     public virtual User? User { get; set; }
 }

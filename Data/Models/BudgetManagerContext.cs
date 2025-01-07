@@ -25,6 +25,8 @@ public partial class BudgetManagerContext : DbContext
 
     public virtual DbSet<Expense> Expenses { get; set; }
 
+    public virtual DbSet<Friend> Friends { get; set; }
+
     public virtual DbSet<Income> Incomes { get; set; }
 
     public virtual DbSet<Log> Logs { get; set; }
@@ -47,19 +49,18 @@ public partial class BudgetManagerContext : DbContext
     {
         modelBuilder.Entity<Achievement>(entity =>
         {
-            entity.HasKey(e => e.Idachievement).HasName("PK__Achievem__B222C16FB6777B24");
+            entity.HasKey(e => e.Idachievement).HasName("PK__Achievem__B222C16F09224143");
 
             entity.Property(e => e.Idachievement).HasColumnName("IDAchievement");
             entity.Property(e => e.Criteria).HasColumnType("text");
             entity.Property(e => e.Description).HasColumnType("text");
-            entity.Property(e => e.Guid).HasDefaultValueSql("(newid())");
             entity.Property(e => e.Icon).HasColumnType("text");
             entity.Property(e => e.Name).HasMaxLength(100);
         });
 
         modelBuilder.Entity<BankAccountApi>(entity =>
         {
-            entity.HasKey(e => e.IdbankAccountApi).HasName("PK__BankAcco__96DB0D7CF4647544");
+            entity.HasKey(e => e.IdbankAccountApi).HasName("PK__BankAcco__96DB0D7C764DC0A1");
 
             entity.ToTable("BankAccountAPI");
 
@@ -76,33 +77,32 @@ public partial class BudgetManagerContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.BankAccountApis)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__BankAccou__UserI__5812160E");
+                .HasConstraintName("FK__BankAccou__UserI__44FF419A");
         });
 
         modelBuilder.Entity<Budget>(entity =>
         {
-            entity.HasKey(e => e.Idbudget).HasName("PK__Budget__25431717224C3BA5");
+            entity.HasKey(e => e.Idbudget).HasName("PK__Budget__25431717F62BDC3B");
 
             entity.ToTable("Budget");
 
             entity.Property(e => e.Idbudget).HasColumnName("IDBudget");
             entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
-            entity.Property(e => e.Guid).HasDefaultValueSql("(newid())");
             entity.Property(e => e.Sum).HasColumnType("decimal(18, 0)");
             entity.Property(e => e.UserId).HasColumnName("UserID");
 
             entity.HasOne(d => d.Category).WithMany(p => p.Budgets)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Budget__Category__6B24EA82");
+                .HasConstraintName("FK__Budget__Category__5629CD9C");
 
             entity.HasOne(d => d.User).WithMany(p => p.Budgets)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Budget__UserID__6A30C649");
+                .HasConstraintName("FK__Budget__UserID__5535A963");
         });
 
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.Idcategory).HasName("PK__Category__1AA1EC660879E772");
+            entity.HasKey(e => e.Idcategory).HasName("PK__Category__1AA1EC66BC561DC6");
 
             entity.ToTable("Category");
 
@@ -113,7 +113,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<Expense>(entity =>
         {
-            entity.HasKey(e => e.Idexpense).HasName("PK__Expense__58C884BFDF5E3C29");
+            entity.HasKey(e => e.Idexpense).HasName("PK__Expense__58C884BF6E56F07A");
 
             entity.ToTable("Expense");
 
@@ -121,7 +121,6 @@ public partial class BudgetManagerContext : DbContext
             entity.Property(e => e.CategoryId).HasColumnName("CategoryID");
             entity.Property(e => e.Date).HasColumnType("date");
             entity.Property(e => e.Description).HasMaxLength(500);
-            entity.Property(e => e.Guid).HasDefaultValueSql("(newid())");
             entity.Property(e => e.PayerId).HasColumnName("PayerID");
             entity.Property(e => e.Status)
                 .HasMaxLength(10)
@@ -131,20 +130,45 @@ public partial class BudgetManagerContext : DbContext
 
             entity.HasOne(d => d.Category).WithMany(p => p.Expenses)
                 .HasForeignKey(d => d.CategoryId)
-                .HasConstraintName("FK__Expense__Categor__6383C8BA");
+                .HasConstraintName("FK__Expense__Categor__4F7CD00D");
 
             entity.HasOne(d => d.Payer).WithMany(p => p.ExpensePayers)
                 .HasForeignKey(d => d.PayerId)
-                .HasConstraintName("FK__Expense__PayerID__66603565");
+                .HasConstraintName("FK__Expense__PayerID__52593CB8");
 
             entity.HasOne(d => d.User).WithMany(p => p.ExpenseUsers)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Expense__UserID__6477ECF3");
+                .HasConstraintName("FK__Expense__UserID__5070F446");
+        });
+
+        modelBuilder.Entity<Friend>(entity =>
+        {
+            entity.HasKey(e => e.Idfriend).HasName("PK__Friends__FB73C390FBAE8615");
+
+            entity.HasIndex(e => new { e.UserId, e.FriendUserId }, "UQ__Friends__11BD2B9DA8167051").IsUnique();
+
+            entity.Property(e => e.Idfriend).HasColumnName("IDFriend");
+            entity.Property(e => e.CreatedAt).HasColumnType("datetime");
+            entity.Property(e => e.FriendUserId).HasColumnName("FriendUserID");
+            entity.Property(e => e.Status)
+                .HasMaxLength(10)
+                .HasDefaultValueSql("('Pending')");
+            entity.Property(e => e.UserId).HasColumnName("UserID");
+
+            entity.HasOne(d => d.FriendUser).WithMany(p => p.FriendFriendUsers)
+                .HasForeignKey(d => d.FriendUserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Friends__FriendU__3F466844");
+
+            entity.HasOne(d => d.User).WithMany(p => p.FriendUsers)
+                .HasForeignKey(d => d.UserId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Friends__UserID__3E52440B");
         });
 
         modelBuilder.Entity<Income>(entity =>
         {
-            entity.HasKey(e => e.Idincome).HasName("PK__Income__6CA4E639F5F36939");
+            entity.HasKey(e => e.Idincome).HasName("PK__Income__6CA4E639C57634BF");
 
             entity.ToTable("Income");
 
@@ -157,12 +181,12 @@ public partial class BudgetManagerContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.Incomes)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Income__UserID__5DCAEF64");
+                .HasConstraintName("FK__Income__UserID__4AB81AF0");
         });
 
         modelBuilder.Entity<Log>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Log__3213E83F4CD17A4E");
+            entity.HasKey(e => e.Id).HasName("PK__Log__3213E83F89E7CAEE");
 
             entity.ToTable("Log");
 
@@ -177,7 +201,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.Idrole).HasName("PK__Role__A1BA16C48CAC0108");
+            entity.HasKey(e => e.Idrole).HasName("PK__Role__A1BA16C475BB1D18");
 
             entity.ToTable("Role");
 
@@ -187,7 +211,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<Saving>(entity =>
         {
-            entity.HasKey(e => e.Idsavings).HasName("PK__Savings__F3FF684AC53EA648");
+            entity.HasKey(e => e.Idsavings).HasName("PK__Savings__F3FF684A096BF988");
 
             entity.Property(e => e.Idsavings).HasColumnName("IDSavings");
             entity.Property(e => e.Current).HasColumnType("decimal(18, 0)");
@@ -197,15 +221,14 @@ public partial class BudgetManagerContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.Savings)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Savings__UserID__5AEE82B9");
+                .HasConstraintName("FK__Savings__UserID__47DBAE45");
         });
 
         modelBuilder.Entity<Statistic>(entity =>
         {
-            entity.HasKey(e => e.Idstatistics).HasName("PK__Statisti__9B81FB2895D0D535");
+            entity.HasKey(e => e.Idstatistics).HasName("PK__Statisti__9B81FB28B3238FC4");
 
             entity.Property(e => e.Idstatistics).HasColumnName("IDStatistics");
-            entity.Property(e => e.Guid).HasDefaultValueSql("(newid())");
             entity.Property(e => e.IncomePercent).HasColumnType("decimal(18, 0)");
             entity.Property(e => e.SpendingPercent).HasColumnType("decimal(18, 0)");
             entity.Property(e => e.TotalIncome).HasColumnType("decimal(18, 0)");
@@ -214,12 +237,12 @@ public partial class BudgetManagerContext : DbContext
 
             entity.HasOne(d => d.User).WithMany(p => p.Statistics)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__Statistic__UserI__5535A963");
+                .HasConstraintName("FK__Statistic__UserI__4222D4EF");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Iduser).HasName("PK__User__EAE6D9DF19F6EB75");
+            entity.HasKey(e => e.Iduser).HasName("PK__User__EAE6D9DFB4961F4C");
 
             entity.ToTable("User");
 
@@ -229,7 +252,6 @@ public partial class BudgetManagerContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.Email).HasMaxLength(150);
             entity.Property(e => e.FirstName).HasMaxLength(150);
-            entity.Property(e => e.Guid).HasDefaultValueSql("(newid())");
             entity.Property(e => e.Jmbag)
                 .HasMaxLength(20)
                 .HasColumnName("JMBAG");
@@ -237,35 +259,29 @@ public partial class BudgetManagerContext : DbContext
             entity.Property(e => e.PassHash).HasMaxLength(255);
             entity.Property(e => e.PhoneNumber).HasMaxLength(50);
             entity.Property(e => e.ProfilePicture).HasColumnType("text");
-            entity.Property(e => e.RoleId).HasColumnName("RoleID");
             entity.Property(e => e.Username).HasMaxLength(50);
-
-            entity.HasOne(d => d.Role).WithMany(p => p.Users)
-                .HasForeignKey(d => d.RoleId)
-                .HasConstraintName("FK__User__RoleID__49C3F6B7");
         });
 
         modelBuilder.Entity<UserAchievement>(entity =>
         {
-            entity.HasKey(e => e.IduserAchievement).HasName("PK__UserAchi__F4B681D14AD5C359");
+            entity.HasKey(e => e.IduserAchievement).HasName("PK__UserAchi__F4B681D15A5F2C7D");
 
-            entity.HasIndex(e => new { e.UserId, e.AchievementId }, "UQ__UserAchi__05FEFFA3B70EEB34").IsUnique();
+            entity.HasIndex(e => new { e.UserId, e.AchievementId }, "UQ__UserAchi__05FEFFA3DE597B59").IsUnique();
 
             entity.Property(e => e.IduserAchievement).HasColumnName("IDUserAchievement");
             entity.Property(e => e.AchievementId).HasColumnName("AchievementID");
             entity.Property(e => e.EarnedAt)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.Guid).HasDefaultValueSql("(newid())");
             entity.Property(e => e.UserId).HasColumnName("UserID");
 
             entity.HasOne(d => d.Achievement).WithMany(p => p.UserAchievements)
                 .HasForeignKey(d => d.AchievementId)
-                .HasConstraintName("FK__UserAchie__Achie__74AE54BC");
+                .HasConstraintName("FK__UserAchie__Achie__5DCAEF64");
 
             entity.HasOne(d => d.User).WithMany(p => p.UserAchievements)
                 .HasForeignKey(d => d.UserId)
-                .HasConstraintName("FK__UserAchie__UserI__73BA3083");
+                .HasConstraintName("FK__UserAchie__UserI__5CD6CB2B");
         });
 
         OnModelCreatingPartial(modelBuilder);

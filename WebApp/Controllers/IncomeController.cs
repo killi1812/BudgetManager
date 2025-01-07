@@ -12,9 +12,9 @@ public class IncomeController : Controller
 {
     private readonly IIncomeService _incomeService;
     private readonly IMapper _mapper;
-    private readonly IUserServices _userServices;
+    private readonly IUserManagementService _userServices;
 
-    public IncomeController(IIncomeService incomeService, IMapper mapper, IUserServices userServices)
+    public IncomeController(IIncomeService incomeService, IMapper mapper, IUserManagementService userServices)
     {
         _incomeService = incomeService;
         _mapper = mapper;

@@ -13,7 +13,7 @@ GO
 
 CREATE TABLE [User] (
     IDUser BIGINT PRIMARY KEY IDENTITY,
-    Guid UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+    Guid UNIQUEIDENTIFIER NOT NULL ,
     FirstName NVARCHAR(150) NOT NULL,
     LastName NVARCHAR(150) NOT NULL,
     JMBAG NVARCHAR(20) NOT NULL,
@@ -21,28 +21,27 @@ CREATE TABLE [User] (
     PhoneNumber NVARCHAR(50),
     PassHash NVARCHAR(255) NOT NULL,
     ProfilePicture TEXT,
-    Username NVARCHAR(50) NOT NULL
+    Username NVARCHAR(50) NOT NULL,
     CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    RoleID BIGINT REFERENCES [Role](IDRole)
 )
 GO
 
 CREATE TABLE [Friends] (
     IDFriend BIGINT PRIMARY KEY IDENTITY,
-    Guid UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+    Guid UNIQUEIDENTIFIER NOT NULL ,
     UserID BIGINT NOT NULL,
     FriendUserID BIGINT NOT NULL,
     Status NVARCHAR(10) DEFAULT 'Pending',
-    CreatedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (UserID) REFERENCES [User](IDUser) ON DELETE CASCADE,
-    FOREIGN KEY (FriendUserID) REFERENCES [User](IDUser) ON DELETE CASCADE,
+    CreatedAt DATETIME,
+    FOREIGN KEY (UserID) REFERENCES [User](IDUser),
+    FOREIGN KEY (FriendUserID) REFERENCES [User](IDUser),
     UNIQUE(UserID, FriendUserID)
 )
 GO
 
 CREATE TABLE [Statistics] (
     IDStatistics BIGINT PRIMARY KEY IDENTITY,
-    Guid UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+    Guid UNIQUEIDENTIFIER NOT NULL ,
     TotalSpent DECIMAL,
     TotalIncome DECIMAL,
     SpendingPercent DECIMAL,
@@ -61,6 +60,7 @@ CREATE TABLE BankAccountAPI
 	APIKey nvarchar(255),
 	UserID bigint references [User](IDUser)
 )
+GO
 
 CREATE TABLE Savings
 (
@@ -71,6 +71,7 @@ CREATE TABLE Savings
 	[Date] date,
 	UserID bigint references [User](IDUser)
 )
+GO
 
 CREATE TABLE Income
 (
@@ -82,6 +83,7 @@ CREATE TABLE Income
 	Frequency nvarchar(255),
 	UserID bigint references [User](IDUser)
 )
+GO
 
 CREATE TABLE Category
 (
@@ -90,10 +92,11 @@ CREATE TABLE Category
 	CategoryName nvarchar(255),
 	Color nvarchar(20)
 )
+GO
 
 CREATE TABLE [Expense] (
     IDExpense BIGINT PRIMARY KEY IDENTITY,
-    Guid UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+    Guid UNIQUEIDENTIFIER NOT NULL ,
     [Sum] DECIMAL,
     [Description] NVARCHAR(500),
     [Date] DATE,
@@ -103,27 +106,30 @@ CREATE TABLE [Expense] (
     Status NVARCHAR(10) DEFAULT 'Unpaid',
     FOREIGN KEY (PayerID) REFERENCES [User](IDUser)
 )
+GO
 
 CREATE TABLE [Budget] (
     IDBudget BIGINT PRIMARY KEY IDENTITY,
-    Guid UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+    Guid UNIQUEIDENTIFIER NOT NULL ,
     [Sum] DECIMAL,
     UserID BIGINT REFERENCES [User](IDUser),
     CategoryID BIGINT REFERENCES [Category](IDCategory)
 )
+GO
 
 CREATE TABLE [Achievements] (
     IDAchievement BIGINT PRIMARY KEY IDENTITY,
-    Guid UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+    Guid UNIQUEIDENTIFIER NOT NULL ,
     Name NVARCHAR(100) NOT NULL,
     Description TEXT NOT NULL,
     Icon TEXT,
     Criteria TEXT NOT NULL
 )
+GO
 
 CREATE TABLE [UserAchievements] (
     IDUserAchievement BIGINT PRIMARY KEY IDENTITY,
-    Guid UNIQUEIDENTIFIER NOT NULL DEFAULT NEWID(),
+    Guid UNIQUEIDENTIFIER NOT NULL ,
     UserID BIGINT NOT NULL,
     AchievementID BIGINT NOT NULL,
     EarnedAt DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -131,6 +137,7 @@ CREATE TABLE [UserAchievements] (
     FOREIGN KEY (AchievementID) REFERENCES [Achievements](IDAchievement) ON DELETE CASCADE,
     UNIQUE(UserID, AchievementID)
 )
+GO
 
 CREATE TABLE Log
 (

@@ -7,7 +7,7 @@ public class NewUserDto
     public string Jmbag { get; set; } = null!;
     public string Email { get; set; } = null!;
     public string Password { get; set; } = null!;
-    public string? ProfilePictureUrl { get; set; } = "/images/default.png"; // Default Profile Picture
-    public long? RoleId { get; set; } // Optional Role ID
+    public string? ProfilePictureUrl { get; set; } = "/images/default.png";
+    public long? RoleId { get; set; }
     public string Username { get; set; }
 }

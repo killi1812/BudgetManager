@@ -1,4 +1,5 @@
 @model WebApp.ViewModels.UserVM
+
 @{
     ViewData["Title"] = "Your Account";
 }
@@ -23,29 +24,10 @@
                     <label asp-for="Username" class="form-label">Username</label>
                     <input asp-for="Username" class="form-control" />
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Admin Status</label>
-                    <input asp-for="Admin" class="form-control" readonly />
-                </div>
                 <button type="submit" class="btn btn-success">Save Changes</button>
             </form>
         </div>
     </div>
-    <hr />
-    <h2>Your Downloads</h2>
-    <ul class="list-group">
-        @if (Model.Downloads.Count > 0)
-        {
-            foreach (var download in Model.Downloads)
-            {
-                <li class="list-group-item">@download</li>
-            }
-        }
-        else
-        {
-            <li class="list-group-item">No downloads available.</li>
-        }
-    </ul>
 </div>
 
 @section Scripts {
@@ -56,9 +38,8 @@
             const username = accountForm.querySelector("input[name='Username']").value;
             const userDto = {
                 Guid: "@Model.Guid",
-                Username: username,
-                Admin: @Model.Admin.ToString().ToLowerInvariant()
-                    };
+                Username: username
+            };
             fetch('/User/EditUser', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },

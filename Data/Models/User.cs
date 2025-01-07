@@ -27,8 +27,6 @@ public partial class User
 
     public DateTime? CreatedAt { get; set; }
 
-    public long? RoleId { get; set; }
-
     public virtual ICollection<BankAccountApi> BankAccountApis { get; set; } = new List<BankAccountApi>();
 
     public virtual ICollection<Budget> Budgets { get; set; } = new List<Budget>();
@@ -37,9 +35,11 @@ public partial class User
 
     public virtual ICollection<Expense> ExpenseUsers { get; set; } = new List<Expense>();
 
-    public virtual ICollection<Income> Incomes { get; set; } = new List<Income>();
+    public virtual ICollection<Friend> FriendFriendUsers { get; set; } = new List<Friend>();
 
-    public virtual Role? Role { get; set; }
+    public virtual ICollection<Friend> FriendUsers { get; set; } = new List<Friend>();
+
+    public virtual ICollection<Income> Incomes { get; set; } = new List<Income>();
 
     public virtual ICollection<Saving> Savings { get; set; } = new List<Saving>();
 

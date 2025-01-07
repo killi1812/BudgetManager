@@ -1,47 +1,60 @@
-﻿@model IEnumerable<Data.ViewModels.BudgetVM>
+﻿@model IEnumerable<BudgetVM>
 
 @{
     ViewData["Title"] = "Budgets";
 }
 
-<h1>Budgets</h1>
-
-<p>
-    <a asp-action="CreateBudget">Create New Budget</a>
-</p>
+<h1 class="mb-3">Budgets</h1>
+<a class="btn btn-success mb-3" asp-action="CreateBudget">Create new budget</a>
 <table class="table">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.First().Sum)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().UserId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.First().CategoryId)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CategoryName)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Sum)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CategoryId)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "EditBudget", new { guid = item.Guid }) |
-                @Html.ActionLink("Details", "DetailsBudget", new { guid = item.Guid }) |
-                @Html.ActionLink("Delete", "DeleteBudget", new { guid = item.Guid })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td class="d-flex gap-3">
+                    <a class="btn btn-primary" href="@Url.ActionLink("EditBudget", "Budget", new { guid = item.Guid })">
+                        Edit
+                    </a>
+                    <a class="btn btn-danger"
+                       href="@Url.ActionLink("DeleteBudget", "Budget", new { guid = item.Guid })"
+                       onclick="return confirmDelete(event)"> Delete </a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('.btn-danger').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+        });
+
+        function confirmDelete(event) {
+            if (!confirm("Are you sure you want to delete this budget?")) {
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
+    </script>
+}

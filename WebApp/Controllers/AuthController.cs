@@ -11,12 +11,14 @@ namespace WebApp.Controllers;
 
 public class AuthController : Controller
 {
-    private readonly IUserServices _userServices;
+    private readonly Data.Services.IAuthenticationService _authService;
+    private readonly IUserManagementService _userManagementService;
     private readonly IMapper _mapper;
 
-    public AuthController(IUserServices userServices, IMapper mapper)
+    public AuthController(Data.Services.IAuthenticationService authService, IUserManagementService userManagementService, IMapper mapper)
     {
-        _userServices = userServices;
+        _authService = authService;
+        _userManagementService = userManagementService;
         _mapper = mapper;
     }
 
@@ -27,10 +29,15 @@ public class AuthController : Controller
 
     public async Task<IActionResult> LoginAction(LoginVM loginVm)
     {
-        var claims = await _userServices.LoginCookie(loginVm.Username, loginVm.Password);
+        if (!ModelState.IsValid)
+        {
+            return View("Login", loginVm);
+        }
+
+        var (claimsIdentity, authProperties) = await _authService.Login(loginVm.Username, loginVm.Password);
 
         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-            new ClaimsPrincipal(claims.claimsIdentity), claims.authProperties);
+            new ClaimsPrincipal(claimsIdentity), authProperties);
 
         HttpContext.Session.SetString("username", loginVm.Username);
 
@@ -50,12 +57,9 @@ public class AuthController : Controller
         }
 
         var newUserDto = _mapper.Map<NewUserDto>(vm);
-        await _userServices.CreateUser(newUserDto);
+        await _userManagementService.CreateUser(newUserDto);
         return Redirect(nameof(Login));
     }
-
-
-
 
     public IActionResult Logout(string redirectUrl = "/Home/Index")
     {

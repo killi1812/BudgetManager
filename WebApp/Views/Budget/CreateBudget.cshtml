@@ -1,4 +1,6 @@
-﻿@model Data.ViewModels.BudgetVM
+﻿@using Data.Models
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model BudgetVM
 
 @{
     ViewData["Title"] = "CreateBudget";
@@ -6,38 +8,58 @@
 
 <h1>CreateBudget</h1>
 
-<h4>BudgetVM</h4>
-<hr />
-<div class="row">
+<hr/>
+<div class="row mb-3">
     <div class="col-md-4">
         <form asp-action="CreateBudgetAction">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Sum" class="control-label"></label>
-                <input asp-for="Sum" class="form-control" />
+                <input asp-for="Sum" class="form-control"/>
                 <span asp-validation-for="Sum" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="UserId" class="control-label"></label>
-                <input asp-for="UserId" class="form-control" />
-                <span asp-validation-for="UserId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <input asp-for="CategoryId" class="form-control" />
-                <span asp-validation-for="CategoryId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="CategoryGuid" class="control-label"></label>
+                <select asp-for="CategoryGuid" id="dropdown" class="form-control"></select>
+                <span asp-validation-for="CategoryGuid" class="text-danger"></span>
+            </div> 
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-primary"/>
+                <a class="btn btn-danger" asp-action="Budgets">Cancel</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Budgets">Back to List</a>
-</div>
+<script>
+   document.addEventListener("DOMContentLoaded", function() {
+    const dropdown = document.getElementById("dropdown");
 
+    function populateDropdown(items) {
+        const option = document.createElement("option");
+        option.value = undefined 
+        option.textContent = ""
+        dropdown.appendChild(option);
+        
+        items.forEach(item => {
+            const option = document.createElement("option");
+            option.value = item.value;
+            option.textContent = item.text;
+            dropdown.appendChild(option);
+        });
+    }
+
+    fetch('@Url.ActionLink("CategoryProps","Category")')
+        .then(response => response.json())
+        .then(data => {
+            populateDropdown(data);
+        })
+        .catch(error => {
+            console.error("Error fetching items:", error);
+        });
+
+});
+</script>
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

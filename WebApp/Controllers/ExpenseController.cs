@@ -9,10 +9,10 @@ namespace WebApp.Controllers
     [Authorize]
     public class ExpenseController : Controller
     {
-        private readonly ExpenseService _expenseService;
+        private readonly IExpenseService _expenseService;
         private readonly IMapper _mapper;
 
-        public ExpenseController(ExpenseService expenseService, IMapper mapper)
+        public ExpenseController(IExpenseService expenseService, IMapper mapper)
         {
             _expenseService = expenseService;
             _mapper = mapper;
@@ -24,7 +24,13 @@ namespace WebApp.Controllers
             if (guid == null)
                 return BadRequest("User not found");
 
-            var expenses = await _expenseService.GetExpensesByStatus(Guid.Parse(guid), status);
+            IExpenseFilter filter = status switch
+            {
+                "Paid" => new PaidExpenseFilter(),
+                _ => new UnpaidExpenseFilter()
+            };
+
+            var expenses = await _expenseService.GetExpenses(Guid.Parse(guid), filter);
             var vm = _mapper.Map<List<ExpenseVM>>(expenses);
 
             ViewBag.Status = status;

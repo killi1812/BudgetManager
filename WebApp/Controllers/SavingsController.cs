@@ -12,10 +12,10 @@ namespace WebApp.Controllers;
 public class SavingsController : Controller
 {
     private readonly ISavingService _savingService;
-    private readonly IUserServices _userServices;
+    private readonly IUserManagementService _userServices;
     private readonly IMapper _mapper;
 
-    public SavingsController(ISavingService savingService, IMapper mapper, IUserServices userServices)
+    public SavingsController(ISavingService savingService, IMapper mapper, IUserManagementService userServices)
     {
         _savingService = savingService;
         _mapper = mapper;

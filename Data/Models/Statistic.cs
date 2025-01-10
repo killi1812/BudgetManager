@@ -7,7 +7,7 @@ public partial class Statistic
 {
     public long Idstatistics { get; set; }
 
-    public Guid Guid { get; set; } = System.Guid.NewGuid();
+    public Guid Guid { get; set; }
 
     public decimal? TotalSpent { get; set; }
 

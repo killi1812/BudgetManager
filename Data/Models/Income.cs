@@ -7,7 +7,7 @@ public partial class Income
 {
     public long Idincome { get; set; }
 
-    public Guid Guid { get; set; } = System.Guid.NewGuid();
+    public Guid Guid { get; set; }
 
     public decimal? Sum { get; set; }
 

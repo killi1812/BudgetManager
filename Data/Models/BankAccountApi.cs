@@ -7,7 +7,7 @@ public partial class BankAccountApi
 {
     public long IdbankAccountApi { get; set; }
 
-    public Guid Guid { get; set; } = System.Guid.NewGuid();
+    public Guid Guid { get; set; }
 
     public string? BankName { get; set; }
 

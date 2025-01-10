@@ -1,6 +1,5 @@
 using AutoMapper;
 using Data.Dto;
-using Data.Models;
 using Data.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -8,64 +7,59 @@ using WebApp.ViewModels;
 
 namespace WebApp.Controllers;
 
+[Authorize]
 public class UserController : Controller
 {
+    private readonly IUserManagementService _userManagementService;
+    private readonly IProfileService _profileService;
     private readonly IMapper _mapper;
-    private readonly IUserServices _userServices;
 
-    public UserController( IUserServices userServices, IMapper mapper)
+    public UserController(IUserManagementService userManagementService, IProfileService profileService, IMapper mapper)
     {
-        _userServices = userServices;
+        _userManagementService = userManagementService;
+        _profileService = profileService;
         _mapper = mapper;
     }
 
     [Authorize]
     public async Task<IActionResult> Account(string guid)
     {
-        if (guid == null)
+        if (string.IsNullOrEmpty(guid))
         {
             guid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
             if (guid == null)
                 return BadRequest("User not found");
         }
 
-        var user = await _userServices.GetUser(Guid.Parse(guid));
-        var userVm = _mapper.Map<UserVM>(user);
+        var user = await _userManagementService.GetUser(Guid.Parse(guid));
+        var userDto = _mapper.Map<UserDto>(user);
+        var userVm = _mapper.Map<UserVM>(userDto);
         return View(userVm);
-    }
-
-    [Authorize]
-    public async Task<IActionResult> ChangePassword(string oldPassword, string newPassword)
-    {
-        var userGuid = Guid.Parse(HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value);
-        await _userServices.ChangePassword(userGuid, oldPassword, newPassword);
-        return Ok();
     }
 
     [Authorize]
     public async Task<IActionResult> EditUser([FromBody] UserDto dto)
     {
         var userGuid = Guid.Parse(HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value);
-        var user = _mapper.Map<User>(dto);
-        await _userServices.EditUser(userGuid, user);
-        var newUser = _mapper.Map<UserVM>(await _userServices.GetUser(userGuid));
-        return Ok(newUser);
+        await _userManagementService.EditUser(userGuid, dto);
+        return Ok();
     }
 
     [Authorize]
-    public async Task<IActionResult> DeleteUser(string guid)
+    public async Task<IActionResult> UpdateProfilePicture(IFormFile profilePicture)
     {
         var userGuid = Guid.Parse(HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value);
-        await _userServices.DeleteUser(userGuid, Guid.Parse(guid));
-        return RedirectToAction("Users", "User");
-    }
 
-    [Authorize]
-    public async Task<IActionResult> Users()
-    {
-        var userGuid = Guid.Parse(HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value);
-        var users = await _userServices.GetUsers(userGuid);
-        var usersVm = _mapper.Map<List<UserVM>>(users);
-        return View(usersVm);
+        if (profilePicture == null || profilePicture.Length == 0)
+            return BadRequest("Invalid file");
+
+        var filePath = Path.Combine("wwwroot", "images", "profile_pictures", $"{userGuid}_{profilePicture.FileName}");
+        using (var stream = new FileStream(filePath, FileMode.Create))
+        {
+            await profilePicture.CopyToAsync(stream);
+        }
+
+        await _profileService.UpdateProfilePicture(userGuid, $"/images/profile_pictures/{userGuid}_{profilePicture.FileName}");
+        return RedirectToAction("Account");
     }
 }

@@ -7,14 +7,12 @@
 <table class="table">
     <tr>
         <th>Username</th>
-        <th>Number of downloads</th>
         <th></th>
     </tr>
     @foreach (var user in Model)
     {
         <tr>
             <td>@user.Username</td>
-            <td>@user.Downloads.Count</td>
             <td>
                 <a class="btn btn-danger" href=@Url.ActionLink("DeleteUser", "User", new { guid = user.Guid })>Delete</a>
             </td>

@@ -7,7 +7,7 @@ public partial class Saving
 {
     public long Idsavings { get; set; }
 
-    public Guid Guid { get; set; } = System.Guid.NewGuid();
+    public Guid Guid { get; set; }
 
     public decimal? Goal { get; set; }
 

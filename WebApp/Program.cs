@@ -8,7 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<BudgetManagerContext>(o => { o.UseSqlServer(builder.Configuration["ConnectionStrings:db"]); });
+builder.Services.AddDbContext<BudgetManagerContext>(o =>
+{
+    o.UseSqlServer(builder.Configuration["ConnectionStrings:db"]);
+});
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -28,12 +31,19 @@ builder.Services.AddAuthentication()
         o.ExpireTimeSpan = TimeSpan.FromMinutes(30);
     });
 
-builder.Services.AddScoped<IUserServices, UserServices>();
+builder.Services.AddScoped<IUserManagementService, UserManagementService>();
+builder.Services.AddScoped<IAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IProfileService, ProfileService>();
+
 builder.Services.AddScoped<ILoggerService, LoggerService>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IIncomeService, IncomeService>();
 builder.Services.AddScoped<IBudgetService, BudgetService>();
 builder.Services.AddScoped<ISavingService, SavingService>();
+builder.Services.AddScoped<IExpenseService, ExpenseService>();
+
+builder.Services.AddScoped<IExpenseFilter, UnpaidExpenseFilter>();
+builder.Services.AddScoped<IExpenseFilter, PaidExpenseFilter>();
 
 var app = builder.Build();
 

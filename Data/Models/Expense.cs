@@ -7,7 +7,7 @@ public partial class Expense
 {
     public long Idexpense { get; set; }
 
-    public Guid Guid { get; set; } = System.Guid.NewGuid();
+    public Guid Guid { get; set; }
 
     public decimal? Sum { get; set; }
 
@@ -19,7 +19,13 @@ public partial class Expense
 
     public long? UserId { get; set; }
 
+    public long? PayerId { get; set; }
+
+    public string? Status { get; set; }
+
     public virtual Category? Category { get; set; }
+
+    public virtual User? Payer { get; set; }
 
     public virtual User? User { get; set; }
 }

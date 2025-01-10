@@ -12,12 +12,12 @@ namespace WebApp.Controllers;
 public class BudgetController : Controller
 {
     private readonly IBudgetService _budgetService;
-    private readonly IUserServices _userServices;
+    private readonly IUserManagementService _userServices;
     private readonly ICategoryService _categoryService;
     private readonly IMapper _mapper;
 
     public BudgetController(IBudgetService budgetService, IMapper mapper, ICategoryService categoryService,
-        IUserServices userServices)
+        IUserManagementService userServices)
     {
         _budgetService = budgetService;
         _mapper = mapper;

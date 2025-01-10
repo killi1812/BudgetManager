@@ -33,7 +33,8 @@ public class CategoryService : ICategoryService
     {
         var cat = await _context.Categories
             .FirstOrDefaultAsync(c => c.Guid == guid);
-        if (cat == null) throw new NotFoundException($"Category with guid: {guid} not found");
+        if (cat == null) 
+            throw new NotFoundException($"Category with guid: {guid} not found");
         return cat;
     }
 
@@ -41,7 +42,8 @@ public class CategoryService : ICategoryService
     {
         var cat = await _context.Categories
             .FirstOrDefaultAsync(c => c.Guid == guid);
-        if (cat == null) throw new NotFoundException($"Category with guid: {guid} not found");
+        if (cat == null)
+            throw new NotFoundException($"Category with guid: {guid} not found");
         _context.Remove(cat);
         await _context.SaveChangesAsync();
     }

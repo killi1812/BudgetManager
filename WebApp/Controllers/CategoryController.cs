@@ -28,14 +28,6 @@ public class CategoryController : Controller
         return View(vm);
     }
 
-    public async Task<IActionResult> EditCategory(string guid)
-    {
-        var category = await _categoryService.Get(Guid.Parse(guid));
-        var vm = _mapper.Map<CategoryVM>(category);
-        
-        return View(vm);
-    }
-
     public IActionResult CreateCategory()
     {
         return View();
@@ -46,6 +38,14 @@ public class CategoryController : Controller
         var newCategory = _mapper.Map<Category>(newCate);
         await _categoryService.Create(newCategory);
         return Redirect(nameof(Categories));
+    }
+
+    public async Task<IActionResult> EditCategory(string guid)
+    {
+        var category = await _categoryService.Get(Guid.Parse(guid));
+        var vm = _mapper.Map<CategoryVM>(category);
+
+        return View(vm);
     }
 
     public async Task<IActionResult> EditCategoryAction(CategoryVM newCate)
@@ -71,7 +71,7 @@ public class CategoryController : Controller
             Text = c.CategoryName,
             Value = c.Guid.ToString(),
         }).ToList();
-        
+
         return Json(props);
     }
 }

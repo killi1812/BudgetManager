@@ -1,1 +1,13 @@
 global using Xunit;
+global using System.Security.Claims;
+global using AutoMapper;
+global using Data.Helpers;
+global using Data.Models;
+global using Data.Services;
+global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Mvc;
+global using Microsoft.EntityFrameworkCore;
+global using WebApp.Controllers;
+global using WebApp.Helpers;
+global using WebApp.ViewModels;
+global using Tests.TestHelpers;

@@ -1,14 +1,3 @@
-using System.Security.Claims;
-using AutoMapper;
-using Data.Helpers;
-using Data.Models;
-using Data.Services;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using WebApp.Controllers;
-using WebApp.Helpers;
-using WebApp.ViewModels;
 
 namespace Tests.CategoryTests;
 
@@ -20,29 +9,16 @@ public class CategoryControllerTests
     public CategoryControllerTests()
     {
         _options = new DbContextOptionsBuilder<BudgetManagerContext>()
-            .UseInMemoryDatabase(databaseName: "CategoryTestDatabse")
+            .UseInMemoryDatabase(databaseName: "CategoryTestDatabase")
             .Options;
-
-        var config = new MapperConfiguration(cfg => { cfg.AddProfile<MapperProfile>(); });
-
-        _mapper = config.CreateMapper();
+        _mapper = TestSetupHelpers.SetupAutomapper();
     }
 
     private CategoryController CreateController(BudgetManagerContext context)
     {
         var categoryService = new CategoryService(context);
         var controller = new CategoryController(categoryService, _mapper);
-
-        var user = new ClaimsPrincipal(new ClaimsIdentity(new Claim[]
-        {
-            new Claim("UserGuid", Guid.NewGuid().ToString())
-        }, "mock"));
-
-        controller.ControllerContext = new ControllerContext
-        {
-            HttpContext = new DefaultHttpContext { User = user }
-        };
-
+        controller.MockLoginUser();
         return controller;
     }
 
@@ -233,7 +209,7 @@ public class CategoryControllerTests
             await service.Get(Guid.NewGuid());
         });
     }
-    
+
     [Fact]
     public async Task DeleteCategory_ShouldThrowNotFound()
     {
@@ -248,6 +224,7 @@ public class CategoryControllerTests
             await service.Delete(Guid.NewGuid());
         });
     }
+
     [Fact]
     public async Task EditCategory_ShouldThrowNotFound()
     {
@@ -261,8 +238,8 @@ public class CategoryControllerTests
             // Act
             await service.Edit(new Category
             {
-            CategoryName = "Test Category",
-            Color = "Red"
+                CategoryName = "Test Category",
+                Color = "Red"
             });
         });
     }

@@ -3,6 +3,7 @@ using Data.Models;
 using Data.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Helpers;
 using WebApp.ViewModels;
 
 namespace WebApp.Controllers;
@@ -23,11 +24,9 @@ public class IncomeController : Controller
 
     public async Task<IActionResult> Incomes()
     {
-        var guid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
-                if (guid == null)
-                    return BadRequest("User not found");
-                
-        var incomes = await _incomeService.GetAll(Guid.Parse(guid));
+        var guid = HttpContext.GetUserGuid();
+
+        var incomes = await _incomeService.GetAll(guid);
         var vms = _mapper.Map<List<IncomeVM>>(incomes);
         return View(vms);
     }
@@ -41,19 +40,17 @@ public class IncomeController : Controller
 
     public IActionResult CreateIncome()
     {
-        return View( new IncomeVM());
+        return View(new IncomeVM());
     }
 
     public async Task<IActionResult> CreateIncomeAction(IncomeVM incomeVm)
     {
         var newIncome = _mapper.Map<Income>(incomeVm);
-        
-        var guid = HttpContext.User.Claims.FirstOrDefault(c => c.Type == "UserGuid")?.Value;
-        if (guid == null)
-            return BadRequest("User not found");
-        var user =  await _userServices.GetUser(Guid.Parse(guid));
+
+        var guid = HttpContext.GetUserGuid();
+        var user = await _userServices.GetUser(guid);
         newIncome.UserId = user.Iduser;
-        
+
         await _incomeService.Create(newIncome);
         return Redirect(nameof(Incomes));
     }

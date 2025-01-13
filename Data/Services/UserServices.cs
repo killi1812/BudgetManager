@@ -32,16 +32,11 @@ public class UserServices : IUserServices
 {
     private readonly IMapper _mapper;
     private readonly BudgetManagerContext _context;
-    private readonly IConfiguration _configuration;
-    private readonly ILoggerService _loggerService;
 
-    public UserServices(IMapper mapper, BudgetManagerContext context, IServiceProvider serviceProvider,
-        ILoggerService loggerService)
+    public UserServices(IMapper mapper, BudgetManagerContext context)
     {
         _context = context;
         _mapper = mapper;
-        _configuration = serviceProvider.GetRequiredService<IConfiguration>();
-        _loggerService = loggerService;
     }
 
     public async Task CreateUser(NewUserDto userDto)
@@ -49,7 +44,6 @@ public class UserServices : IUserServices
         var userExist = await _context.Users.FirstOrDefaultAsync(u => u.Jmbag == userDto.Jmbag);
         if (userExist != null)
         {
-           _loggerService.Log($"User {userDto.Jmbag} already exists", ThreatLvl.Medium);
             throw new Exception("User already exists");
         }
 
@@ -57,7 +51,6 @@ public class UserServices : IUserServices
         user = _mapper.Map<User>(userDto);
         user.PassHash = BCrypt.Net.BCrypt.HashPassword(userDto.Password);
 
-        _loggerService.Log($"User {user.FirstName} {user.LastName} created");
 
         _context.Users.Add(user);
         await _context.SaveChangesAsync();

@@ -2,13 +2,23 @@ using Data.Helpers;
 using Data.Models;
 using Data.Services;
 using Microsoft.EntityFrameworkCore;
+using PaymentService.Builder;
 using WebApp.Helpers;
+
+var paymentService = new PaymentServiceBuilder()
+    .WithCheckInterval(TimeSpan.FromSeconds(3))
+    .WithStartTime(new TimeOnly(8, 0))
+    .WithStopTime(new TimeOnly(16, 0))
+    .Build();
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<BudgetManagerContext>(o => { o.UseSqlServer(builder.Configuration["ConnectionStrings:db"]); });
+builder.Services.AddDbContext<BudgetManagerContext>(o =>
+{
+    o.UseSqlServer(builder.Configuration["ConnectionStrings:db"]);
+});
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession(options =>
@@ -56,4 +66,5 @@ app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
+paymentService.Run();
 app.Run();

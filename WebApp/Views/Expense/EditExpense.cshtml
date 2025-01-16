@@ -1,0 +1,79 @@
+﻿@model WebApp.ViewModels.ExpenseVM
+
+@{
+    ViewData["Title"] = "EditExpense";
+}
+
+<h1>Edit Expense</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditExpenseAction">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input asp-for="Guid" hidden />
+            <div class="form-group">
+                <label asp-for="Sum" class="control-label"></label>
+                <input asp-for="Sum" class="form-control" />
+                <span asp-validation-for="Sum" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" type="date" />
+                <span asp-validation-for="Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Category </label>
+                <select asp-for="CategoryGuid" id="dropdown" class="form-control"></select>
+                <span asp-validation-for="CategoryGuid" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Expenses" class="btn btn-danger">Cancel</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dropdown = document.getElementById("dropdown");
+
+        function populateDropdown(items) {
+            const option = document.createElement("option");
+            option.value = undefined;
+            option.textContent = "";
+            dropdown.appendChild(option);
+
+            items.forEach(item => {
+                const option = document.createElement("option");
+                option.value = item.value;
+                option.textContent = item.text;
+                if (item.value === '@Model.CategoryGuid') {
+                    option.selected = true;
+                }
+                dropdown.appendChild(option);
+            });
+        }
+
+        fetch('@Url.ActionLink("CategoryProps", "Category")')
+            .then(response => response.json())
+            .then(data => {
+                populateDropdown(data);
+            })
+            .catch(error => {
+                console.error("Error fetching items:", error);
+            });
+
+    });
+</script>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

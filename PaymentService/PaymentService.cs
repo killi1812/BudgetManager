@@ -23,13 +23,24 @@ public class PaymentService
         runThread.Start();
     }
 
+    private static TimeSpan TimeUntilStart(TimeOnly time)
+    {
+        var now = TimeOnly.Parse(DateTime.Now.ToString("hh:mm:ss"));
+        if (now < time)
+            return TimeSpan.Zero;
+        var diff = time - now;
+        return diff;
+    }
+
     private void Start()
     {
-        int work = 0;
+        Thread.Sleep(TimeUntilStart(_startTime));
+        var work = 0;
         while (true)
         {
             Thread.Sleep(_interval);
             work++;
+            Console.WriteLine(work);
         }
     }
 }

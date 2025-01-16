@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebApp.ViewModels.ExpenseVM>
+
+@{
+    ViewData["Title"] = "Expenses";
+}
+
+<h1>Expenses</h1>
+
+<p>
+    <a class="btn btn-success" asp-action="CreateExpense">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Sum)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sum)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @item.Date.ToString("dd.MM.yyyy")
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td class="d-flex gap-3">
+                    <a class="btn btn-primary" href="@Url.ActionLink("EditExpense", "Expense", new { guid = item.Guid })">
+                        Edit
+                    </a>
+                    <a class="btn btn-danger"
+                       href="@Url.ActionLink("DeleteExpense", "Expense", new { guid = item.Guid })"
+                       onclick="return confirmDelete(event)">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        document.querySelectorAll('.btn-danger').forEach(button => {
+            button.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
+        });
+
+        function confirmDelete(event) {
+            if (!confirm("Are you sure you want to delete this expense?")) {
+                event.preventDefault();
+                return false;
+            }
+            return true;
+        }
+    </script>
+}

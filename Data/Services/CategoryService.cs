@@ -50,10 +50,9 @@ public class CategoryService : ICategoryService
 
     public async Task<List<Category>> GetAll(Guid guid)
     {
-        //TODO needs to get only categorys from selected user
-        var cats = await _context.Categories
-            .AsNoTracking().ToListAsync();
-        return cats;
+        return await _context.Categories
+        .AsNoTracking()
+        .ToListAsync();
     }
 
     public async Task<Category> Edit(Category newCategory)

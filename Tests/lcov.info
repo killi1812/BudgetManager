@@ -1,0 +1,3423 @@
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Services/BudgetService.cs
+FN:19,System.Void Data.Services.BudgetService::.ctor(Data.Models.BudgetManagerContext)
+FNDA:0,System.Void Data.Services.BudgetService::.ctor(Data.Models.BudgetManagerContext)
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+FN:25,System.Void Data.Services.BudgetService/<Create>d__2::MoveNext()
+FNDA:0,System.Void Data.Services.BudgetService/<Create>d__2::MoveNext()
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+FN:42,System.Void Data.Services.BudgetService/<Delete>d__4::MoveNext()
+FNDA:0,System.Void Data.Services.BudgetService/<Delete>d__4::MoveNext()
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+BRDA:45,329,0,0
+BRDA:45,329,1,0
+FN:60,System.Void Data.Services.BudgetService/<Edit>d__6::MoveNext()
+FNDA:0,System.Void Data.Services.BudgetService/<Edit>d__6::MoveNext()
+DA:61,0
+DA:62,0
+DA:63,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:72,0
+BRDA:63,344,0,0
+BRDA:63,344,1,0
+BRDA:70,859,0,0
+BRDA:70,859,1,0
+FN:32,System.Void Data.Services.BudgetService/<Get>d__3::MoveNext()
+FNDA:0,System.Void Data.Services.BudgetService/<Get>d__3::MoveNext()
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+BRDA:38,443,0,0
+BRDA:38,443,1,0
+FN:50,System.Void Data.Services.BudgetService/<GetAll>d__5::MoveNext()
+FNDA:0,System.Void Data.Services.BudgetService/<GetAll>d__5::MoveNext()
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+LF:41
+LH:0
+BRF:8
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Services/CategoryService.cs
+FN:19,System.Void Data.Services.CategoryService::.ctor(Data.Models.BudgetManagerContext)
+FNDA:10,System.Void Data.Services.CategoryService::.ctor(Data.Models.BudgetManagerContext)
+DA:20,10
+DA:21,10
+DA:22,10
+DA:23,10
+FN:25,System.Void Data.Services.CategoryService/<Create>d__2::MoveNext()
+FNDA:1,System.Void Data.Services.CategoryService/<Create>d__2::MoveNext()
+DA:26,1
+DA:27,1
+DA:28,1
+DA:29,1
+DA:30,1
+FN:41,System.Void Data.Services.CategoryService/<Delete>d__4::MoveNext()
+FNDA:2,System.Void Data.Services.CategoryService/<Delete>d__4::MoveNext()
+DA:42,2
+DA:43,2
+DA:44,2
+DA:45,2
+DA:46,1
+DA:47,1
+DA:48,1
+DA:49,1
+BRDA:45,329,0,1
+BRDA:45,329,1,1
+FN:58,System.Void Data.Services.CategoryService/<Edit>d__6::MoveNext()
+FNDA:2,System.Void Data.Services.CategoryService/<Edit>d__6::MoveNext()
+DA:59,2
+DA:60,2
+DA:61,2
+DA:62,3
+DA:63,1
+DA:64,1
+DA:65,1
+DA:66,1
+DA:67,1
+DA:68,1
+BRDA:62,364,0,1
+BRDA:62,364,1,1
+BRDA:66,891,0,0
+BRDA:66,891,1,1
+FN:32,System.Void Data.Services.CategoryService/<Get>d__3::MoveNext()
+FNDA:2,System.Void Data.Services.CategoryService/<Get>d__3::MoveNext()
+DA:33,2
+DA:34,2
+DA:35,2
+DA:36,2
+DA:37,1
+DA:38,1
+DA:39,1
+BRDA:36,319,0,1
+BRDA:36,319,1,1
+FN:51,System.Void Data.Services.CategoryService/<GetAll>d__5::MoveNext()
+FNDA:2,System.Void Data.Services.CategoryService/<GetAll>d__5::MoveNext()
+DA:52,2
+DA:53,2
+DA:54,2
+DA:55,2
+DA:56,2
+LF:39
+LH:39
+BRF:8
+BRH:7
+FNF:6
+FNH:6
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Services/ExpenseService.cs
+FN:24,System.Void Data.Services.ExpenseService::.ctor(Data.Models.BudgetManagerContext)
+FNDA:0,System.Void Data.Services.ExpenseService::.ctor(Data.Models.BudgetManagerContext)
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+FN:30,System.Void Data.Services.ExpenseService/<Create>d__2::MoveNext()
+FNDA:0,System.Void Data.Services.ExpenseService/<Create>d__2::MoveNext()
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+FN:53,System.Void Data.Services.ExpenseService/<Delete>d__4::MoveNext()
+FNDA:0,System.Void Data.Services.ExpenseService/<Delete>d__4::MoveNext()
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+BRDA:56,329,0,0
+BRDA:56,329,1,0
+FN:71,System.Void Data.Services.ExpenseService/<Edit>d__6::MoveNext()
+FNDA:0,System.Void Data.Services.ExpenseService/<Edit>d__6::MoveNext()
+DA:72,0
+DA:73,0
+DA:74,0
+DA:76,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+BRDA:74,344,0,0
+BRDA:74,344,1,0
+BRDA:83,905,0,0
+BRDA:83,905,1,0
+FN:37,System.Void Data.Services.ExpenseService/<Get>d__3::MoveNext()
+FNDA:0,System.Void Data.Services.ExpenseService/<Get>d__3::MoveNext()
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:44,0
+DA:45,0
+DA:47,0
+DA:48,0
+DA:50,0
+DA:51,0
+BRDA:44,443,0,0
+BRDA:44,443,1,0
+BRDA:47,531,0,0
+BRDA:47,531,1,0
+FN:61,System.Void Data.Services.ExpenseService/<GetAll>d__5::MoveNext()
+FNDA:0,System.Void Data.Services.ExpenseService/<GetAll>d__5::MoveNext()
+DA:62,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+LF:46
+LH:0
+BRF:10
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Services/IncomeService.cs
+FN:21,System.Void Data.Services.IncomeService::.ctor(Data.Models.BudgetManagerContext,AutoMapper.IMapper)
+FNDA:11,System.Void Data.Services.IncomeService::.ctor(Data.Models.BudgetManagerContext,AutoMapper.IMapper)
+DA:22,11
+DA:23,11
+DA:24,11
+DA:25,11
+DA:26,11
+FN:34,System.Void Data.Services.IncomeService/<Create>d__4::MoveNext()
+FNDA:1,System.Void Data.Services.IncomeService/<Create>d__4::MoveNext()
+DA:35,1
+DA:36,1
+DA:37,1
+DA:38,1
+DA:39,1
+DA:40,1
+DA:41,1
+DA:42,1
+BRDA:38,604,0,0
+BRDA:38,604,1,1
+FN:54,System.Void Data.Services.IncomeService/<Delete>d__6::MoveNext()
+FNDA:2,System.Void Data.Services.IncomeService/<Delete>d__6::MoveNext()
+DA:55,2
+DA:56,2
+DA:57,2
+DA:58,2
+DA:59,1
+DA:60,1
+DA:61,1
+DA:62,1
+BRDA:58,329,0,1
+BRDA:58,329,1,1
+FN:44,System.Void Data.Services.IncomeService/<Get>d__5::MoveNext()
+FNDA:2,System.Void Data.Services.IncomeService/<Get>d__5::MoveNext()
+DA:45,2
+DA:46,2
+DA:47,2
+DA:48,2
+DA:49,2
+DA:50,1
+DA:51,1
+DA:52,1
+BRDA:49,324,0,1
+BRDA:49,324,1,1
+FN:28,System.Void Data.Services.IncomeService/<GetAll>d__3::MoveNext()
+FNDA:1,System.Void Data.Services.IncomeService/<GetAll>d__3::MoveNext()
+DA:29,1
+DA:30,1
+DA:31,1
+DA:32,1
+FN:64,System.Void Data.Services.IncomeService/<Update>d__7::MoveNext()
+FNDA:2,System.Void Data.Services.IncomeService/<Update>d__7::MoveNext()
+DA:65,2
+DA:66,2
+DA:67,2
+DA:68,2
+DA:69,1
+DA:70,1
+DA:71,1
+DA:72,1
+DA:73,1
+DA:74,1
+DA:75,1
+BRDA:68,344,0,1
+BRDA:68,344,1,1
+LF:44
+LH:44
+BRF:8
+BRH:7
+FNF:6
+FNH:6
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Services/LoggerService.cs
+FN:24,System.Threading.Tasks.Task Data.Services.LoggerService::Log(System.String,Data.Helpers.ThreatLvl)
+FNDA:0,System.Threading.Tasks.Task Data.Services.LoggerService::Log(System.String,Data.Helpers.ThreatLvl)
+DA:25,0
+DA:38,0
+DA:39,0
+FN:41,System.Threading.Tasks.Task Data.Services.LoggerService::LogMany(System.String[],Data.Helpers.ThreatLvl)
+FNDA:0,System.Threading.Tasks.Task Data.Services.LoggerService::LogMany(System.String[],Data.Helpers.ThreatLvl)
+DA:42,0
+DA:59,0
+DA:60,0
+FN:18,System.Void Data.Services.LoggerService::.ctor(Data.Models.BudgetManagerContext)
+FNDA:0,System.Void Data.Services.LoggerService::.ctor(Data.Models.BudgetManagerContext)
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+FN:62,System.Void Data.Services.LoggerService/<GetLogs>d__4::MoveNext()
+FNDA:0,System.Void Data.Services.LoggerService/<GetLogs>d__4::MoveNext()
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+FN:70,System.Void Data.Services.LoggerService/<GetLogsCount>d__5::MoveNext()
+FNDA:0,System.Void Data.Services.LoggerService/<GetLogsCount>d__5::MoveNext()
+DA:71,0
+DA:72,0
+DA:73,0
+DA:74,0
+LF:20
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Services/SavingsService.cs
+FN:19,System.Void Data.Services.SavingService::.ctor(Data.Models.BudgetManagerContext)
+FNDA:0,System.Void Data.Services.SavingService::.ctor(Data.Models.BudgetManagerContext)
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+FN:25,System.Void Data.Services.SavingService/<Create>d__2::MoveNext()
+FNDA:0,System.Void Data.Services.SavingService/<Create>d__2::MoveNext()
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+FN:41,System.Void Data.Services.SavingService/<Delete>d__4::MoveNext()
+FNDA:0,System.Void Data.Services.SavingService/<Delete>d__4::MoveNext()
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+BRDA:44,329,0,0
+BRDA:44,329,1,0
+FN:58,System.Void Data.Services.SavingService/<Edit>d__6::MoveNext()
+FNDA:0,System.Void Data.Services.SavingService/<Edit>d__6::MoveNext()
+DA:59,0
+DA:60,0
+DA:61,0
+DA:63,0
+DA:64,0
+DA:65,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+BRDA:61,364,0,0
+BRDA:61,364,1,0
+BRDA:68,919,0,0
+BRDA:68,919,1,0
+FN:32,System.Void Data.Services.SavingService/<Get>d__3::MoveNext()
+FNDA:0,System.Void Data.Services.SavingService/<Get>d__3::MoveNext()
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+BRDA:37,381,0,0
+BRDA:37,381,1,0
+FN:49,System.Void Data.Services.SavingService/<GetAll>d__5::MoveNext()
+FNDA:0,System.Void Data.Services.SavingService/<GetAll>d__5::MoveNext()
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+LF:39
+LH:0
+BRF:8
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Services/UserServices.cs
+FN:136,System.Threading.Tasks.Task Data.Services.UserServices::DeleteUser(System.Guid,System.Guid)
+FNDA:0,System.Threading.Tasks.Task Data.Services.UserServices::DeleteUser(System.Guid,System.Guid)
+DA:137,0
+DA:138,0
+DA:139,0
+DA:140,0
+DA:141,0
+DA:142,0
+DA:143,0
+DA:144,0
+DA:145,0
+DA:147,0
+DA:148,0
+DA:149,0
+BRDA:139,155,0,0
+BRDA:139,155,1,0
+BRDA:142,354,0,0
+BRDA:142,354,1,0
+BRDA:144,440,0,0
+BRDA:144,440,1,0
+FN:35,System.Void Data.Services.UserServices::.ctor(AutoMapper.IMapper,Data.Models.BudgetManagerContext)
+FNDA:11,System.Void Data.Services.UserServices::.ctor(AutoMapper.IMapper,Data.Models.BudgetManagerContext)
+DA:36,11
+DA:37,11
+DA:38,11
+DA:39,11
+DA:40,11
+FN:88,System.Void Data.Services.UserServices/<ChangePassword>d__5::MoveNext()
+FNDA:0,System.Void Data.Services.UserServices/<ChangePassword>d__5::MoveNext()
+DA:89,0
+DA:90,0
+DA:91,0
+DA:92,0
+DA:94,0
+DA:95,0
+DA:96,0
+DA:98,0
+DA:99,0
+DA:100,0
+BRDA:91,329,0,0
+BRDA:91,329,1,0
+BRDA:95,442,0,0
+BRDA:95,442,1,0
+FN:42,System.Void Data.Services.UserServices/<CreateUser>d__3::MoveNext()
+FNDA:0,System.Void Data.Services.UserServices/<CreateUser>d__3::MoveNext()
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:55,0
+DA:56,0
+DA:57,0
+BRDA:45,333,0,0
+BRDA:45,333,1,0
+FN:112,System.Void Data.Services.UserServices/<EditUser>d__7::MoveNext()
+FNDA:0,System.Void Data.Services.UserServices/<EditUser>d__7::MoveNext()
+DA:113,0
+DA:114,0
+DA:115,0
+DA:116,0
+DA:117,0
+DA:118,0
+DA:120,0
+DA:126,0
+BRDA:115,329,0,0
+BRDA:115,329,1,0
+BRDA:117,433,0,0
+BRDA:117,433,1,0
+FN:102,System.Void Data.Services.UserServices/<GetUser>d__6::MoveNext()
+FNDA:1,System.Void Data.Services.UserServices/<GetUser>d__6::MoveNext()
+DA:103,1
+DA:104,1
+DA:105,1
+DA:106,1
+DA:107,1
+DA:108,0
+DA:109,1
+DA:110,1
+BRDA:107,324,0,0
+BRDA:107,324,1,1
+FN:128,System.Void Data.Services.UserServices/<GetUsers>d__8::MoveNext()
+FNDA:0,System.Void Data.Services.UserServices/<GetUsers>d__8::MoveNext()
+DA:129,0
+DA:130,0
+DA:131,0
+DA:132,0
+DA:133,0
+DA:134,0
+BRDA:131,330,0,0
+BRDA:131,330,1,0
+FN:62,System.Void Data.Services.UserServices/<LoginCookie>d__4::MoveNext()
+FNDA:0,System.Void Data.Services.UserServices/<LoginCookie>d__4::MoveNext()
+DA:63,0
+DA:64,0
+DA:66,0
+DA:67,0
+DA:69,0
+DA:70,0
+DA:71,0
+DA:73,0
+DA:74,0
+DA:75,0
+DA:76,0
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+BRDA:66,303,0,0
+BRDA:66,303,1,0
+BRDA:70,380,0,0
+BRDA:70,380,1,0
+LF:81
+LH:12
+BRF:24
+BRH:1
+FNF:8
+FNH:2
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Helpers/NotFoundException.cs
+FN:4,System.Void Data.Helpers.NotFoundException::.ctor(System.String)
+FNDA:6,System.Void Data.Helpers.NotFoundException::.ctor(System.String)
+DA:5,6
+DA:6,6
+DA:7,6
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Helpers/SeedData.cs
+FN:37,System.Void Data.Helpers.SeedDataClass::SeedPictures()
+FNDA:0,System.Void Data.Helpers.SeedDataClass::SeedPictures()
+DA:38,0
+DA:39,0
+FN:11,System.Void Data.Helpers.SeedDataClass/<SeedData>d__0::MoveNext()
+FNDA:0,System.Void Data.Helpers.SeedDataClass/<SeedData>d__0::MoveNext()
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+BRDA:17,117,0,0
+BRDA:17,117,1,0
+FN:23,System.Void Data.Helpers.SeedDataClass/<SeedUsers>d__1::MoveNext()
+FNDA:0,System.Void Data.Helpers.SeedDataClass/<SeedUsers>d__1::MoveNext()
+DA:24,0
+DA:25,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+LF:23
+LH:0
+BRF:2
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Helpers/ThreatLvl.cs
+FN:12,Data.Helpers.ThreatLvl Data.Helpers.ThreatLvlHelper::ToThreatLvl(System.Int32)
+FNDA:0,Data.Helpers.ThreatLvl Data.Helpers.ThreatLvlHelper::ToThreatLvl(System.Int32)
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+BRDA:14,8,1,0
+BRDA:14,8,2,0
+BRDA:14,8,3,0
+BRDA:14,8,0,0
+FN:23,System.Int32 Data.Helpers.ThreatLvlHelper::ToInt(Data.Helpers.ThreatLvl)
+FNDA:0,System.Int32 Data.Helpers.ThreatLvlHelper::ToInt(Data.Helpers.ThreatLvl)
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+BRDA:25,8,1,0
+BRDA:25,8,2,0
+BRDA:25,8,3,0
+BRDA:25,8,0,0
+LF:18
+LH:0
+BRF:8
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Helpers/UnauthorizedException.cs
+FN:4,System.Void Data.Helpers.UnauthorizedException::.ctor(System.String)
+FNDA:2,System.Void Data.Helpers.UnauthorizedException::.ctor(System.String)
+DA:5,2
+DA:6,2
+DA:7,2
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Enums/Frequency.cs
+FN:15,Data.Enums.Frequency Data.Enums.FrequencyHelper::Parse(System.String)
+FNDA:0,Data.Enums.Frequency Data.Enums.FrequencyHelper::Parse(System.String)
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+BRDA:17,23,0,0
+BRDA:17,36,0,0
+BRDA:17,49,0,0
+BRDA:17,62,0,0
+BRDA:17,23,1,0
+BRDA:17,36,1,0
+BRDA:17,49,1,0
+BRDA:17,62,1,0
+BRDA:17,75,1,0
+BRDA:17,75,0,0
+LF:11
+LH:0
+BRF:10
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Dto/PropDto.cs
+FN:4,System.String Data.Models.PropDto::get_Text()
+FNDA:2,System.String Data.Models.PropDto::get_Text()
+DA:5,2
+FN:5,System.String Data.Models.PropDto::get_Value()
+FNDA:4,System.String Data.Models.PropDto::get_Value()
+DA:6,4
+FN:7,System.Boolean Data.Models.PropDto::Equals(System.Object)
+FNDA:1,System.Boolean Data.Models.PropDto::Equals(System.Object)
+DA:8,1
+DA:9,1
+DA:10,1
+DA:11,1
+DA:12,1
+DA:13,1
+DA:15,0
+DA:16,0
+DA:17,1
+BRDA:9,7,0,1
+BRDA:11,23,0,1
+BRDA:11,23,1,0
+BRDA:9,7,1,0
+LF:11
+LH:9
+BRF:4
+BRH:2
+FNF:3
+FNH:3
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/BankAccountApi.cs
+FN:7,System.Int64 Data.Models.BankAccountApi::get_IdbankAccountApi()
+FNDA:0,System.Int64 Data.Models.BankAccountApi::get_IdbankAccountApi()
+DA:8,0
+FN:9,System.Guid Data.Models.BankAccountApi::get_Guid()
+FNDA:0,System.Guid Data.Models.BankAccountApi::get_Guid()
+DA:10,0
+FN:11,System.String Data.Models.BankAccountApi::get_BankName()
+FNDA:0,System.String Data.Models.BankAccountApi::get_BankName()
+DA:12,0
+FN:13,System.Nullable`1<System.Decimal> Data.Models.BankAccountApi::get_Balance()
+FNDA:0,System.Nullable`1<System.Decimal> Data.Models.BankAccountApi::get_Balance()
+DA:14,0
+FN:15,System.String Data.Models.BankAccountApi::get_Url()
+FNDA:0,System.String Data.Models.BankAccountApi::get_Url()
+DA:16,0
+FN:17,System.String Data.Models.BankAccountApi::get_Apikey()
+FNDA:0,System.String Data.Models.BankAccountApi::get_Apikey()
+DA:18,0
+FN:19,System.Nullable`1<System.Int64> Data.Models.BankAccountApi::get_UserId()
+FNDA:0,System.Nullable`1<System.Int64> Data.Models.BankAccountApi::get_UserId()
+DA:20,0
+FN:21,Data.Models.User Data.Models.BankAccountApi::get_User()
+FNDA:0,Data.Models.User Data.Models.BankAccountApi::get_User()
+DA:22,0
+LF:8
+LH:0
+BRF:0
+BRH:0
+FNF:8
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/Budget.cs
+FN:7,System.Int64 Data.Models.Budget::get_Idbudget()
+FNDA:0,System.Int64 Data.Models.Budget::get_Idbudget()
+DA:8,0
+FN:9,System.Guid Data.Models.Budget::get_Guid()
+FNDA:0,System.Guid Data.Models.Budget::get_Guid()
+DA:10,0
+FN:11,System.Nullable`1<System.Decimal> Data.Models.Budget::get_Sum()
+FNDA:0,System.Nullable`1<System.Decimal> Data.Models.Budget::get_Sum()
+DA:12,0
+FN:13,System.Nullable`1<System.Int64> Data.Models.Budget::get_UserId()
+FNDA:0,System.Nullable`1<System.Int64> Data.Models.Budget::get_UserId()
+DA:14,0
+FN:15,System.Nullable`1<System.Int64> Data.Models.Budget::get_CategoryId()
+FNDA:0,System.Nullable`1<System.Int64> Data.Models.Budget::get_CategoryId()
+DA:16,0
+FN:17,Data.Models.Category Data.Models.Budget::get_Category()
+FNDA:0,Data.Models.Category Data.Models.Budget::get_Category()
+DA:18,0
+FN:19,Data.Models.User Data.Models.Budget::get_User()
+FNDA:0,Data.Models.User Data.Models.Budget::get_User()
+DA:20,0
+LF:7
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/BudgetManagerContext.cs
+FN:17,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.BankAccountApi> Data.Models.BudgetManagerContext::get_BankAccountApis()
+FNDA:21,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.BankAccountApi> Data.Models.BudgetManagerContext::get_BankAccountApis()
+DA:18,21
+FN:19,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Budget> Data.Models.BudgetManagerContext::get_Budgets()
+FNDA:21,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Budget> Data.Models.BudgetManagerContext::get_Budgets()
+DA:20,21
+FN:21,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Category> Data.Models.BudgetManagerContext::get_Categories()
+FNDA:39,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Category> Data.Models.BudgetManagerContext::get_Categories()
+DA:22,39
+FN:23,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Expense> Data.Models.BudgetManagerContext::get_Expenses()
+FNDA:21,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Expense> Data.Models.BudgetManagerContext::get_Expenses()
+DA:24,21
+FN:25,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Income> Data.Models.BudgetManagerContext::get_Incomes()
+FNDA:36,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Income> Data.Models.BudgetManagerContext::get_Incomes()
+DA:26,36
+FN:27,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Log> Data.Models.BudgetManagerContext::get_Logs()
+FNDA:21,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Log> Data.Models.BudgetManagerContext::get_Logs()
+DA:28,21
+FN:29,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Role> Data.Models.BudgetManagerContext::get_Roles()
+FNDA:21,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Role> Data.Models.BudgetManagerContext::get_Roles()
+DA:30,21
+FN:31,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Saving> Data.Models.BudgetManagerContext::get_Savings()
+FNDA:21,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Saving> Data.Models.BudgetManagerContext::get_Savings()
+DA:32,21
+FN:33,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Statistic> Data.Models.BudgetManagerContext::get_Statistics()
+FNDA:21,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.Statistic> Data.Models.BudgetManagerContext::get_Statistics()
+DA:34,21
+FN:35,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.User> Data.Models.BudgetManagerContext::get_Users()
+FNDA:31,Microsoft.EntityFrameworkCore.DbSet`1<Data.Models.User> Data.Models.BudgetManagerContext::get_Users()
+DA:36,31
+FN:38,System.Void Data.Models.BudgetManagerContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+FNDA:1,System.Void Data.Models.BudgetManagerContext::OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)
+DA:39,1
+DA:40,1
+DA:41,1
+DA:42,1
+DA:43,1
+DA:44,1
+DA:45,1
+DA:46,1
+DA:47,1
+DA:48,1
+DA:49,1
+DA:50,1
+DA:51,1
+DA:52,1
+DA:53,1
+DA:54,1
+DA:55,1
+DA:56,1
+DA:57,1
+DA:58,1
+DA:59,1
+DA:60,2
+DA:62,1
+DA:63,1
+DA:64,1
+DA:65,1
+DA:66,1
+DA:67,1
+DA:68,1
+DA:69,1
+DA:70,1
+DA:71,1
+DA:72,1
+DA:73,1
+DA:74,1
+DA:75,1
+DA:76,1
+DA:77,1
+DA:78,1
+DA:79,1
+DA:80,2
+DA:82,1
+DA:83,1
+DA:84,1
+DA:85,1
+DA:86,1
+DA:87,1
+DA:88,1
+DA:89,1
+DA:90,1
+DA:91,2
+DA:93,1
+DA:94,1
+DA:95,1
+DA:96,1
+DA:97,1
+DA:98,1
+DA:99,1
+DA:100,1
+DA:101,1
+DA:102,1
+DA:103,1
+DA:104,1
+DA:105,1
+DA:106,1
+DA:107,1
+DA:108,1
+DA:109,1
+DA:110,1
+DA:111,1
+DA:112,1
+DA:113,2
+DA:115,1
+DA:116,1
+DA:117,1
+DA:118,1
+DA:119,1
+DA:120,1
+DA:121,1
+DA:122,1
+DA:123,1
+DA:124,1
+DA:125,1
+DA:126,1
+DA:127,1
+DA:128,1
+DA:129,1
+DA:130,1
+DA:131,2
+DA:133,1
+DA:134,1
+DA:135,1
+DA:136,1
+DA:137,1
+DA:138,1
+DA:139,1
+DA:140,1
+DA:141,1
+DA:142,1
+DA:143,1
+DA:144,1
+DA:145,1
+DA:146,2
+DA:148,1
+DA:149,1
+DA:150,1
+DA:151,1
+DA:152,1
+DA:153,1
+DA:154,1
+DA:155,1
+DA:156,2
+DA:158,1
+DA:159,1
+DA:160,1
+DA:161,1
+DA:162,1
+DA:163,1
+DA:164,1
+DA:165,1
+DA:166,1
+DA:167,1
+DA:168,1
+DA:169,1
+DA:170,1
+DA:171,2
+DA:173,1
+DA:174,1
+DA:175,1
+DA:176,1
+DA:177,1
+DA:178,1
+DA:179,1
+DA:180,1
+DA:181,1
+DA:182,1
+DA:183,1
+DA:184,1
+DA:185,1
+DA:186,1
+DA:187,2
+DA:189,1
+DA:190,1
+DA:191,1
+DA:192,1
+DA:193,1
+DA:194,1
+DA:195,1
+DA:196,1
+DA:197,1
+DA:198,1
+DA:199,1
+DA:200,1
+DA:201,1
+DA:202,1
+DA:203,1
+DA:204,1
+DA:205,1
+DA:206,1
+DA:207,1
+DA:208,1
+DA:209,2
+DA:212,1
+FN:8,System.Void Data.Models.BudgetManagerContext::.ctor()
+FNDA:0,System.Void Data.Models.BudgetManagerContext::.ctor()
+DA:9,0
+DA:10,0
+DA:11,0
+FN:13,System.Void Data.Models.BudgetManagerContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<Data.Models.BudgetManagerContext>)
+FNDA:21,System.Void Data.Models.BudgetManagerContext::.ctor(Microsoft.EntityFrameworkCore.DbContextOptions`1<Data.Models.BudgetManagerContext>)
+DA:14,21
+DA:15,21
+DA:16,21
+LF:179
+LH:176
+BRF:0
+BRH:0
+FNF:13
+FNH:12
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/Category.cs
+FN:7,System.Int64 Data.Models.Category::get_Idcategory()
+FNDA:0,System.Int64 Data.Models.Category::get_Idcategory()
+DA:8,0
+FN:9,System.Guid Data.Models.Category::get_Guid()
+FNDA:22,System.Guid Data.Models.Category::get_Guid()
+DA:10,22
+FN:11,System.String Data.Models.Category::get_CategoryName()
+FNDA:12,System.String Data.Models.Category::get_CategoryName()
+DA:12,12
+FN:13,System.String Data.Models.Category::get_Color()
+FNDA:10,System.String Data.Models.Category::get_Color()
+DA:14,10
+FN:15,System.Collections.Generic.ICollection`1<Data.Models.Budget> Data.Models.Category::get_Budgets()
+FNDA:9,System.Collections.Generic.ICollection`1<Data.Models.Budget> Data.Models.Category::get_Budgets()
+DA:16,9
+FN:17,System.Collections.Generic.ICollection`1<Data.Models.Expense> Data.Models.Category::get_Expenses()
+FNDA:9,System.Collections.Generic.ICollection`1<Data.Models.Expense> Data.Models.Category::get_Expenses()
+DA:18,9
+LF:6
+LH:5
+BRF:0
+BRH:0
+FNF:6
+FNH:5
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/Expense.cs
+FN:7,System.Int64 Data.Models.Expense::get_Idexpense()
+FNDA:0,System.Int64 Data.Models.Expense::get_Idexpense()
+DA:8,0
+FN:9,System.Guid Data.Models.Expense::get_Guid()
+FNDA:0,System.Guid Data.Models.Expense::get_Guid()
+DA:10,0
+FN:11,System.Nullable`1<System.Decimal> Data.Models.Expense::get_Sum()
+FNDA:0,System.Nullable`1<System.Decimal> Data.Models.Expense::get_Sum()
+DA:12,0
+FN:13,System.String Data.Models.Expense::get_Description()
+FNDA:0,System.String Data.Models.Expense::get_Description()
+DA:14,0
+FN:15,System.Nullable`1<System.DateTime> Data.Models.Expense::get_Date()
+FNDA:0,System.Nullable`1<System.DateTime> Data.Models.Expense::get_Date()
+DA:16,0
+FN:17,System.Nullable`1<System.Int64> Data.Models.Expense::get_CategoryId()
+FNDA:0,System.Nullable`1<System.Int64> Data.Models.Expense::get_CategoryId()
+DA:18,0
+FN:19,System.Nullable`1<System.Int64> Data.Models.Expense::get_UserId()
+FNDA:0,System.Nullable`1<System.Int64> Data.Models.Expense::get_UserId()
+DA:20,0
+FN:21,Data.Models.Category Data.Models.Expense::get_Category()
+FNDA:0,Data.Models.Category Data.Models.Expense::get_Category()
+DA:22,0
+FN:23,Data.Models.User Data.Models.Expense::get_User()
+FNDA:0,Data.Models.User Data.Models.Expense::get_User()
+DA:24,0
+LF:9
+LH:0
+BRF:0
+BRH:0
+FNF:9
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/Income.cs
+FN:7,System.Int64 Data.Models.Income::get_Idincome()
+FNDA:0,System.Int64 Data.Models.Income::get_Idincome()
+DA:8,0
+FN:9,System.Guid Data.Models.Income::get_Guid()
+FNDA:16,System.Guid Data.Models.Income::get_Guid()
+DA:10,16
+FN:11,System.Nullable`1<System.Decimal> Data.Models.Income::get_Sum()
+FNDA:10,System.Nullable`1<System.Decimal> Data.Models.Income::get_Sum()
+DA:12,10
+FN:13,System.String Data.Models.Income::get_Source()
+FNDA:10,System.String Data.Models.Income::get_Source()
+DA:14,10
+FN:15,System.Nullable`1<System.DateTime> Data.Models.Income::get_Date()
+FNDA:10,System.Nullable`1<System.DateTime> Data.Models.Income::get_Date()
+DA:16,10
+FN:17,System.String Data.Models.Income::get_Frequency()
+FNDA:10,System.String Data.Models.Income::get_Frequency()
+DA:18,10
+FN:19,System.Nullable`1<System.Int64> Data.Models.Income::get_UserId()
+FNDA:1,System.Nullable`1<System.Int64> Data.Models.Income::get_UserId()
+DA:20,1
+FN:21,Data.Models.User Data.Models.Income::get_User()
+FNDA:0,Data.Models.User Data.Models.Income::get_User()
+DA:22,0
+LF:8
+LH:6
+BRF:0
+BRH:0
+FNF:8
+FNH:6
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/Log.cs
+FN:7,System.Int32 Data.Models.Log::get_Id()
+FNDA:0,System.Int32 Data.Models.Log::get_Id()
+DA:8,0
+FN:9,System.DateTime Data.Models.Log::get_Date()
+FNDA:0,System.DateTime Data.Models.Log::get_Date()
+DA:10,0
+FN:11,System.String Data.Models.Log::get_Message()
+FNDA:0,System.String Data.Models.Log::get_Message()
+DA:12,0
+FN:13,System.Int32 Data.Models.Log::get_Lvl()
+FNDA:0,System.Int32 Data.Models.Log::get_Lvl()
+DA:14,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/Paginated.cs
+FN:4,System.Collections.Generic.IList`1<T> Data.Models.Paginated`1::get_Items()
+FNDA:0,System.Collections.Generic.IList`1<T> Data.Models.Paginated`1::get_Items()
+DA:5,0
+FN:5,System.Int32 Data.Models.Paginated`1::get_Page()
+FNDA:0,System.Int32 Data.Models.Paginated`1::get_Page()
+DA:6,0
+FN:6,System.Int32 Data.Models.Paginated`1::get_Count()
+FNDA:0,System.Int32 Data.Models.Paginated`1::get_Count()
+DA:7,0
+FN:7,System.Int32 Data.Models.Paginated`1::get_Size()
+FNDA:0,System.Int32 Data.Models.Paginated`1::get_Size()
+DA:8,0
+FN:8,System.Int32 Data.Models.Paginated`1::get_LastPage()
+FNDA:0,System.Int32 Data.Models.Paginated`1::get_LastPage()
+DA:9,0
+FN:9,System.Int32 Data.Models.Paginated`1::get_FromPage()
+FNDA:0,System.Int32 Data.Models.Paginated`1::get_FromPage()
+DA:10,0
+FN:10,System.Int32 Data.Models.Paginated`1::get_ToPage()
+FNDA:0,System.Int32 Data.Models.Paginated`1::get_ToPage()
+DA:11,0
+FN:13,System.Void Data.Models.Paginated`1::.ctor(System.Collections.Generic.IEnumerable`1<T>,System.Int32,System.Int32)
+FNDA:0,System.Void Data.Models.Paginated`1::.ctor(System.Collections.Generic.IEnumerable`1<T>,System.Int32,System.Int32)
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+BRDA:21,94,0,0
+BRDA:21,94,1,0
+BRDA:22,120,0,0
+BRDA:22,120,1,0
+LF:17
+LH:0
+BRF:4
+BRH:0
+FNF:8
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/Role.cs
+FN:7,System.Int64 Data.Models.Role::get_Idrole()
+FNDA:0,System.Int64 Data.Models.Role::get_Idrole()
+DA:8,0
+FN:9,System.String Data.Models.Role::get_RoleType()
+FNDA:0,System.String Data.Models.Role::get_RoleType()
+DA:10,0
+FN:11,System.Collections.Generic.ICollection`1<Data.Models.User> Data.Models.Role::get_Users()
+FNDA:0,System.Collections.Generic.ICollection`1<Data.Models.User> Data.Models.Role::get_Users()
+DA:12,0
+LF:3
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/Saving.cs
+FN:7,System.Int64 Data.Models.Saving::get_Idsavings()
+FNDA:0,System.Int64 Data.Models.Saving::get_Idsavings()
+DA:8,0
+FN:9,System.Guid Data.Models.Saving::get_Guid()
+FNDA:0,System.Guid Data.Models.Saving::get_Guid()
+DA:10,0
+FN:11,System.Nullable`1<System.Decimal> Data.Models.Saving::get_Goal()
+FNDA:0,System.Nullable`1<System.Decimal> Data.Models.Saving::get_Goal()
+DA:12,0
+FN:13,System.Nullable`1<System.Decimal> Data.Models.Saving::get_Current()
+FNDA:0,System.Nullable`1<System.Decimal> Data.Models.Saving::get_Current()
+DA:14,0
+FN:15,System.Nullable`1<System.DateTime> Data.Models.Saving::get_Date()
+FNDA:0,System.Nullable`1<System.DateTime> Data.Models.Saving::get_Date()
+DA:16,0
+FN:17,System.Nullable`1<System.Int64> Data.Models.Saving::get_UserId()
+FNDA:0,System.Nullable`1<System.Int64> Data.Models.Saving::get_UserId()
+DA:18,0
+FN:19,Data.Models.User Data.Models.Saving::get_User()
+FNDA:0,Data.Models.User Data.Models.Saving::get_User()
+DA:20,0
+LF:7
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/Statistic.cs
+FN:7,System.Int64 Data.Models.Statistic::get_Idstatistics()
+FNDA:0,System.Int64 Data.Models.Statistic::get_Idstatistics()
+DA:8,0
+FN:9,System.Guid Data.Models.Statistic::get_Guid()
+FNDA:0,System.Guid Data.Models.Statistic::get_Guid()
+DA:10,0
+FN:11,System.Nullable`1<System.Decimal> Data.Models.Statistic::get_TotalSpent()
+FNDA:0,System.Nullable`1<System.Decimal> Data.Models.Statistic::get_TotalSpent()
+DA:12,0
+FN:13,System.Nullable`1<System.Decimal> Data.Models.Statistic::get_TotalIncome()
+FNDA:0,System.Nullable`1<System.Decimal> Data.Models.Statistic::get_TotalIncome()
+DA:14,0
+FN:15,System.Nullable`1<System.Decimal> Data.Models.Statistic::get_SpendingPercent()
+FNDA:0,System.Nullable`1<System.Decimal> Data.Models.Statistic::get_SpendingPercent()
+DA:16,0
+FN:17,System.Nullable`1<System.Decimal> Data.Models.Statistic::get_IncomePercent()
+FNDA:0,System.Nullable`1<System.Decimal> Data.Models.Statistic::get_IncomePercent()
+DA:18,0
+FN:19,System.Nullable`1<System.Int64> Data.Models.Statistic::get_UserId()
+FNDA:0,System.Nullable`1<System.Int64> Data.Models.Statistic::get_UserId()
+DA:20,0
+FN:21,Data.Models.User Data.Models.Statistic::get_User()
+FNDA:0,Data.Models.User Data.Models.Statistic::get_User()
+DA:22,0
+LF:8
+LH:0
+BRF:0
+BRH:0
+FNF:8
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Models/User.cs
+FN:7,System.Int64 Data.Models.User::get_Iduser()
+FNDA:1,System.Int64 Data.Models.User::get_Iduser()
+DA:8,1
+FN:9,System.Guid Data.Models.User::get_Guid()
+FNDA:18,System.Guid Data.Models.User::get_Guid()
+DA:10,18
+FN:11,System.String Data.Models.User::get_FirstName()
+FNDA:18,System.String Data.Models.User::get_FirstName()
+DA:12,18
+FN:13,System.String Data.Models.User::get_LastName()
+FNDA:18,System.String Data.Models.User::get_LastName()
+DA:14,18
+FN:15,System.String Data.Models.User::get_Jmbag()
+FNDA:18,System.String Data.Models.User::get_Jmbag()
+DA:16,18
+FN:17,System.String Data.Models.User::get_Email()
+FNDA:18,System.String Data.Models.User::get_Email()
+DA:18,18
+FN:19,System.String Data.Models.User::get_PhoneNumber()
+FNDA:0,System.String Data.Models.User::get_PhoneNumber()
+DA:20,0
+FN:21,System.String Data.Models.User::get_PassHash()
+FNDA:18,System.String Data.Models.User::get_PassHash()
+DA:22,18
+FN:23,System.Nullable`1<System.Int64> Data.Models.User::get_RoleId()
+FNDA:0,System.Nullable`1<System.Int64> Data.Models.User::get_RoleId()
+DA:24,0
+FN:25,System.Collections.Generic.ICollection`1<Data.Models.BankAccountApi> Data.Models.User::get_BankAccountApis()
+FNDA:9,System.Collections.Generic.ICollection`1<Data.Models.BankAccountApi> Data.Models.User::get_BankAccountApis()
+DA:26,9
+FN:27,System.Collections.Generic.ICollection`1<Data.Models.Budget> Data.Models.User::get_Budgets()
+FNDA:9,System.Collections.Generic.ICollection`1<Data.Models.Budget> Data.Models.User::get_Budgets()
+DA:28,9
+FN:29,System.Collections.Generic.ICollection`1<Data.Models.Expense> Data.Models.User::get_Expenses()
+FNDA:9,System.Collections.Generic.ICollection`1<Data.Models.Expense> Data.Models.User::get_Expenses()
+DA:30,9
+FN:31,System.Collections.Generic.ICollection`1<Data.Models.Income> Data.Models.User::get_Incomes()
+FNDA:9,System.Collections.Generic.ICollection`1<Data.Models.Income> Data.Models.User::get_Incomes()
+DA:32,9
+FN:33,Data.Models.Role Data.Models.User::get_Role()
+FNDA:0,Data.Models.Role Data.Models.User::get_Role()
+DA:34,0
+FN:35,System.Collections.Generic.ICollection`1<Data.Models.Saving> Data.Models.User::get_Savings()
+FNDA:9,System.Collections.Generic.ICollection`1<Data.Models.Saving> Data.Models.User::get_Savings()
+DA:36,9
+FN:37,System.Collections.Generic.ICollection`1<Data.Models.Statistic> Data.Models.User::get_Statistics()
+FNDA:9,System.Collections.Generic.ICollection`1<Data.Models.Statistic> Data.Models.User::get_Statistics()
+DA:38,9
+LF:16
+LH:13
+BRF:0
+BRH:0
+FNF:16
+FNH:13
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Dto/ExceptionResponse.cs
+FN:6,System.Net.HttpStatusCode Data.Dto.ExceptionResponse::get_Status()
+FNDA:0,System.Net.HttpStatusCode Data.Dto.ExceptionResponse::get_Status()
+DA:7,0
+FN:7,System.String Data.Dto.ExceptionResponse::get_Message()
+FNDA:0,System.String Data.Dto.ExceptionResponse::get_Message()
+DA:8,0
+FN:16,System.String Data.Dto.ExceptionResponse::ToJson()
+FNDA:0,System.String Data.Dto.ExceptionResponse::ToJson()
+DA:17,0
+DA:18,0
+DA:19,0
+FN:9,System.Void Data.Dto.ExceptionResponse::.ctor(System.Net.HttpStatusCode,System.String)
+FNDA:0,System.Void Data.Dto.ExceptionResponse::.ctor(System.Net.HttpStatusCode,System.String)
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+LF:10
+LH:0
+BRF:0
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Dto/LogDto.cs
+FN:4,System.String Data.Dto.LogDto::get_Message()
+FNDA:0,System.String Data.Dto.LogDto::get_Message()
+DA:5,0
+FN:5,System.String Data.Dto.LogDto::get_Date()
+FNDA:0,System.String Data.Dto.LogDto::get_Date()
+DA:6,0
+FN:6,System.Int32 Data.Dto.LogDto::get_Lvl()
+FNDA:0,System.Int32 Data.Dto.LogDto::get_Lvl()
+DA:7,0
+LF:3
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Dto/LoginUserDto.cs
+FN:4,System.String Data.Dto.LoginUserDto::get_Username()
+FNDA:0,System.String Data.Dto.LoginUserDto::get_Username()
+DA:5,0
+FN:5,System.String Data.Dto.LoginUserDto::get_Password()
+FNDA:0,System.String Data.Dto.LoginUserDto::get_Password()
+DA:6,0
+LF:2
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Dto/NewUserDto.cs
+FN:4,System.String Data.Dto.NewUserDto::get_FirstName()
+FNDA:0,System.String Data.Dto.NewUserDto::get_FirstName()
+DA:5,0
+FN:6,System.String Data.Dto.NewUserDto::get_LastName()
+FNDA:0,System.String Data.Dto.NewUserDto::get_LastName()
+DA:7,0
+FN:8,System.String Data.Dto.NewUserDto::get_Jmbag()
+FNDA:0,System.String Data.Dto.NewUserDto::get_Jmbag()
+DA:9,0
+FN:10,System.String Data.Dto.NewUserDto::get_Email()
+FNDA:0,System.String Data.Dto.NewUserDto::get_Email()
+DA:11,0
+FN:12,System.String Data.Dto.NewUserDto::get_PhoneNumber()
+FNDA:0,System.String Data.Dto.NewUserDto::get_PhoneNumber()
+DA:13,0
+FN:13,System.String Data.Dto.NewUserDto::get_Password()
+FNDA:0,System.String Data.Dto.NewUserDto::get_Password()
+DA:14,0
+LF:6
+LH:0
+BRF:0
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/Data/Dto/UserDto.cs
+FN:4,System.String Data.Dto.UserDto::get_Guid()
+FNDA:0,System.String Data.Dto.UserDto::get_Guid()
+DA:5,0
+FN:5,System.String Data.Dto.UserDto::get_Username()
+FNDA:0,System.String Data.Dto.UserDto::get_Username()
+DA:6,0
+FN:6,System.Boolean Data.Dto.UserDto::get_Admin()
+FNDA:0,System.Boolean Data.Dto.UserDto::get_Admin()
+DA:7,0
+LF:3
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Program.cs
+FN:6,System.Void Program/<<Main>$>d__0::MoveNext()
+FNDA:0,System.Void Program/<<Main>$>d__0::MoveNext()
+DA:7,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:39,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:49,0
+DA:50,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:60,0
+BRDA:42,481,0,0
+BRDA:42,481,1,0
+LF:44
+LH:0
+BRF:2
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Auth/Login.cshtml
+FN:6,System.Void AspNetCoreGeneratedDocument.Views_Auth_Login/<<ExecuteAsync>b__19_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Auth_Login/<<ExecuteAsync>b__19_0>d::MoveNext()
+DA:7,0
+DA:8,0
+DA:9,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:16,0
+BRDA:7,571,0,0
+BRDA:7,571,1,0
+BRDA:8,1239,0,0
+BRDA:8,1239,1,0
+BRDA:9,1853,0,0
+BRDA:9,1853,1,0
+BRDA:12,2453,0,0
+BRDA:12,2453,1,0
+BRDA:13,3121,0,0
+BRDA:13,3121,1,0
+BRDA:14,3737,0,0
+BRDA:14,3737,1,0
+BRDA:16,4385,0,0
+BRDA:16,4385,1,0
+FN:21,System.Void AspNetCoreGeneratedDocument.Views_Auth_Login/<<ExecuteAsync>b__19_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Auth_Login/<<ExecuteAsync>b__19_1>d::MoveNext()
+DA:22,0
+FN:2,System.Void AspNetCoreGeneratedDocument.Views_Auth_Login/<ExecuteAsync>d__19::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Auth_Login/<ExecuteAsync>d__19::MoveNext()
+DA:3,0
+BRDA:3,462,0,0
+BRDA:3,462,1,0
+LF:9
+LH:0
+BRF:16
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Auth/Register.cshtml
+FN:6,System.Void AspNetCoreGeneratedDocument.Views_Auth_Register/<<ExecuteAsync>b__21_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Auth_Register/<<ExecuteAsync>b__21_0>d::MoveNext()
+DA:7,0
+DA:8,0
+DA:9,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:36,0
+DA:37,0
+DA:38,0
+BRDA:7,790,0,0
+BRDA:7,790,1,0
+BRDA:8,1458,0,0
+BRDA:8,1458,1,0
+BRDA:9,2072,0,0
+BRDA:9,2072,1,0
+BRDA:12,2672,0,0
+BRDA:12,2672,1,0
+BRDA:13,3340,0,0
+BRDA:13,3340,1,0
+BRDA:14,3956,0,0
+BRDA:14,3956,1,0
+BRDA:18,4558,0,0
+BRDA:18,4558,1,0
+BRDA:19,5228,0,0
+BRDA:19,5228,1,0
+BRDA:20,5844,0,0
+BRDA:20,5844,1,0
+BRDA:24,6446,0,0
+BRDA:24,6446,1,0
+BRDA:25,7116,0,0
+BRDA:25,7116,1,0
+BRDA:26,7732,0,0
+BRDA:26,7732,1,0
+BRDA:30,8334,0,0
+BRDA:30,8334,1,0
+BRDA:31,9004,0,0
+BRDA:31,9004,1,0
+BRDA:32,9620,0,0
+BRDA:32,9620,1,0
+BRDA:36,10222,0,0
+BRDA:36,10222,1,0
+BRDA:37,10892,0,0
+BRDA:37,10892,1,0
+BRDA:38,11508,0,0
+BRDA:38,11508,1,0
+BRDA:38,12100,0,0
+BRDA:38,12100,1,0
+FN:44,System.Void AspNetCoreGeneratedDocument.Views_Auth_Register/<<ExecuteAsync>b__21_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Auth_Register/<<ExecuteAsync>b__21_1>d::MoveNext()
+DA:45,0
+FN:2,System.Void AspNetCoreGeneratedDocument.Views_Auth_Register/<ExecuteAsync>d__21::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Auth_Register/<ExecuteAsync>d__21::MoveNext()
+DA:3,0
+BRDA:3,354,0,0
+BRDA:3,354,1,0
+LF:20
+LH:0
+BRF:40
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Budget/Budgets.cshtml
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Budget_Budgets/<ExecuteAsync>d__9::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Budget_Budgets/<ExecuteAsync>d__9::MoveNext()
+DA:4,0
+DA:13,0
+DA:16,0
+DA:22,0
+DA:23,0
+DA:26,0
+DA:29,0
+DA:32,0
+DA:36,0
+DA:40,0
+BRDA:4,414,0,0
+BRDA:4,414,1,0
+BRDA:22,1479,1,0
+BRDA:22,1479,0,0
+LF:10
+LH:0
+BRF:4
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Budget/CreateBudget.cshtml
+FN:14,System.Void AspNetCoreGeneratedDocument.Views_Budget_CreateBudget/<<ExecuteAsync>b__21_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Budget_CreateBudget/<<ExecuteAsync>b__21_0>d::MoveNext()
+DA:15,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:22,0
+DA:23,0
+DA:24,0
+BRDA:15,523,0,0
+BRDA:15,523,1,0
+BRDA:17,1140,0,0
+BRDA:17,1140,1,0
+BRDA:18,1757,0,0
+BRDA:18,1757,1,0
+BRDA:19,2374,0,0
+BRDA:19,2374,1,0
+BRDA:22,2991,0,0
+BRDA:22,2991,1,0
+BRDA:23,3632,0,0
+BRDA:23,3632,1,0
+BRDA:24,4251,0,0
+BRDA:24,4251,1,0
+BRDA:24,4767,0,0
+BRDA:24,4767,1,0
+FN:63,System.Void AspNetCoreGeneratedDocument.Views_Budget_CreateBudget/<<ExecuteAsync>b__21_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Budget_CreateBudget/<<ExecuteAsync>b__21_1>d::MoveNext()
+DA:64,0
+FN:5,System.Void AspNetCoreGeneratedDocument.Views_Budget_CreateBudget/<ExecuteAsync>d__21::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Budget_CreateBudget/<ExecuteAsync>d__21::MoveNext()
+DA:6,0
+DA:52,0
+BRDA:6,442,0,0
+BRDA:6,442,1,0
+LF:10
+LH:0
+BRF:18
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Budget/DeleteBudget.cshtml
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Budget_DeleteBudget/<ExecuteAsync>d__11::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Budget_DeleteBudget/<ExecuteAsync>d__11::MoveNext()
+DA:4,0
+DA:15,0
+DA:18,0
+DA:21,0
+DA:24,0
+BRDA:24,852,0,0
+BRDA:24,852,1,0
+LF:5
+LH:0
+BRF:2
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Budget/DetailsBudget.cshtml
+FN:32,System.Void AspNetCoreGeneratedDocument.Views_Budget_DetailsBudget/<<ExecuteAsync>b__9_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Budget_DetailsBudget/<<ExecuteAsync>b__9_1>d::MoveNext()
+DA:33,0
+FN:9,System.Void AspNetCoreGeneratedDocument.Views_Budget_DetailsBudget/<ExecuteAsync>d__9::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Budget_DetailsBudget/<ExecuteAsync>d__9::MoveNext()
+DA:10,0
+DA:13,0
+BRDA:13,465,0,0
+BRDA:13,465,1,0
+LF:3
+LH:0
+BRF:2
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Budget/EditBudget.cshtml
+FN:11,System.Void AspNetCoreGeneratedDocument.Views_Budget_EditBudget/<<ExecuteAsync>b__21_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Budget_EditBudget/<<ExecuteAsync>b__21_0>d::MoveNext()
+DA:12,0
+DA:13,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:21,0
+DA:22,0
+BRDA:12,523,0,0
+BRDA:12,523,1,0
+BRDA:13,1202,0,0
+BRDA:13,1202,1,0
+BRDA:15,1819,0,0
+BRDA:15,1819,1,0
+BRDA:16,2436,0,0
+BRDA:16,2436,1,0
+BRDA:17,3053,0,0
+BRDA:17,3053,1,0
+BRDA:21,3694,0,0
+BRDA:21,3694,1,0
+BRDA:22,4313,0,0
+BRDA:22,4313,1,0
+BRDA:22,4829,0,0
+BRDA:22,4829,1,0
+FN:65,System.Void AspNetCoreGeneratedDocument.Views_Budget_EditBudget/<<ExecuteAsync>b__21_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Budget_EditBudget/<<ExecuteAsync>b__21_1>d::MoveNext()
+DA:66,0
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Budget_EditBudget/<ExecuteAsync>d__21::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Budget_EditBudget/<ExecuteAsync>d__21::MoveNext()
+DA:4,0
+DA:46,0
+DA:53,0
+BRDA:4,442,0,0
+BRDA:4,442,1,0
+LF:11
+LH:0
+BRF:18
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Category/Categories.cshtml
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Category_Categories/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Category_Categories/<ExecuteAsync>d__0::MoveNext()
+DA:4,0
+DA:5,0
+DA:9,0
+DA:22,0
+DA:23,0
+DA:26,0
+DA:29,0
+DA:32,0
+DA:34,0
+DA:40,0
+BRDA:4,30,1,0
+BRDA:4,30,0,0
+BRDA:22,803,1,0
+BRDA:22,803,0,0
+LF:10
+LH:0
+BRF:4
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Category/CreateCategory.cshtml
+FN:10,System.Void AspNetCoreGeneratedDocument.Views_Category_CreateCategory/<<ExecuteAsync>b__22_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Category_CreateCategory/<<ExecuteAsync>b__22_0>d::MoveNext()
+DA:11,0
+DA:12,0
+DA:13,0
+DA:17,0
+DA:18,0
+BRDA:11,567,0,0
+BRDA:11,567,1,0
+BRDA:12,1181,0,0
+BRDA:12,1181,1,0
+BRDA:13,1795,0,0
+BRDA:13,1795,1,0
+BRDA:17,2409,0,0
+BRDA:17,2409,1,0
+BRDA:18,3077,0,0
+BRDA:18,3077,1,0
+BRDA:18,3615,0,0
+BRDA:18,3615,1,0
+FN:27,System.Void AspNetCoreGeneratedDocument.Views_Category_CreateCategory/<<ExecuteAsync>b__22_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Category_CreateCategory/<<ExecuteAsync>b__22_1>d::MoveNext()
+DA:28,0
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Category_CreateCategory/<ExecuteAsync>d__22::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Category_CreateCategory/<ExecuteAsync>d__22::MoveNext()
+DA:4,0
+DA:5,0
+BRDA:4,51,1,0
+BRDA:4,51,0,0
+BRDA:5,589,0,0
+BRDA:5,589,1,0
+LF:8
+LH:0
+BRF:16
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Category/EditCategory.cshtml
+FN:11,System.Void AspNetCoreGeneratedDocument.Views_Category_EditCategory/<<ExecuteAsync>b__18_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Category_EditCategory/<<ExecuteAsync>b__18_0>d::MoveNext()
+DA:12,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:20,0
+DA:21,0
+DA:26,0
+BRDA:12,629,0,0
+BRDA:12,629,1,0
+BRDA:14,1243,0,0
+BRDA:14,1243,1,0
+BRDA:15,1857,0,0
+BRDA:15,1857,1,0
+BRDA:16,2471,0,0
+BRDA:16,2471,1,0
+BRDA:20,3085,0,0
+BRDA:20,3085,1,0
+BRDA:21,3755,0,0
+BRDA:21,3755,1,0
+FN:30,System.Void AspNetCoreGeneratedDocument.Views_Category_EditCategory/<<ExecuteAsync>b__18_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Category_EditCategory/<<ExecuteAsync>b__18_1>d::MoveNext()
+DA:31,0
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Category_EditCategory/<ExecuteAsync>d__18::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Category_EditCategory/<ExecuteAsync>d__18::MoveNext()
+DA:4,0
+DA:5,0
+BRDA:4,51,1,0
+BRDA:4,51,0,0
+BRDA:5,589,0,0
+BRDA:5,589,1,0
+LF:10
+LH:0
+BRF:16
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Error/Error401.cshtml
+FN:2,System.Void AspNetCoreGeneratedDocument.Views_Error_Error401/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Error_Error401/<ExecuteAsync>d__0::MoveNext()
+DA:3,0
+DA:7,0
+BRDA:7,74,1,0
+BRDA:7,74,0,0
+BRDA:7,166,1,0
+BRDA:7,166,0,0
+LF:2
+LH:0
+BRF:4
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Error/Error404.cshtml
+FN:2,System.Void AspNetCoreGeneratedDocument.Views_Error_Error404/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Error_Error404/<ExecuteAsync>d__0::MoveNext()
+DA:3,0
+DA:7,0
+BRDA:7,74,1,0
+BRDA:7,74,0,0
+BRDA:7,166,1,0
+BRDA:7,166,0,0
+LF:2
+LH:0
+BRF:4
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Error/Error500.cshtml
+FN:2,System.Void AspNetCoreGeneratedDocument.Views_Error_Error500/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Error_Error500/<ExecuteAsync>d__0::MoveNext()
+DA:3,0
+DA:7,0
+BRDA:7,74,1,0
+BRDA:7,74,0,0
+BRDA:7,166,1,0
+BRDA:7,166,0,0
+LF:2
+LH:0
+BRF:4
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Expense/CreateExpense.cshtml
+FN:13,System.Void AspNetCoreGeneratedDocument.Views_Expense_CreateExpense/<<ExecuteAsync>b__20_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Expense_CreateExpense/<<ExecuteAsync>b__20_0>d::MoveNext()
+DA:14,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:31,0
+DA:32,0
+DA:33,0
+BRDA:14,616,0,0
+BRDA:14,616,1,0
+BRDA:16,1233,0,0
+BRDA:16,1233,1,0
+BRDA:17,1850,0,0
+BRDA:17,1850,1,0
+BRDA:18,2467,0,0
+BRDA:18,2467,1,0
+BRDA:21,3084,0,0
+BRDA:21,3084,1,0
+BRDA:22,3703,0,0
+BRDA:22,3703,1,0
+BRDA:23,4322,0,0
+BRDA:23,4322,1,0
+BRDA:26,4941,0,0
+BRDA:26,4941,1,0
+BRDA:27,5614,0,0
+BRDA:27,5614,1,0
+BRDA:28,6233,0,0
+BRDA:28,6233,1,0
+BRDA:31,6852,0,0
+BRDA:31,6852,1,0
+BRDA:32,7338,1,0
+BRDA:32,7338,0,0
+BRDA:32,7398,1,0
+BRDA:32,7398,0,0
+BRDA:32,7679,0,0
+BRDA:32,7679,1,0
+BRDA:33,8298,0,0
+BRDA:33,8298,1,0
+FN:46,System.Void AspNetCoreGeneratedDocument.Views_Expense_CreateExpense/<<ExecuteAsync>b__20_2>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Expense_CreateExpense/<<ExecuteAsync>b__20_2>d::MoveNext()
+DA:47,0
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Expense_CreateExpense/<ExecuteAsync>d__20::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Expense_CreateExpense/<ExecuteAsync>d__20::MoveNext()
+DA:4,0
+BRDA:4,465,0,0
+BRDA:4,465,1,0
+BRDA:4,957,0,0
+BRDA:4,957,1,0
+LF:15
+LH:0
+BRF:34
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Expense/DeleteExpense.cshtml
+FN:40,System.Void AspNetCoreGeneratedDocument.Views_Expense_DeleteExpense/<<ExecuteAsync>b__13_8>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Expense_DeleteExpense/<<ExecuteAsync>b__13_8>d::MoveNext()
+DA:41,0
+BRDA:41,527,0,0
+BRDA:41,527,1,0
+BRDA:41,1019,0,0
+BRDA:41,1019,1,0
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Expense_DeleteExpense/<ExecuteAsync>d__13::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Expense_DeleteExpense/<ExecuteAsync>d__13::MoveNext()
+DA:4,0
+DA:15,0
+DA:18,0
+DA:21,0
+DA:24,0
+DA:27,0
+DA:30,0
+DA:33,0
+DA:36,0
+BRDA:36,1260,0,0
+BRDA:36,1260,1,0
+LF:10
+LH:0
+BRF:6
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Expense/EditExpense.cshtml
+FN:11,System.Void AspNetCoreGeneratedDocument.Views_Expense_EditExpense/<<ExecuteAsync>b__22_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Expense_EditExpense/<<ExecuteAsync>b__22_0>d::MoveNext()
+DA:12,0
+DA:13,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:31,0
+DA:32,0
+BRDA:12,634,0,0
+BRDA:12,634,1,0
+BRDA:13,1313,0,0
+BRDA:13,1313,1,0
+BRDA:15,1930,0,0
+BRDA:15,1930,1,0
+BRDA:16,2547,0,0
+BRDA:16,2547,1,0
+BRDA:17,3164,0,0
+BRDA:17,3164,1,0
+BRDA:20,3783,0,0
+BRDA:20,3783,1,0
+BRDA:21,4402,0,0
+BRDA:21,4402,1,0
+BRDA:22,5021,0,0
+BRDA:22,5021,1,0
+BRDA:25,5640,0,0
+BRDA:25,5640,1,0
+BRDA:26,6313,0,0
+BRDA:26,6313,1,0
+BRDA:27,6932,0,0
+BRDA:27,6932,1,0
+BRDA:31,7573,0,0
+BRDA:31,7573,1,0
+BRDA:32,8192,0,0
+BRDA:32,8192,1,0
+BRDA:32,8708,0,0
+BRDA:32,8708,1,0
+FN:76,System.Void AspNetCoreGeneratedDocument.Views_Expense_EditExpense/<<ExecuteAsync>b__22_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Expense_EditExpense/<<ExecuteAsync>b__22_1>d::MoveNext()
+DA:77,0
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Expense_EditExpense/<ExecuteAsync>d__22::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Expense_EditExpense/<ExecuteAsync>d__22::MoveNext()
+DA:4,0
+DA:56,0
+DA:63,0
+BRDA:4,442,0,0
+BRDA:4,442,1,0
+LF:17
+LH:0
+BRF:30
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Expense/Expenses.cshtml
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Expense_Expenses/<ExecuteAsync>d__9::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Expense_Expenses/<ExecuteAsync>d__9::MoveNext()
+DA:4,0
+DA:16,0
+DA:19,0
+DA:22,0
+DA:25,0
+DA:31,0
+DA:32,0
+DA:35,0
+DA:38,0
+DA:41,0
+DA:44,0
+DA:47,0
+DA:51,0
+DA:55,0
+BRDA:4,414,0,0
+BRDA:4,414,1,0
+BRDA:31,1887,1,0
+BRDA:31,1887,0,0
+LF:14
+LH:0
+BRF:4
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Home/Index.cshtml
+FN:1,System.Void AspNetCoreGeneratedDocument.Views_Home_Index/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Home_Index/<ExecuteAsync>d__0::MoveNext()
+DA:2,0
+LF:1
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Income/CreateIncome.cshtml
+FN:10,System.Void AspNetCoreGeneratedDocument.Views_Income_CreateIncome/<<ExecuteAsync>b__19_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Income_CreateIncome/<<ExecuteAsync>b__19_0>d::MoveNext()
+DA:11,0
+DA:12,0
+DA:13,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:29,0
+DA:30,0
+DA:31,0
+BRDA:11,675,0,0
+BRDA:11,675,1,0
+BRDA:12,1343,0,0
+BRDA:12,1343,1,0
+BRDA:13,1957,0,0
+BRDA:13,1957,1,0
+BRDA:17,2571,0,0
+BRDA:17,2571,1,0
+BRDA:18,3185,0,0
+BRDA:18,3185,1,0
+BRDA:19,3801,0,0
+BRDA:19,3801,1,0
+BRDA:23,4417,0,0
+BRDA:23,4417,1,0
+BRDA:24,5087,0,0
+BRDA:24,5087,1,0
+BRDA:25,5703,0,0
+BRDA:25,5703,1,0
+BRDA:29,6319,0,0
+BRDA:29,6319,1,0
+BRDA:30,7007,0,0
+BRDA:30,7007,1,0
+BRDA:31,7623,0,0
+BRDA:31,7623,1,0
+FN:40,System.Void AspNetCoreGeneratedDocument.Views_Income_CreateIncome/<<ExecuteAsync>b__19_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Income_CreateIncome/<<ExecuteAsync>b__19_1>d::MoveNext()
+DA:41,0
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Income_CreateIncome/<ExecuteAsync>d__19::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Income_CreateIncome/<ExecuteAsync>d__19::MoveNext()
+DA:4,0
+BRDA:4,496,0,0
+BRDA:4,496,1,0
+LF:14
+LH:0
+BRF:26
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Income/EditIncome.cshtml
+FN:10,System.Void AspNetCoreGeneratedDocument.Views_Income_EditIncome/<<ExecuteAsync>b__18_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Income_EditIncome/<<ExecuteAsync>b__18_0>d::MoveNext()
+DA:11,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:38,0
+BRDA:11,758,0,0
+BRDA:11,758,1,0
+BRDA:13,1372,0,0
+BRDA:13,1372,1,0
+BRDA:14,1986,0,0
+BRDA:14,1986,1,0
+BRDA:15,2600,0,0
+BRDA:15,2600,1,0
+BRDA:19,3214,0,0
+BRDA:19,3214,1,0
+BRDA:20,3830,0,0
+BRDA:20,3830,1,0
+BRDA:21,4446,0,0
+BRDA:21,4446,1,0
+BRDA:25,5062,0,0
+BRDA:25,5062,1,0
+BRDA:26,5732,0,0
+BRDA:26,5732,1,0
+BRDA:27,6348,0,0
+BRDA:27,6348,1,0
+BRDA:31,6964,0,0
+BRDA:31,6964,1,0
+BRDA:32,7652,0,0
+BRDA:32,7652,1,0
+BRDA:33,8268,0,0
+BRDA:33,8268,1,0
+FN:42,System.Void AspNetCoreGeneratedDocument.Views_Income_EditIncome/<<ExecuteAsync>b__18_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Income_EditIncome/<<ExecuteAsync>b__18_1>d::MoveNext()
+DA:43,0
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Income_EditIncome/<ExecuteAsync>d__18::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Income_EditIncome/<ExecuteAsync>d__18::MoveNext()
+DA:4,0
+DA:5,0
+BRDA:4,51,1,0
+BRDA:4,51,0,0
+BRDA:5,589,0,0
+BRDA:5,589,1,0
+LF:17
+LH:0
+BRF:30
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Income/Incomes.cshtml
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Income_Incomes/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Income_Incomes/<ExecuteAsync>d__0::MoveNext()
+DA:4,0
+DA:8,0
+DA:22,0
+DA:23,0
+DA:26,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:32,0
+DA:34,0
+DA:40,0
+BRDA:22,737,1,0
+BRDA:22,737,0,0
+LF:11
+LH:0
+BRF:2
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Savings/CreateSaving.cshtml
+FN:13,System.Void AspNetCoreGeneratedDocument.Views_Savings_CreateSaving/<<ExecuteAsync>b__18_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Savings_CreateSaving/<<ExecuteAsync>b__18_0>d::MoveNext()
+DA:14,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:21,0
+DA:22,0
+DA:23,0
+BRDA:14,505,0,0
+BRDA:14,505,1,0
+BRDA:16,1122,0,0
+BRDA:16,1122,1,0
+BRDA:17,1739,0,0
+BRDA:17,1739,1,0
+BRDA:18,2356,0,0
+BRDA:18,2356,1,0
+BRDA:21,2973,0,0
+BRDA:21,2973,1,0
+BRDA:22,3592,0,0
+BRDA:22,3592,1,0
+BRDA:23,4211,0,0
+BRDA:23,4211,1,0
+FN:36,System.Void AspNetCoreGeneratedDocument.Views_Savings_CreateSaving/<<ExecuteAsync>b__18_2>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Savings_CreateSaving/<<ExecuteAsync>b__18_2>d::MoveNext()
+DA:37,0
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Savings_CreateSaving/<ExecuteAsync>d__18::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Savings_CreateSaving/<ExecuteAsync>d__18::MoveNext()
+DA:4,0
+BRDA:4,465,0,0
+BRDA:4,465,1,0
+BRDA:4,957,0,0
+BRDA:4,957,1,0
+LF:9
+LH:0
+BRF:18
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Savings/DetailsSaving.cshtml
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Savings_DetailsSaving/<ExecuteAsync>d__8::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Savings_DetailsSaving/<ExecuteAsync>d__8::MoveNext()
+DA:4,0
+DA:14,0
+DA:17,0
+DA:20,0
+DA:23,0
+DA:26,0
+DA:29,0
+DA:32,0
+DA:35,0
+DA:40,0
+BRDA:40,1286,0,0
+BRDA:40,1286,1,0
+LF:10
+LH:0
+BRF:2
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Savings/EditSaving.cshtml
+FN:13,System.Void AspNetCoreGeneratedDocument.Views_Savings_EditSaving/<<ExecuteAsync>b__18_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Savings_EditSaving/<<ExecuteAsync>b__18_0>d::MoveNext()
+DA:14,0
+DA:15,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:22,0
+DA:23,0
+DA:24,0
+BRDA:14,665,0,0
+BRDA:14,665,1,0
+BRDA:15,1201,0,0
+BRDA:15,1201,1,0
+BRDA:17,1815,0,0
+BRDA:17,1815,1,0
+BRDA:18,2429,0,0
+BRDA:18,2429,1,0
+BRDA:19,3043,0,0
+BRDA:19,3043,1,0
+BRDA:22,3659,0,0
+BRDA:22,3659,1,0
+BRDA:23,4275,0,0
+BRDA:23,4275,1,0
+BRDA:24,4891,0,0
+BRDA:24,4891,1,0
+FN:37,System.Void AspNetCoreGeneratedDocument.Views_Savings_EditSaving/<<ExecuteAsync>b__18_2>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Savings_EditSaving/<<ExecuteAsync>b__18_2>d::MoveNext()
+DA:38,0
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Savings_EditSaving/<ExecuteAsync>d__18::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Savings_EditSaving/<ExecuteAsync>d__18::MoveNext()
+DA:4,0
+BRDA:4,465,0,0
+BRDA:4,465,1,0
+BRDA:4,957,0,0
+BRDA:4,957,1,0
+LF:10
+LH:0
+BRF:20
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Savings/Savings.cshtml
+FN:3,System.Void AspNetCoreGeneratedDocument.Views_Savings_Savings/<ExecuteAsync>d__9::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Savings_Savings/<ExecuteAsync>d__9::MoveNext()
+DA:4,0
+DA:16,0
+DA:19,0
+DA:22,0
+DA:28,0
+DA:29,0
+DA:32,0
+DA:35,0
+DA:38,0
+DA:41,0
+DA:45,0
+DA:49,0
+BRDA:4,414,0,0
+BRDA:4,414,1,0
+BRDA:28,1664,1,0
+BRDA:38,1303,0,0
+BRDA:38,1303,1,0
+BRDA:28,1664,0,0
+LF:12
+LH:0
+BRF:6
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Shared/Error.cshtml
+FN:2,System.Void AspNetCoreGeneratedDocument.Views_Shared_Error/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Shared_Error/<ExecuteAsync>d__0::MoveNext()
+DA:3,0
+DA:9,0
+DA:10,0
+DA:12,0
+DA:14,0
+BRDA:9,70,0,0
+BRDA:9,70,1,0
+LF:5
+LH:0
+BRF:2
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/User/Account.cshtml
+FN:12,System.Void AspNetCoreGeneratedDocument.Views_User_Account/<<ExecuteAsync>b__18_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_User_Account/<<ExecuteAsync>b__18_0>d::MoveNext()
+DA:13,0
+DA:14,0
+BRDA:13,481,0,0
+BRDA:13,481,1,0
+BRDA:14,1117,0,0
+BRDA:14,1117,1,0
+FN:2,System.Void AspNetCoreGeneratedDocument.Views_User_Account/<ExecuteAsync>d__18::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_User_Account/<ExecuteAsync>d__18::MoveNext()
+DA:3,0
+DA:4,0
+DA:32,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:74,0
+DA:89,0
+BRDA:4,445,0,0
+BRDA:4,445,1,0
+BRDA:4,1085,0,0
+BRDA:4,1085,1,0
+BRDA:34,1434,1,0
+BRDA:34,1434,0,0
+LF:11
+LH:0
+BRF:10
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/User/Users.cshtml
+FN:2,System.Void AspNetCoreGeneratedDocument.Views_User_Users/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_User_Users/<ExecuteAsync>d__0::MoveNext()
+DA:3,0
+DA:13,0
+DA:14,0
+DA:16,0
+DA:17,0
+DA:19,0
+DA:22,0
+BRDA:3,13,1,0
+BRDA:3,13,0,0
+BRDA:13,442,1,0
+BRDA:13,442,0,0
+LF:7
+LH:0
+BRF:4
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/_ViewStart.cshtml
+FN:1,System.Void AspNetCoreGeneratedDocument.Views__ViewStart/<ExecuteAsync>d__0::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views__ViewStart/<ExecuteAsync>d__0::MoveNext()
+DA:2,0
+LF:1
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Views/Shared/_Layout.cshtml
+FN:6,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__36_0>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__36_0>d::MoveNext()
+DA:7,0
+DA:9,0
+BRDA:7,425,0,0
+BRDA:7,425,1,0
+BRDA:9,1070,0,0
+BRDA:9,1070,1,0
+FN:15,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__36_1>d::MoveNext()
+FNDA:0,System.Void AspNetCoreGeneratedDocument.Views_Shared__Layout/<<ExecuteAsync>b__36_1>d::MoveNext()
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:25,0
+DA:38,0
+DA:39,0
+DA:55,0
+DA:60,0
+DA:61,0
+DA:63,0
+DA:68,0
+DA:70,0
+DA:72,0
+DA:75,0
+DA:81,0
+DA:88,0
+DA:89,0
+DA:92,0
+DA:95,0
+DA:97,0
+DA:100,0
+DA:103,0
+DA:112,0
+DA:124,0
+BRDA:19,309,0,0
+BRDA:19,309,1,0
+BRDA:19,340,0,0
+BRDA:19,340,1,0
+BRDA:25,437,0,0
+BRDA:25,437,1,0
+BRDA:25,904,0,0
+BRDA:25,904,1,0
+BRDA:25,1526,0,0
+BRDA:25,1526,1,0
+BRDA:38,1721,0,0
+BRDA:39,2181,0,0
+BRDA:39,2181,1,0
+BRDA:39,2803,0,0
+BRDA:39,2803,1,0
+BRDA:39,3425,0,0
+BRDA:39,3425,1,0
+BRDA:39,4049,0,0
+BRDA:39,4049,1,0
+BRDA:39,4673,0,0
+BRDA:39,4673,1,0
+BRDA:38,1721,1,0
+BRDA:60,4887,0,0
+BRDA:60,4887,1,0
+BRDA:75,5908,0,0
+BRDA:75,5908,1,0
+BRDA:88,6152,0,0
+BRDA:88,6152,1,0
+BRDA:103,6707,0,0
+BRDA:103,6707,1,0
+BRDA:103,7183,0,0
+BRDA:103,7183,1,0
+BRDA:103,7659,0,0
+BRDA:103,7659,1,0
+BRDA:112,8284,0,0
+BRDA:112,8284,1,0
+LF:31
+LH:0
+BRF:40
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/ViewModels/BudgetVM.cs
+FN:4,System.String WebApp.ViewModels.BudgetVM::get_Guid()
+FNDA:0,System.String WebApp.ViewModels.BudgetVM::get_Guid()
+DA:5,0
+FN:6,System.Decimal WebApp.ViewModels.BudgetVM::get_Sum()
+FNDA:0,System.Decimal WebApp.ViewModels.BudgetVM::get_Sum()
+DA:7,0
+FN:8,System.String WebApp.ViewModels.BudgetVM::get_UserGuid()
+FNDA:0,System.String WebApp.ViewModels.BudgetVM::get_UserGuid()
+DA:9,0
+FN:10,System.String WebApp.ViewModels.BudgetVM::get_CategoryGuid()
+FNDA:0,System.String WebApp.ViewModels.BudgetVM::get_CategoryGuid()
+DA:11,0
+FN:12,System.String WebApp.ViewModels.BudgetVM::get_CategoryName()
+FNDA:0,System.String WebApp.ViewModels.BudgetVM::get_CategoryName()
+DA:13,0
+FN:13,System.String WebApp.ViewModels.BudgetVM::get_UserName()
+FNDA:0,System.String WebApp.ViewModels.BudgetVM::get_UserName()
+DA:14,0
+LF:6
+LH:0
+BRF:0
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/ViewModels/CategoryVM.cs
+FN:6,System.String WebApp.ViewModels.CategoryVM::get_Guid()
+FNDA:4,System.String WebApp.ViewModels.CategoryVM::get_Guid()
+DA:7,4
+FN:10,System.String WebApp.ViewModels.CategoryVM::get_Name()
+FNDA:5,System.String WebApp.ViewModels.CategoryVM::get_Name()
+DA:11,5
+FN:11,System.String WebApp.ViewModels.CategoryVM::get_Color()
+FNDA:5,System.String WebApp.ViewModels.CategoryVM::get_Color()
+DA:12,5
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:3
+FNH:3
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/ViewModels/ErrorViewModel.cs
+FN:4,System.String WebApp.ViewModels.ErrorViewModel::get_RequestId()
+FNDA:0,System.String WebApp.ViewModels.ErrorViewModel::get_RequestId()
+DA:5,0
+FN:6,System.Boolean WebApp.ViewModels.ErrorViewModel::get_ShowRequestId()
+FNDA:0,System.Boolean WebApp.ViewModels.ErrorViewModel::get_ShowRequestId()
+DA:7,0
+LF:2
+LH:0
+BRF:0
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/ViewModels/ExpenseVM.cs
+FN:4,System.String WebApp.ViewModels.ExpenseVM::get_Guid()
+FNDA:0,System.String WebApp.ViewModels.ExpenseVM::get_Guid()
+DA:5,0
+FN:6,System.Decimal WebApp.ViewModels.ExpenseVM::get_Sum()
+FNDA:0,System.Decimal WebApp.ViewModels.ExpenseVM::get_Sum()
+DA:7,0
+FN:8,System.String WebApp.ViewModels.ExpenseVM::get_Description()
+FNDA:0,System.String WebApp.ViewModels.ExpenseVM::get_Description()
+DA:9,0
+FN:10,System.DateTime WebApp.ViewModels.ExpenseVM::get_Date()
+FNDA:0,System.DateTime WebApp.ViewModels.ExpenseVM::get_Date()
+DA:11,0
+FN:12,System.String WebApp.ViewModels.ExpenseVM::get_UserGuid()
+FNDA:0,System.String WebApp.ViewModels.ExpenseVM::get_UserGuid()
+DA:13,0
+FN:14,System.String WebApp.ViewModels.ExpenseVM::get_CategoryGuid()
+FNDA:0,System.String WebApp.ViewModels.ExpenseVM::get_CategoryGuid()
+DA:15,0
+FN:16,System.String WebApp.ViewModels.ExpenseVM::get_CategoryName()
+FNDA:0,System.String WebApp.ViewModels.ExpenseVM::get_CategoryName()
+DA:17,0
+FN:18,System.String WebApp.ViewModels.ExpenseVM::get_UserName()
+FNDA:0,System.String WebApp.ViewModels.ExpenseVM::get_UserName()
+DA:19,0
+LF:8
+LH:0
+BRF:0
+BRH:0
+FNF:8
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/ViewModels/IncomeVM.cs
+FN:8,System.String WebApp.ViewModels.IncomeVM::get_Guid()
+FNDA:6,System.String WebApp.ViewModels.IncomeVM::get_Guid()
+DA:9,6
+FN:12,System.Decimal WebApp.ViewModels.IncomeVM::get_Sum()
+FNDA:9,System.Decimal WebApp.ViewModels.IncomeVM::get_Sum()
+DA:13,9
+FN:15,System.String WebApp.ViewModels.IncomeVM::get_Source()
+FNDA:9,System.String WebApp.ViewModels.IncomeVM::get_Source()
+DA:16,9
+FN:19,System.DateTime WebApp.ViewModels.IncomeVM::get_Date()
+FNDA:9,System.DateTime WebApp.ViewModels.IncomeVM::get_Date()
+DA:20,9
+FN:23,Data.Enums.Frequency WebApp.ViewModels.IncomeVM::get_Frequency()
+FNDA:9,Data.Enums.Frequency WebApp.ViewModels.IncomeVM::get_Frequency()
+DA:24,9
+FN:25,System.Collections.Generic.List`1<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> WebApp.ViewModels.IncomeVM::get_Frequencies()
+FNDA:6,System.Collections.Generic.List`1<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> WebApp.ViewModels.IncomeVM::get_Frequencies()
+DA:26,6
+FN:26,System.Void WebApp.ViewModels.IncomeVM::.ctor()
+FNDA:6,System.Void WebApp.ViewModels.IncomeVM::.ctor()
+DA:27,6
+DA:28,36
+DA:29,36
+DA:30,36
+DA:31,36
+DA:32,36
+LF:12
+LH:12
+BRF:0
+BRH:0
+FNF:7
+FNH:7
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/ViewModels/LoginVM.cs
+FN:8,System.String WebApp.ViewModels.LoginVM::get_Username()
+FNDA:0,System.String WebApp.ViewModels.LoginVM::get_Username()
+DA:9,0
+FN:12,System.String WebApp.ViewModels.LoginVM::get_Password()
+FNDA:0,System.String WebApp.ViewModels.LoginVM::get_Password()
+DA:13,0
+FN:14,System.String WebApp.ViewModels.LoginVM::get_ReturnUrl()
+FNDA:0,System.String WebApp.ViewModels.LoginVM::get_ReturnUrl()
+DA:15,0
+LF:3
+LH:0
+BRF:0
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/ViewModels/RegisterVM.cs
+FN:8,System.String WebApp.ViewModels.RegisterVM::get_Email()
+FNDA:0,System.String WebApp.ViewModels.RegisterVM::get_Email()
+DA:9,0
+FN:12,System.String WebApp.ViewModels.RegisterVM::get_Password()
+FNDA:0,System.String WebApp.ViewModels.RegisterVM::get_Password()
+DA:13,0
+FN:16,System.String WebApp.ViewModels.RegisterVM::get_FirstName()
+FNDA:0,System.String WebApp.ViewModels.RegisterVM::get_FirstName()
+DA:17,0
+FN:20,System.String WebApp.ViewModels.RegisterVM::get_LastName()
+FNDA:0,System.String WebApp.ViewModels.RegisterVM::get_LastName()
+DA:21,0
+FN:24,System.String WebApp.ViewModels.RegisterVM::get_Jmbag()
+FNDA:0,System.String WebApp.ViewModels.RegisterVM::get_Jmbag()
+DA:25,0
+FN:27,System.String WebApp.ViewModels.RegisterVM::get_PhoneNumber()
+FNDA:0,System.String WebApp.ViewModels.RegisterVM::get_PhoneNumber()
+DA:28,0
+LF:6
+LH:0
+BRF:0
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/ViewModels/SavingsVM.cs
+FN:3,System.Int64 WebApp.ViewModels.SavingsVM::get_Id()
+FNDA:0,System.Int64 WebApp.ViewModels.SavingsVM::get_Id()
+DA:4,0
+FN:5,System.Nullable`1<System.Decimal> WebApp.ViewModels.SavingsVM::get_Goal()
+FNDA:0,System.Nullable`1<System.Decimal> WebApp.ViewModels.SavingsVM::get_Goal()
+DA:6,0
+FN:7,System.Nullable`1<System.Decimal> WebApp.ViewModels.SavingsVM::get_Current()
+FNDA:0,System.Nullable`1<System.Decimal> WebApp.ViewModels.SavingsVM::get_Current()
+DA:8,0
+FN:9,System.Nullable`1<System.Int64> WebApp.ViewModels.SavingsVM::get_UserId()
+FNDA:0,System.Nullable`1<System.Int64> WebApp.ViewModels.SavingsVM::get_UserId()
+DA:10,0
+FN:11,System.String WebApp.ViewModels.SavingsVM::get_Guid()
+FNDA:0,System.String WebApp.ViewModels.SavingsVM::get_Guid()
+DA:12,0
+FN:13,System.Nullable`1<System.DateTime> WebApp.ViewModels.SavingsVM::get_Date()
+FNDA:0,System.Nullable`1<System.DateTime> WebApp.ViewModels.SavingsVM::get_Date()
+DA:14,0
+FN:15,System.String WebApp.ViewModels.SavingsVM::get_UserName()
+FNDA:0,System.String WebApp.ViewModels.SavingsVM::get_UserName()
+DA:16,0
+LF:7
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/ViewModels/SearchVM.cs
+FN:4,System.String WebApp.ViewModels.SearchVM`1::get_Query()
+FNDA:0,System.String WebApp.ViewModels.SearchVM`1::get_Query()
+DA:5,0
+FN:5,System.Int32 WebApp.ViewModels.SearchVM`1::get_Page()
+FNDA:0,System.Int32 WebApp.ViewModels.SearchVM`1::get_Page()
+DA:6,0
+FN:6,System.Int32 WebApp.ViewModels.SearchVM`1::get_Size()
+FNDA:0,System.Int32 WebApp.ViewModels.SearchVM`1::get_Size()
+DA:7,0
+FN:7,System.Int32 WebApp.ViewModels.SearchVM`1::get_Count()
+FNDA:0,System.Int32 WebApp.ViewModels.SearchVM`1::get_Count()
+DA:8,0
+FN:8,System.Int32 WebApp.ViewModels.SearchVM`1::get_LastPage()
+FNDA:0,System.Int32 WebApp.ViewModels.SearchVM`1::get_LastPage()
+DA:9,0
+FN:9,System.Int32 WebApp.ViewModels.SearchVM`1::get_FromPage()
+FNDA:0,System.Int32 WebApp.ViewModels.SearchVM`1::get_FromPage()
+DA:10,0
+FN:10,System.Int32 WebApp.ViewModels.SearchVM`1::get_ToPage()
+FNDA:0,System.Int32 WebApp.ViewModels.SearchVM`1::get_ToPage()
+DA:11,0
+FN:11,System.Collections.Generic.IEnumerable`1<T> WebApp.ViewModels.SearchVM`1::get_Items()
+FNDA:0,System.Collections.Generic.IEnumerable`1<T> WebApp.ViewModels.SearchVM`1::get_Items()
+DA:12,0
+LF:8
+LH:0
+BRF:0
+BRH:0
+FNF:8
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/ViewModels/UserVM.cs
+FN:4,System.String WebApp.ViewModels.UserVM::get_Guid()
+FNDA:0,System.String WebApp.ViewModels.UserVM::get_Guid()
+DA:5,0
+FN:5,System.String WebApp.ViewModels.UserVM::get_Username()
+FNDA:0,System.String WebApp.ViewModels.UserVM::get_Username()
+DA:6,0
+FN:6,System.Boolean WebApp.ViewModels.UserVM::get_Admin()
+FNDA:0,System.Boolean WebApp.ViewModels.UserVM::get_Admin()
+DA:7,0
+FN:7,System.Collections.Generic.List`1<System.String> WebApp.ViewModels.UserVM::get_Downloads()
+FNDA:0,System.Collections.Generic.List`1<System.String> WebApp.ViewModels.UserVM::get_Downloads()
+DA:8,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Helpers/ExceptionRedirectMiddleware.cs
+FN:10,System.Void WebApp.Helpers.ExceptionRedirectMiddleware::.ctor(Microsoft.AspNetCore.Http.RequestDelegate)
+FNDA:0,System.Void WebApp.Helpers.ExceptionRedirectMiddleware::.ctor(Microsoft.AspNetCore.Http.RequestDelegate)
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+FN:28,System.Void WebApp.Helpers.ExceptionRedirectMiddleware/<HandleExceptionAsync>d__3::MoveNext()
+FNDA:0,System.Void WebApp.Helpers.ExceptionRedirectMiddleware/<HandleExceptionAsync>d__3::MoveNext()
+DA:29,0
+DA:30,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:54,0
+DA:55,0
+BRDA:34,88,0,0
+BRDA:34,88,1,0
+BRDA:34,101,1,0
+BRDA:34,101,0,0
+FN:16,System.Void WebApp.Helpers.ExceptionRedirectMiddleware/<InvokeAsync>d__2::MoveNext()
+FNDA:0,System.Void WebApp.Helpers.ExceptionRedirectMiddleware/<InvokeAsync>d__2::MoveNext()
+DA:17,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+LF:33
+LH:0
+BRF:4
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Helpers/HttpContextHelpers.cs
+FN:7,System.Guid WebApp.Helpers.HttpContextHelpers::GetUserGuid(Microsoft.AspNetCore.Http.HttpContext)
+FNDA:6,System.Guid WebApp.Helpers.HttpContextHelpers::GetUserGuid(Microsoft.AspNetCore.Http.HttpContext)
+DA:8,6
+DA:9,10
+DA:10,6
+DA:11,2
+DA:12,4
+DA:13,4
+BRDA:9,49,0,2
+BRDA:9,49,1,4
+BRDA:10,67,0,2
+BRDA:10,67,1,4
+LF:6
+LH:6
+BRF:4
+BRH:4
+FNF:1
+FNH:1
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Helpers/MapperProfile.cs
+FN:11,System.Void WebApp.Helpers.MapperProfile::.ctor()
+FNDA:21,System.Void WebApp.Helpers.MapperProfile::.ctor()
+DA:12,21
+DA:13,21
+DA:14,21
+DA:15,21
+DA:16,42
+DA:17,21
+DA:18,21
+DA:19,21
+DA:20,21
+DA:22,21
+DA:23,21
+DA:24,21
+DA:25,21
+DA:26,42
+DA:27,21
+DA:28,21
+DA:29,42
+DA:31,21
+DA:32,21
+DA:33,21
+DA:34,21
+DA:35,42
+DA:36,21
+DA:37,42
+DA:38,21
+DA:39,21
+DA:40,42
+DA:42,21
+DA:43,21
+DA:44,21
+DA:45,21
+DA:46,21
+DA:47,42
+DA:50,21
+DA:51,21
+DA:52,21
+DA:53,42
+DA:55,21
+DA:56,21
+DA:57,42
+DA:59,21
+DA:60,21
+DA:61,42
+DA:63,21
+DA:64,21
+DA:65,21
+DA:66,21
+DA:67,42
+DA:69,21
+DA:70,21
+DA:71,21
+DA:72,42
+DA:73,21
+LF:53
+LH:53
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Controllers/AuthController.cs
+FN:23,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.AuthController::Login(System.String)
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.AuthController::Login(System.String)
+DA:24,0
+DA:25,0
+DA:26,0
+FN:40,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.AuthController::Register()
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.AuthController::Register()
+DA:41,0
+DA:42,0
+DA:43,0
+FN:52,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.AuthController::Logout(System.String)
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.AuthController::Logout(System.String)
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+FN:58,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.AuthController::AccessDenied()
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.AuthController::AccessDenied()
+DA:59,0
+DA:60,0
+DA:61,0
+FN:16,System.Void WebApp.Controllers.AuthController::.ctor(Data.Services.IUserServices,AutoMapper.IMapper)
+FNDA:0,System.Void WebApp.Controllers.AuthController::.ctor(Data.Services.IUserServices,AutoMapper.IMapper)
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+FN:28,System.Void WebApp.Controllers.AuthController/<LoginAction>d__4::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.AuthController/<LoginAction>d__4::MoveNext()
+DA:29,0
+DA:30,0
+DA:32,0
+DA:33,0
+DA:35,0
+DA:37,0
+DA:38,0
+FN:45,System.Void WebApp.Controllers.AuthController/<RegisterAction>d__6::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.AuthController/<RegisterAction>d__6::MoveNext()
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+LF:29
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Controllers/BudgetController.cs
+FN:46,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.BudgetController::CreateBudget()
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.BudgetController::CreateBudget()
+DA:47,0
+DA:48,0
+DA:49,0
+FN:18,System.Void WebApp.Controllers.BudgetController::.ctor(Data.Services.IBudgetService,AutoMapper.IMapper,Data.Services.ICategoryService,Data.Services.IUserServices)
+FNDA:0,System.Void WebApp.Controllers.BudgetController::.ctor(Data.Services.IBudgetService,AutoMapper.IMapper,Data.Services.ICategoryService,Data.Services.IUserServices)
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+FN:29,System.Boolean WebApp.Controllers.BudgetController/<>c::<Budgets>b__5_0(System.Security.Claims.Claim)
+FNDA:0,System.Boolean WebApp.Controllers.BudgetController/<>c::<Budgets>b__5_0(System.Security.Claims.Claim)
+DA:30,0
+FN:28,System.Void WebApp.Controllers.BudgetController/<Budgets>d__5::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.BudgetController/<Budgets>d__5::MoveNext()
+DA:29,0
+DA:31,0
+DA:32,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+BRDA:30,77,0,0
+BRDA:30,77,1,0
+BRDA:31,104,0,0
+BRDA:31,104,1,0
+FN:51,System.Void WebApp.Controllers.BudgetController/<CreateBudgetAction>d__8::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.BudgetController/<CreateBudgetAction>d__8::MoveNext()
+DA:52,0
+DA:53,0
+DA:55,0
+DA:56,0
+DA:58,0
+DA:59,0
+DA:60,0
+FN:75,System.Void WebApp.Controllers.BudgetController/<DeleteBudget>d__10::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.BudgetController/<DeleteBudget>d__10::MoveNext()
+DA:76,0
+DA:77,0
+DA:78,0
+DA:79,0
+FN:81,System.Void WebApp.Controllers.BudgetController/<DetailsBudget>d__11::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.BudgetController/<DetailsBudget>d__11::MoveNext()
+DA:82,0
+DA:83,0
+DA:84,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:89,0
+BRDA:83,28,0,0
+BRDA:83,28,1,0
+FN:39,System.Void WebApp.Controllers.BudgetController/<EditBudget>d__6::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.BudgetController/<EditBudget>d__6::MoveNext()
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+FN:62,System.Void WebApp.Controllers.BudgetController/<EditBudgetAction>d__9::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.BudgetController/<EditBudgetAction>d__9::MoveNext()
+DA:63,0
+DA:64,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:71,0
+DA:72,0
+DA:73,0
+LF:51
+LH:0
+BRF:6
+BRH:0
+FNF:9
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Controllers/CategoryController.cs
+FN:31,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.CategoryController::CreateCategory()
+FNDA:1,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.CategoryController::CreateCategory()
+DA:32,1
+DA:33,1
+DA:34,1
+FN:16,System.Void WebApp.Controllers.CategoryController::.ctor(Data.Services.ICategoryService,AutoMapper.IMapper)
+FNDA:7,System.Void WebApp.Controllers.CategoryController::.ctor(Data.Services.ICategoryService,AutoMapper.IMapper)
+DA:17,7
+DA:18,7
+DA:19,7
+DA:20,7
+DA:21,7
+FN:68,Data.Models.PropDto WebApp.Controllers.CategoryController/<>c::<CategoryProps>b__9_0(Data.Models.Category)
+FNDA:2,Data.Models.PropDto WebApp.Controllers.CategoryController/<>c::<CategoryProps>b__9_0(Data.Models.Category)
+DA:69,2
+DA:70,2
+DA:71,2
+DA:72,2
+DA:73,2
+FN:23,System.Void WebApp.Controllers.CategoryController/<Categories>d__3::MoveNext()
+FNDA:1,System.Void WebApp.Controllers.CategoryController/<Categories>d__3::MoveNext()
+DA:24,1
+DA:25,1
+DA:26,1
+DA:27,1
+DA:28,1
+DA:29,1
+FN:65,System.Void WebApp.Controllers.CategoryController/<CategoryProps>d__9::MoveNext()
+FNDA:1,System.Void WebApp.Controllers.CategoryController/<CategoryProps>d__9::MoveNext()
+DA:66,1
+DA:67,1
+DA:68,1
+DA:75,1
+DA:76,1
+FN:36,System.Void WebApp.Controllers.CategoryController/<CreateCategoryAction>d__5::MoveNext()
+FNDA:1,System.Void WebApp.Controllers.CategoryController/<CreateCategoryAction>d__5::MoveNext()
+DA:37,1
+DA:38,1
+DA:39,1
+DA:40,1
+DA:41,1
+FN:59,System.Void WebApp.Controllers.CategoryController/<DeleteCategory>d__8::MoveNext()
+FNDA:1,System.Void WebApp.Controllers.CategoryController/<DeleteCategory>d__8::MoveNext()
+DA:60,1
+DA:61,1
+DA:62,1
+DA:63,1
+FN:43,System.Void WebApp.Controllers.CategoryController/<EditCategory>d__6::MoveNext()
+FNDA:1,System.Void WebApp.Controllers.CategoryController/<EditCategory>d__6::MoveNext()
+DA:44,1
+DA:45,1
+DA:46,1
+DA:48,1
+DA:49,1
+FN:51,System.Void WebApp.Controllers.CategoryController/<EditCategoryAction>d__7::MoveNext()
+FNDA:1,System.Void WebApp.Controllers.CategoryController/<EditCategoryAction>d__7::MoveNext()
+DA:52,1
+DA:53,1
+DA:54,1
+DA:55,1
+DA:56,1
+DA:57,1
+LF:44
+LH:44
+BRF:0
+BRH:0
+FNF:9
+FNH:9
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Controllers/ErrorController.cs
+FN:8,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.ErrorController::Error404(System.String)
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.ErrorController::Error404(System.String)
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+BRDA:10,6,1,0
+BRDA:10,6,0,0
+FN:14,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.ErrorController::Error401(System.String)
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.ErrorController::Error401(System.String)
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+BRDA:16,6,1,0
+BRDA:16,6,0,0
+FN:20,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.ErrorController::Error500(System.String)
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.ErrorController::Error500(System.String)
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+BRDA:22,6,1,0
+BRDA:22,6,0,0
+LF:12
+LH:0
+BRF:6
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Controllers/ExpenseController.cs
+FN:20,System.Void WebApp.Controllers.ExpenseController::.ctor(Data.Services.IExpenseService,AutoMapper.IMapper,Data.Services.ICategoryService,Data.Services.IUserServices,Microsoft.Extensions.Logging.ILogger`1<WebApp.Controllers.ExpenseController>)
+FNDA:0,System.Void WebApp.Controllers.ExpenseController::.ctor(Data.Services.IExpenseService,AutoMapper.IMapper,Data.Services.ICategoryService,Data.Services.IUserServices,Microsoft.Extensions.Logging.ILogger`1<WebApp.Controllers.ExpenseController>)
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+FN:32,System.Boolean WebApp.Controllers.ExpenseController/<>c::<Expenses>b__6_0(System.Security.Claims.Claim)
+FNDA:0,System.Boolean WebApp.Controllers.ExpenseController/<>c::<Expenses>b__6_0(System.Security.Claims.Claim)
+DA:33,0
+FN:65,System.Void WebApp.Controllers.ExpenseController/<CreateExpense>d__8::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.ExpenseController/<CreateExpense>d__8::MoveNext()
+DA:66,0
+DA:67,0
+DA:69,0
+DA:70,0
+DA:71,0
+BRDA:69,155,1,0
+BRDA:69,155,0,0
+FN:73,System.Void WebApp.Controllers.ExpenseController/<CreateExpenseAction>d__9::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.ExpenseController/<CreateExpenseAction>d__9::MoveNext()
+DA:74,0
+DA:75,0
+DA:77,0
+DA:78,0
+DA:80,0
+DA:81,0
+DA:82,0
+FN:102,System.Void WebApp.Controllers.ExpenseController/<DeleteExpense>d__11::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.ExpenseController/<DeleteExpense>d__11::MoveNext()
+DA:103,0
+DA:104,0
+DA:105,0
+DA:106,0
+FN:108,System.Void WebApp.Controllers.ExpenseController/<DetailsExpense>d__12::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.ExpenseController/<DetailsExpense>d__12::MoveNext()
+DA:109,0
+DA:110,0
+DA:111,0
+DA:113,0
+DA:114,0
+DA:115,0
+DA:116,0
+BRDA:110,28,0,0
+BRDA:110,28,1,0
+FN:42,System.Void WebApp.Controllers.ExpenseController/<EditExpense>d__7::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.ExpenseController/<EditExpense>d__7::MoveNext()
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:60,0
+DA:61,0
+DA:62,0
+BRDA:44,31,0,0
+BRDA:44,31,1,0
+BRDA:49,78,0,0
+BRDA:49,78,1,0
+BRDA:55,256,0,0
+BRDA:55,256,1,0
+FN:84,System.Void WebApp.Controllers.ExpenseController/<EditExpenseAction>d__10::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.ExpenseController/<EditExpenseAction>d__10::MoveNext()
+DA:85,0
+DA:86,0
+DA:87,0
+DA:88,0
+DA:91,0
+DA:93,0
+DA:94,0
+DA:95,0
+DA:96,0
+DA:98,0
+DA:99,0
+DA:100,0
+BRDA:86,54,0,0
+BRDA:86,54,1,0
+FN:31,System.Void WebApp.Controllers.ExpenseController/<Expenses>d__6::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.ExpenseController/<Expenses>d__6::MoveNext()
+DA:32,0
+DA:34,0
+DA:35,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+BRDA:33,77,0,0
+BRDA:33,77,1,0
+BRDA:34,104,0,0
+BRDA:34,104,1,0
+LF:66
+LH:0
+BRF:16
+BRH:0
+FNF:9
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Controllers/HomeController.cs
+FN:18,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.HomeController::Index()
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.HomeController::Index()
+DA:19,0
+DA:20,0
+DA:21,0
+FN:24,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.HomeController::Error()
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.HomeController::Error()
+DA:25,0
+DA:26,0
+DA:27,0
+BRDA:26,14,0,0
+BRDA:26,14,1,0
+BRDA:26,26,0,0
+BRDA:26,26,1,0
+FN:12,System.Void WebApp.Controllers.HomeController::.ctor(AutoMapper.IMapper)
+FNDA:0,System.Void WebApp.Controllers.HomeController::.ctor(AutoMapper.IMapper)
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+LF:10
+LH:0
+BRF:4
+BRH:0
+FNF:3
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Controllers/IncomeController.cs
+FN:41,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.IncomeController::CreateIncome()
+FNDA:1,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.IncomeController::CreateIncome()
+DA:42,1
+DA:43,1
+DA:44,1
+FN:17,System.Void WebApp.Controllers.IncomeController::.ctor(Data.Services.IIncomeService,AutoMapper.IMapper,Data.Services.IUserServices)
+FNDA:11,System.Void WebApp.Controllers.IncomeController::.ctor(Data.Services.IIncomeService,AutoMapper.IMapper,Data.Services.IUserServices)
+DA:18,11
+DA:19,11
+DA:20,11
+DA:21,11
+DA:22,11
+DA:23,11
+FN:46,System.Void WebApp.Controllers.IncomeController/<CreateIncomeAction>d__7::MoveNext()
+FNDA:2,System.Void WebApp.Controllers.IncomeController/<CreateIncomeAction>d__7::MoveNext()
+DA:47,2
+DA:48,2
+DA:50,2
+DA:51,1
+DA:52,1
+DA:54,1
+DA:55,1
+DA:56,1
+FN:65,System.Void WebApp.Controllers.IncomeController/<DeleteIncome>d__9::MoveNext()
+FNDA:2,System.Void WebApp.Controllers.IncomeController/<DeleteIncome>d__9::MoveNext()
+DA:66,2
+DA:67,2
+DA:68,1
+DA:69,1
+FN:34,System.Void WebApp.Controllers.IncomeController/<EditIncome>d__5::MoveNext()
+FNDA:2,System.Void WebApp.Controllers.IncomeController/<EditIncome>d__5::MoveNext()
+DA:35,2
+DA:36,2
+DA:37,1
+DA:38,1
+DA:39,1
+FN:58,System.Void WebApp.Controllers.IncomeController/<EditIncomeAction>d__8::MoveNext()
+FNDA:2,System.Void WebApp.Controllers.IncomeController/<EditIncomeAction>d__8::MoveNext()
+DA:59,2
+DA:60,2
+DA:61,2
+DA:62,1
+DA:63,1
+FN:25,System.Void WebApp.Controllers.IncomeController/<Incomes>d__4::MoveNext()
+FNDA:2,System.Void WebApp.Controllers.IncomeController/<Incomes>d__4::MoveNext()
+DA:26,2
+DA:27,2
+DA:29,1
+DA:30,1
+DA:31,1
+DA:32,1
+LF:37
+LH:37
+BRF:0
+BRH:0
+FNF:7
+FNH:7
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Controllers/SavingsController.cs
+FN:47,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.SavingsController::CreateSaving()
+FNDA:0,Microsoft.AspNetCore.Mvc.IActionResult WebApp.Controllers.SavingsController::CreateSaving()
+DA:48,0
+DA:49,0
+DA:50,0
+FN:17,System.Void WebApp.Controllers.SavingsController::.ctor(Data.Services.ISavingService,AutoMapper.IMapper,Data.Services.IUserServices)
+FNDA:0,System.Void WebApp.Controllers.SavingsController::.ctor(Data.Services.ISavingService,AutoMapper.IMapper,Data.Services.IUserServices)
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+FN:26,System.Boolean WebApp.Controllers.SavingsController/<>c::<Savings>b__4_0(System.Security.Claims.Claim)
+FNDA:0,System.Boolean WebApp.Controllers.SavingsController/<>c::<Savings>b__4_0(System.Security.Claims.Claim)
+DA:27,0
+FN:52,System.Void WebApp.Controllers.SavingsController/<CreateSavingsAction>d__7::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.SavingsController/<CreateSavingsAction>d__7::MoveNext()
+DA:53,0
+DA:54,0
+DA:55,0
+DA:57,0
+DA:58,0
+DA:60,0
+DA:61,0
+DA:62,0
+FN:76,System.Void WebApp.Controllers.SavingsController/<DeleteSavingsAction>d__9::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.SavingsController/<DeleteSavingsAction>d__9::MoveNext()
+DA:77,0
+DA:78,0
+DA:79,0
+DA:80,0
+DA:83,0
+DA:84,0
+DA:85,0
+BRDA:78,28,0,0
+BRDA:78,28,1,0
+FN:87,System.Void WebApp.Controllers.SavingsController/<DetailsSaving>d__10::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.SavingsController/<DetailsSaving>d__10::MoveNext()
+DA:88,0
+DA:89,0
+DA:90,0
+DA:92,0
+DA:93,0
+DA:95,0
+DA:96,0
+BRDA:89,28,0,0
+BRDA:89,28,1,0
+FN:36,System.Void WebApp.Controllers.SavingsController/<EditSaving>d__5::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.SavingsController/<EditSaving>d__5::MoveNext()
+DA:37,0
+DA:38,0
+DA:39,0
+DA:41,0
+DA:43,0
+DA:44,0
+DA:45,0
+BRDA:38,28,0,0
+BRDA:38,28,1,0
+FN:64,System.Void WebApp.Controllers.SavingsController/<EditSavingsAction>d__8::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.SavingsController/<EditSavingsAction>d__8::MoveNext()
+DA:65,0
+DA:66,0
+DA:68,0
+DA:69,0
+DA:71,0
+DA:72,0
+DA:73,0
+DA:74,0
+FN:25,System.Void WebApp.Controllers.SavingsController/<Savings>d__4::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.SavingsController/<Savings>d__4::MoveNext()
+DA:26,0
+DA:28,0
+DA:29,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+BRDA:27,77,0,0
+BRDA:27,77,1,0
+BRDA:28,104,0,0
+BRDA:28,104,1,0
+LF:54
+LH:0
+BRF:10
+BRH:0
+FNF:9
+FNH:0
+end_of_record
+SF:/home/fran/Documents/algebra/pi/BudgetManager/WebApp/Controllers/UserController.cs
+FN:15,System.Void WebApp.Controllers.UserController::.ctor(Data.Services.IUserServices,AutoMapper.IMapper)
+FNDA:0,System.Void WebApp.Controllers.UserController::.ctor(Data.Services.IUserServices,AutoMapper.IMapper)
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+FN:26,System.Boolean WebApp.Controllers.UserController/<>c::<Account>b__3_0(System.Security.Claims.Claim)
+FNDA:0,System.Boolean WebApp.Controllers.UserController/<>c::<Account>b__3_0(System.Security.Claims.Claim)
+DA:27,0
+FN:39,System.Boolean WebApp.Controllers.UserController/<>c::<ChangePassword>b__4_0(System.Security.Claims.Claim)
+FNDA:0,System.Boolean WebApp.Controllers.UserController/<>c::<ChangePassword>b__4_0(System.Security.Claims.Claim)
+DA:40,0
+FN:47,System.Boolean WebApp.Controllers.UserController/<>c::<EditUser>b__5_0(System.Security.Claims.Claim)
+FNDA:0,System.Boolean WebApp.Controllers.UserController/<>c::<EditUser>b__5_0(System.Security.Claims.Claim)
+DA:48,0
+FN:57,System.Boolean WebApp.Controllers.UserController/<>c::<DeleteUser>b__6_0(System.Security.Claims.Claim)
+FNDA:0,System.Boolean WebApp.Controllers.UserController/<>c::<DeleteUser>b__6_0(System.Security.Claims.Claim)
+DA:58,0
+FN:65,System.Boolean WebApp.Controllers.UserController/<>c::<Users>b__7_0(System.Security.Claims.Claim)
+FNDA:0,System.Boolean WebApp.Controllers.UserController/<>c::<Users>b__7_0(System.Security.Claims.Claim)
+DA:66,0
+FN:23,System.Void WebApp.Controllers.UserController/<Account>d__3::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.UserController/<Account>d__3::MoveNext()
+DA:24,0
+DA:25,0
+DA:26,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+BRDA:25,29,0,0
+BRDA:27,91,0,0
+BRDA:27,91,1,0
+BRDA:28,118,0,0
+BRDA:28,118,1,0
+BRDA:25,29,1,0
+FN:38,System.Void WebApp.Controllers.UserController/<ChangePassword>d__4::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.UserController/<ChangePassword>d__4::MoveNext()
+DA:39,0
+DA:41,0
+DA:42,0
+DA:43,0
+BRDA:40,77,0,0
+BRDA:40,77,1,0
+FN:56,System.Void WebApp.Controllers.UserController/<DeleteUser>d__6::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.UserController/<DeleteUser>d__6::MoveNext()
+DA:57,0
+DA:59,0
+DA:60,0
+DA:61,0
+BRDA:58,77,0,0
+BRDA:58,77,1,0
+FN:46,System.Void WebApp.Controllers.UserController/<EditUser>d__5::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.UserController/<EditUser>d__5::MoveNext()
+DA:47,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+BRDA:48,88,0,0
+BRDA:48,88,1,0
+FN:64,System.Void WebApp.Controllers.UserController/<Users>d__7::MoveNext()
+FNDA:0,System.Void WebApp.Controllers.UserController/<Users>d__7::MoveNext()
+DA:65,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+BRDA:66,77,0,0
+BRDA:66,77,1,0
+LF:39
+LH:0
+BRF:14
+BRH:0
+FNF:11
+FNH:0
+end_of_record

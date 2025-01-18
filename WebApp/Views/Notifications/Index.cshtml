@@ -1,0 +1,33 @@
+@model List<NotificationVM>
+
+@{
+    ViewBag.Title = "Notifications";
+    Layout = "_Layout";
+}
+
+<h2 class="my-4">Notifications</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            @if (Model.Count == 0)
+            {
+                <div class="alert alert-info" role="alert">
+                    You have no unread notifications.
+                </div>
+            }
+            else
+            {
+                <ul class="list-group">
+                    @foreach (var notification in Model)
+                    {
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            @notification.Message
+                            <span class="badge badge-primary badge-pill">@notification.Read ? "Read" : "Unread"</span>
+                        </li>
+                    }
+                </ul>
+            }
+        </div>
+    </div>
+</div>

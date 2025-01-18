@@ -32,6 +32,14 @@ public class UserServices : IUserServices
 {
     private readonly IMapper _mapper;
     private readonly BudgetManagerContext _context;
+    private readonly INotificationService? _notification;
+
+    public UserServices(IMapper mapper, BudgetManagerContext context, INotificationService notification)
+    {
+        _context = context;
+        _notification = notification;
+        _mapper = mapper;
+    }
 
     public UserServices(IMapper mapper, BudgetManagerContext context)
     {
@@ -82,6 +90,8 @@ public class UserServices : IUserServices
             ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
             IsPersistent = true,
         };
+
+        _notification?.Create(user.Guid, $"New Login at {DateTime.Now}");
         return (claimsIdentity, authProperties);
     }
 

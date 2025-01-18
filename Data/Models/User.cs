@@ -31,6 +31,8 @@ public partial class User
 
     public virtual ICollection<Income> Incomes { get; set; } = new List<Income>();
 
+    public virtual ICollection<Notification> Notifications { get; set; } = new List<Notification>();
+
     public virtual Role? Role { get; set; }
 
     public virtual ICollection<Saving> Savings { get; set; } = new List<Saving>();

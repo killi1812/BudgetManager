@@ -7,6 +7,14 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <style>
+        .badge {
+            padding: 5px 10px;
+            border-radius: 50%;
+            background-color: red;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -43,15 +51,15 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Income" asp-action="Incomes">Incomes</a>
                         </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Budget" asp-action="Budgets">Budget</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Savings" asp-action="Savings">Savings</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Expense" asp-action="Expenses">Expense</a>
-                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Budget" asp-action="Budgets">Budget</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Savings" asp-action="Savings">Savings</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Expense" asp-action="Expenses">Expense</a>
+                        </li>
                     }
                 </ul>
                 <ul class="navbar-nav flex-grow-1">
@@ -60,7 +68,18 @@
                     @if (loggedIn)
                     {
                         <li class="nav-item">
-                            <a class="nav-link text-dark" href="@Url.Action("Account", "User", new { guid })">@username</a>
+                            <a class="nav-link text-dark d-block" href="@Url.Action("Index", "Notifications")">
+                                <span id="notificationCount" class="badge badge-danger">0</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                     class="bi bi-bell" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2M8 1.918l-.797.161A4 4 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4 4 0 0 0-3.203-3.92zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5 5 0 0 1 13 6c0 .88.32 4.2 1.22 6"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark"
+                               href="@Url.Action("Account", "User", new { guid })">@username</a>
                         </li>
 
                         <li class="nav-item">
@@ -103,9 +122,12 @@ else
 }
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2024 - Fran Cvok - Dominik Despot - Luka Petrečija - Algebra - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        &copy; 2024 - Fran Cvok - Dominik Despot - Luka Petrečija - Algebra - <a asp-area="" asp-controller="Home"
+                                                                                 asp-action="Privacy">Privacy</a>
     </div>
 </footer>
+
+
 
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
 <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
@@ -121,6 +143,41 @@ else
     }
 
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
+@if (loggedIn)
+{
+    <script type="text/javascript">
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("/NotificationsSocket")
+            .configureLogging(signalR.LogLevel.Information)
+            .build();
+
+        const count ="notificationCount"
+        let notificationCount = localStorage.getItem(count);
+
+        async function start() {
+            try {
+                await connection.start();
+                console.log("SignalR Connected.");
+            } catch (err) {
+                console.error(err);
+                setTimeout(start, 5000);
+            }
+        }
+        connection.on("ReceiveNotification", (message) => {
+            notificationCount++;
+            localStorage.setItem(count, notificationCount)
+            document.getElementById(count).textContent = notificationCount;
+        });
+        //TODO: Singleton
+        const key = "WS_Connection"
+        if (!sessionStorage.getItem(key)){
+            start();
+            sessionStorage.setItem(key, "True");
+        }
+        document.getElementById(count).textContent = localStorage.getItem(count)
+    </script>
+}
 @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

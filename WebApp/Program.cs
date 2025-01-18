@@ -1,4 +1,5 @@
 using Data.Helpers;
+using Data.Hubs;
 using Data.Models;
 using Data.Services;
 using Microsoft.EntityFrameworkCore;
@@ -27,6 +28,7 @@ builder.Services.AddAuthentication()
         o.SlidingExpiration = true;
         o.ExpireTimeSpan = TimeSpan.FromMinutes(30);
     });
+builder.Services.AddSignalR();
 
 builder.Services.AddScoped<IUserServices, UserServices>();
 builder.Services.AddScoped<ILoggerService, LoggerService>();
@@ -35,6 +37,7 @@ builder.Services.AddScoped<IIncomeService, IncomeService>();
 builder.Services.AddScoped<IBudgetService, BudgetService>();
 builder.Services.AddScoped<ISavingService, SavingService>();
 builder.Services.AddScoped<IExpenseService, ExpenseService>();
+builder.Services.AddScoped<INotificationService, NotificationService>();
 
 var app = builder.Build();
 
@@ -56,5 +59,5 @@ app.UseSession();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapHub<NotificationsHub>("/NotificationsSocket");
 app.Run();

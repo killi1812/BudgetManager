@@ -7,6 +7,7 @@ using Data.Helpers;
 using Data.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -91,7 +92,7 @@ public class UserServices : IUserServices
             IsPersistent = true,
         };
 
-        _notification?.Create(user.Guid, $"New Login at {DateTime.Now}");
+        await _notification?.Create(user.Guid, $"New Login at {DateTime.Now}");
         return (claimsIdentity, authProperties);
     }
 

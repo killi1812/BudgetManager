@@ -1,3 +1,4 @@
+<!-- WebApp/Views/Notifications/Index.cshtml -->
 @model List<NotificationVM>
 
 @{
@@ -10,6 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 offset-md-2">
+            <a href="@Url.Action("Index", "Notifications", new { unread = false })" class="btn btn-primary mb-3">Load All Notifications</a>
             @if (Model.Count == 0)
             {
                 <div class="alert alert-info" role="alert">
@@ -23,7 +25,14 @@
                     {
                         <li class="list-group-item d-flex justify-content-between align-items-center">
                             @notification.Message
-                            <span class="badge badge-primary badge-pill">@notification.Read ? "Read" : "Unread"</span>
+                            @if (notification.Read)
+                            {
+                                <span class="badge bg-primary badge-pill">Read</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger badge-pill">New</span>
+                            }
                         </li>
                     }
                 </ul>

@@ -146,37 +146,14 @@ else
 <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.11/signalr.min.js"></script>
 @if (loggedIn)
 {
-    <script type="text/javascript">
-        const connection = new signalR.HubConnectionBuilder()
-            .withUrl("/NotificationsSocket")
-            .configureLogging(signalR.LogLevel.Information)
-            .build();
-
-        const count ="notificationCount"
-        let notificationCount = localStorage.getItem(count);
-
-        async function start() {
-            try {
-                await connection.start();
-                console.log("SignalR Connected.");
-            } catch (err) {
-                console.error(err);
-                setTimeout(start, 5000);
-            }
-        }
-        connection.on("ReceiveNotification", (message) => {
-            notificationCount++;
-            localStorage.setItem(count, notificationCount)
-            document.getElementById(count).textContent = notificationCount;
-        });
-        //TODO: Singleton
-        const key = "WS_Connection"
-        if (!sessionStorage.getItem(key)){
-            start();
-            sessionStorage.setItem(key, "True");
-        }
-        document.getElementById(count).textContent = localStorage.getItem(count)
-    </script>
+    <script type="module">
+    import {NotificationService} from "/js/NotificationService.js";
+    document.addEventListener("DOMContentLoaded", () => {
+        if (!window.notificationService) {
+            window.notificationService = new NotificationService("/NotificationsSocket", "notificationCount");
+        } 
+    });
+</script>
 }
 @await RenderSectionAsync("Scripts", required: false)
 </body>

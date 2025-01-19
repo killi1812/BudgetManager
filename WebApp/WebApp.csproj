@@ -15,6 +15,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\Data\Data.csproj" />
+      <ProjectReference Include="..\PaymentService\PaymentService.csproj" />
     </ItemGroup>
 
     <ItemGroup>
@@ -23,6 +24,10 @@
       <_ContentIncludedByDefault Remove="Views\Pictures\SearchResults.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Pictures\Tags.cshtml" />
       <_ContentIncludedByDefault Remove="Views\Pictures\Upload.cshtml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="PaymentEngine\" />
     </ItemGroup>
 
 </Project>

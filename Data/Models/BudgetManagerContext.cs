@@ -27,6 +27,8 @@ public partial class BudgetManagerContext : DbContext
 
     public virtual DbSet<Log> Logs { get; set; }
 
+    public virtual DbSet<Notification> Notifications { get; set; }
+
     public virtual DbSet<Role> Roles { get; set; }
 
     public virtual DbSet<Saving> Savings { get; set; }
@@ -39,7 +41,7 @@ public partial class BudgetManagerContext : DbContext
     {
         modelBuilder.Entity<BankAccountApi>(entity =>
         {
-            entity.HasKey(e => e.IdbankAccountApi).HasName("PK__BankAcco__96DB0D7CF63A57D5");
+            entity.HasKey(e => e.IdbankAccountApi).HasName("PK__BankAcco__96DB0D7CB663FB29");
 
             entity.ToTable("BankAccountAPI");
 
@@ -61,7 +63,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<Budget>(entity =>
         {
-            entity.HasKey(e => e.Idbudget).HasName("PK__Budget__254317178C2610C4");
+            entity.HasKey(e => e.Idbudget).HasName("PK__Budget__254317171D334131");
 
             entity.ToTable("Budget");
 
@@ -81,7 +83,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<Category>(entity =>
         {
-            entity.HasKey(e => e.Idcategory).HasName("PK__Category__1AA1EC665E348F81");
+            entity.HasKey(e => e.Idcategory).HasName("PK__Category__1AA1EC66F37720A3");
 
             entity.ToTable("Category");
 
@@ -92,7 +94,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<Expense>(entity =>
         {
-            entity.HasKey(e => e.Idexpense).HasName("PK__Expense__58C884BF0D1A1C32");
+            entity.HasKey(e => e.Idexpense).HasName("PK__Expense__58C884BF52D7882E");
 
             entity.ToTable("Expense");
 
@@ -114,7 +116,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<Income>(entity =>
         {
-            entity.HasKey(e => e.Idincome).HasName("PK__Income__6CA4E639C58AFA90");
+            entity.HasKey(e => e.Idincome).HasName("PK__Income__6CA4E63968B3EA75");
 
             entity.ToTable("Income");
 
@@ -132,7 +134,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<Log>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Log__3213E83FE2FF3295");
+            entity.HasKey(e => e.Id).HasName("PK__Log__3213E83F6F301B4B");
 
             entity.ToTable("Log");
 
@@ -145,9 +147,24 @@ public partial class BudgetManagerContext : DbContext
                 .HasColumnName("message");
         });
 
+        modelBuilder.Entity<Notification>(entity =>
+        {
+            entity.HasKey(e => e.Idbudget).HasName("PK__Notifica__2543171761E68E7D");
+
+            entity.ToTable("Notification");
+
+            entity.Property(e => e.Idbudget).HasColumnName("IDBudget");
+            entity.Property(e => e.Message).HasMaxLength(50);
+            entity.Property(e => e.UserId).HasColumnName("UserID");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Notifications)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK__Notificat__UserI__534D60F1");
+        });
+
         modelBuilder.Entity<Role>(entity =>
         {
-            entity.HasKey(e => e.Idrole).HasName("PK__Role__A1BA16C4699EDA87");
+            entity.HasKey(e => e.Idrole).HasName("PK__Role__A1BA16C45DAD1C8C");
 
             entity.ToTable("Role");
 
@@ -157,7 +174,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<Saving>(entity =>
         {
-            entity.HasKey(e => e.Idsavings).HasName("PK__Savings__F3FF684A0E56ECA2");
+            entity.HasKey(e => e.Idsavings).HasName("PK__Savings__F3FF684ACA5A4682");
 
             entity.Property(e => e.Idsavings).HasColumnName("IDSavings");
             entity.Property(e => e.Current).HasColumnType("decimal(18, 0)");
@@ -172,7 +189,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<Statistic>(entity =>
         {
-            entity.HasKey(e => e.Idstatistics).HasName("PK__Statisti__9B81FB28BC9D4139");
+            entity.HasKey(e => e.Idstatistics).HasName("PK__Statisti__9B81FB2832EF71DB");
 
             entity.Property(e => e.Idstatistics).HasColumnName("IDStatistics");
             entity.Property(e => e.IncomePercent).HasColumnType("decimal(18, 0)");
@@ -188,7 +205,7 @@ public partial class BudgetManagerContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.Iduser).HasName("PK__User__EAE6D9DF6D9C7F3E");
+            entity.HasKey(e => e.Iduser).HasName("PK__User__EAE6D9DF1BE8948E");
 
             entity.ToTable("User");
 

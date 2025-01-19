@@ -8,7 +8,7 @@ CREATE TABLE [Role]
 (
     IDRole bigint primary key identity,
     RoleType nvarchar(150)
-)
+);
 GO
 
 CREATE TABLE [User] 
@@ -22,7 +22,7 @@ CREATE TABLE [User]
     PhoneNumber nvarchar(50),
     PassHash nvarchar(255) NOT NULL,
     RoleID bigint references [Role](IDRole)
-)
+);
 GO
 
 CREATE TABLE [Statistics]
@@ -34,7 +34,7 @@ CREATE TABLE [Statistics]
 	SpendingPercent decimal,
 	IncomePercent decimal,
 	UserID bigint references [User](IDUser)
-)
+);
 
 CREATE TABLE BankAccountAPI
 (
@@ -45,7 +45,7 @@ CREATE TABLE BankAccountAPI
 	[URL] nvarchar(255),
 	APIKey nvarchar(255),
 	UserID bigint references [User](IDUser)
-)
+);
 
 CREATE TABLE Savings
 (
@@ -55,7 +55,7 @@ CREATE TABLE Savings
 	[Current] decimal,
 	[Date] date,
 	UserID bigint references [User](IDUser)
-)
+);
 
 CREATE TABLE Income
 (
@@ -66,7 +66,7 @@ CREATE TABLE Income
 	[Date] date,
 	Frequency nvarchar(255),
 	UserID bigint references [User](IDUser)
-)
+);
 
 CREATE TABLE Category
 (
@@ -74,7 +74,7 @@ CREATE TABLE Category
     Guid     UNIQUEIDENTIFIER NOT NULL,
 	CategoryName nvarchar(255),
 	Color nvarchar(20)
-)
+);
 GO
 
 CREATE TABLE Expense 
@@ -86,7 +86,7 @@ CREATE TABLE Expense
 	[Date] date,
 	CategoryID bigint references Category(IDCategory),
 	UserID bigint references [User](IDUser)
-)
+);
 
 CREATE TABLE Budget
 (
@@ -104,3 +104,11 @@ CREATE TABLE Log
     message NVARCHAR(500)                  not null,
     Lvl     int      not null
 );
+
+Create table Notification(
+	IDBudget bigint primary key identity,
+  Guid     UNIQUEIDENTIFIER NOT NULL,
+  Message nvarchar(50) not null,
+  [Read] bit not null,
+	UserID bigint references [User](IDUser),
+)

@@ -70,5 +70,6 @@ public class MapperProfile : Profile
             .ForMember(dest => dest.Category, opt => opt.Ignore())
             .ForMember(dest => dest.User, opt => opt.Ignore())
             .ForMember(dest => dest.Guid, opt => opt.Ignore());
+        CreateMap<Notification, NotificationVM>();
     }
 }

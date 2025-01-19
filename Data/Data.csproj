@@ -12,6 +12,9 @@
       <PackageReference Include="Microsoft.AspNetCore.Authentication" Version="2.2.0" />
       <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="2.2.0" />
       <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+      <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.20" />
+      <PackageReference Include="Microsoft.AspNetCore.SignalR.Client.Core" Version="7.0.20" />
+      <PackageReference Include="Microsoft.AspNetCore.SignalR.Common" Version="7.0.20" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.20" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.20">
         <PrivateAssets>all</PrivateAssets>
@@ -35,6 +38,9 @@
       </Reference>
       <Reference Include="Microsoft.AspNetCore.Http.Features">
         <HintPath>..\..\..\..\.nuget\packages\microsoft.aspnetcore.app.ref\7.0.20\ref\net7.0\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+      </Reference>
+      <Reference Include="Microsoft.AspNetCore.SignalR.Core">
+        <HintPath>..\..\..\..\..\.nuget\packages\microsoft.aspnetcore.app.ref\7.0.20\ref\net7.0\Microsoft.AspNetCore.SignalR.Core.dll</HintPath>
       </Reference>
     </ItemGroup>
 

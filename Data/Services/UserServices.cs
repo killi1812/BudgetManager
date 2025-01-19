@@ -7,6 +7,7 @@ using Data.Helpers;
 using Data.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,6 +33,14 @@ public class UserServices : IUserServices
 {
     private readonly IMapper _mapper;
     private readonly BudgetManagerContext _context;
+    private readonly INotificationService? _notification;
+
+    public UserServices(IMapper mapper, BudgetManagerContext context, INotificationService notification)
+    {
+        _context = context;
+        _notification = notification;
+        _mapper = mapper;
+    }
 
     public UserServices(IMapper mapper, BudgetManagerContext context)
     {
@@ -82,6 +91,8 @@ public class UserServices : IUserServices
             ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(10),
             IsPersistent = true,
         };
+
+        await _notification?.Create(user.Guid, $"New Login at {DateTime.Now}");
         return (claimsIdentity, authProperties);
     }
 

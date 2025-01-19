@@ -5,6 +5,7 @@ using Data.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
+using WebApp.Helpers;
 using WebApp.ViewModels;
 
 namespace WebApp.Controllers;
@@ -28,7 +29,6 @@ public class AuthController : Controller
     public async Task<IActionResult> LoginAction(LoginVM loginVm)
     {
         var claims = await _userServices.LoginCookie(loginVm.Username, loginVm.Password);
-
         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
             new ClaimsPrincipal(claims.claimsIdentity), claims.authProperties);
 

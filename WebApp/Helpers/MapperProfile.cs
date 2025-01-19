@@ -45,7 +45,7 @@ public class MapperProfile : Profile
             .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => $"{src.User.FirstName} {src.User.LastName}"))
             .ForMember(dest => dest.CategoryGuid, opt => opt.MapFrom(src => src.Category.Guid))
             .ForMember(dest => dest.UserGuid, opt => opt.MapFrom(src => src.User.Guid));
-        
+
 
         CreateMap<BudgetVM, Budget>()
             .ForMember(dest => dest.Guid, opt => opt.Ignore())
@@ -60,5 +60,16 @@ public class MapperProfile : Profile
             .ForMember(dest => dest.Guid, opt => opt.Ignore())
             .ForMember(dest => dest.User, opt => opt.Ignore());
 
+        CreateMap<Expense, ExpenseVM>()
+    .ForMember(dest => dest.CategoryGuid, opt => opt.MapFrom(src => src.Category.Guid.ToString()))
+    .ForMember(dest => dest.CategoryName, opt => opt.MapFrom(src => src.Category.CategoryName))
+    .ForMember(dest => dest.UserGuid, opt => opt.MapFrom(src => src.User.Guid.ToString()))
+    .ForMember(dest => dest.UserName, opt => opt.MapFrom(src => $"{src.User.FirstName} {src.User.LastName}"));
+
+        CreateMap<ExpenseVM, Expense>()
+            .ForMember(dest => dest.Category, opt => opt.Ignore())
+            .ForMember(dest => dest.User, opt => opt.Ignore())
+            .ForMember(dest => dest.Guid, opt => opt.Ignore());
+        CreateMap<Notification, NotificationVM>();
     }
 }

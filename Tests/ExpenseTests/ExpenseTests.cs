@@ -243,5 +243,258 @@ namespace Tests.ExpenseTests;
         Assert.Equal("Guid can't be null", badRequestResult.Value);
     }
 
-}
+    [Fact]
+    public async Task Create_ShouldThrowArgumentNullExceptionWhenExpenseIsNull()
+    {
+        // Arrange
+        await using var context = new BudgetManagerContext(_options);
+        var service = new ExpenseService(context);
 
+        // Act & Assert
+        await Assert.ThrowsAsync<ArgumentNullException>(async () => await service.Create(null));
+    }
+
+    [Fact]
+    public async Task Create_ShouldSaveAndReturnExpense()
+    {
+        // Arrange
+        await using var context = new BudgetManagerContext(_options);
+        var service = new ExpenseService(context);
+
+        var expense = new Expense
+        {
+            Guid = Guid.NewGuid(),
+            Sum = 100,
+            Description = "Test Expense",
+            Date = DateTime.Now
+        };
+
+        // Act
+        var createdExpense = await service.Create(expense);
+
+        // Assert
+        Assert.NotNull(createdExpense);
+        Assert.Equal(expense.Guid, createdExpense.Guid);
+        Assert.Equal(expense.Sum, createdExpense.Sum);
+        Assert.Equal(expense.Description, createdExpense.Description);
+    }
+
+    [Fact]
+    public async Task Get_ShouldThrowNotFoundExceptionWhenExpenseDoesNotExist()
+    {
+        // Arrange
+        await using var context = new BudgetManagerContext(_options);
+        var service = new ExpenseService(context);
+
+        // Act & Assert
+        await Assert.ThrowsAsync<NotFoundException>(async () => await service.Get(Guid.NewGuid()));
+    }
+
+    [Fact]
+    public async Task Get_ShouldReturnExpenseWhenItExists()
+    {
+        // Arrange
+        await using var context = new BudgetManagerContext(_options);
+        var service = new ExpenseService(context);
+
+        var category = new Category
+        {
+            Guid = Guid.NewGuid(),
+            CategoryName = "Test Category"
+        };
+        await context.Categories.AddAsync(category);
+        await context.SaveChangesAsync();
+
+        var expense = new Expense
+        {
+            Guid = Guid.NewGuid(),
+            Sum = 200,
+            Description = "Test Expense",
+            Date = DateTime.Now,
+            CategoryId = category.Idcategory 
+        };
+
+        await context.Expenses.AddAsync(expense);
+        await context.SaveChangesAsync();
+
+        // Act
+        var fetchedExpense = await service.Get(expense.Guid);
+
+        // Assert
+        Assert.NotNull(fetchedExpense);
+        Assert.Equal(expense.Guid, fetchedExpense.Guid);
+        Assert.Equal(expense.Description, fetchedExpense.Description);
+        Assert.Equal(expense.Sum, fetchedExpense.Sum);
+        Assert.Equal(category.Idcategory, fetchedExpense.CategoryId);
+    }
+
+
+    [Fact]
+    public async Task Delete_ShouldThrowNotFoundExceptionWhenExpenseDoesNotExist()
+    {
+        // Arrange
+        await using var context = new BudgetManagerContext(_options);
+        var service = new ExpenseService(context);
+
+        // Act & Assert
+        await Assert.ThrowsAsync<NotFoundException>(async () => await service.Delete(Guid.NewGuid()));
+    }
+
+    [Fact]
+    public async Task Delete_ShouldRemoveExpenseWhenItExists()
+    {
+        // Arrange
+        await using var context = new BudgetManagerContext(_options);
+        var service = new ExpenseService(context);
+
+        var expense = new Expense
+        {
+            Guid = Guid.NewGuid(),
+            Sum = 100,
+            Description = "Test Expense"
+        };
+
+        await context.Expenses.AddAsync(expense);
+        await context.SaveChangesAsync();
+
+        // Act
+        await service.Delete(expense.Guid);
+
+        // Assert
+        var deletedExpense = await context.Expenses.FirstOrDefaultAsync(e => e.Guid == expense.Guid);
+        Assert.Null(deletedExpense);
+    }
+
+    [Fact]
+    public async Task GetAll_ShouldReturnEmptyListWhenNoExpensesExist()
+    {
+        // Arrange
+        await using var context = new BudgetManagerContext(_options);
+        var service = new ExpenseService(context);
+
+        // Act
+        var expenses = await service.GetAll(Guid.NewGuid());
+
+        // Assert
+        Assert.NotNull(expenses);
+        Assert.Empty(expenses);
+    }
+
+    [Fact]
+    public async Task GetAll_ShouldReturnListOfExpensesForUser()
+    {
+        // Arrange
+        await using var context = new BudgetManagerContext(_options);
+        var service = new ExpenseService(context);
+
+        var user = new User
+        {
+            Guid = Guid.NewGuid(),
+            FirstName = "Test",
+            LastName = "User",
+            Email = "testuser@test.com", 
+            Jmbag = "123456789",         
+            PassHash = "hashedpassword"  
+        };
+
+        await context.Users.AddAsync(user);
+        await context.SaveChangesAsync();
+
+        var category = new Category
+        {
+            Guid = Guid.NewGuid(),
+            CategoryName = "Test Category"
+        };
+
+        await context.Categories.AddAsync(category);
+        await context.SaveChangesAsync();
+
+        var expenses = new List<Expense>
+    {
+        new Expense
+        {
+            Guid = Guid.NewGuid(),
+            UserId = user.Iduser,
+            Sum = 100,
+            Date = DateTime.Now,
+            Description = "Test Expense 1",
+            CategoryId = category.Idcategory
+        },
+        new Expense
+        {
+            Guid = Guid.NewGuid(),
+            UserId = user.Iduser,
+            Sum = 200,
+            Date = DateTime.Now,
+            Description = "Test Expense 2",
+            CategoryId = category.Idcategory
+        }
+    };
+
+        await context.Expenses.AddRangeAsync(expenses);
+        await context.SaveChangesAsync();
+
+        // Act
+        var fetchedExpenses = await service.GetAll(user.Guid);
+
+        // Assert
+        Assert.NotNull(fetchedExpenses);
+        Assert.Equal(2, fetchedExpenses.Count);
+        Assert.Contains(fetchedExpenses, e => e.Sum == 100);
+        Assert.Contains(fetchedExpenses, e => e.Sum == 200);
+    }
+
+
+    [Fact]
+    public async Task Edit_ShouldThrowNotFoundExceptionWhenExpenseDoesNotExist()
+    {
+        // Arrange
+        await using var context = new BudgetManagerContext(_options);
+        var service = new ExpenseService(context);
+
+        var updatedExpense = new Expense
+        {
+            Guid = Guid.NewGuid(),
+            Sum = 200
+        };
+
+        // Act & Assert
+        await Assert.ThrowsAsync<NotFoundException>(async () => await service.Edit(updatedExpense.Guid, updatedExpense));
+    }
+
+    [Fact]
+    public async Task Edit_ShouldUpdateExpenseDetails()
+    {
+        // Arrange
+        await using var context = new BudgetManagerContext(_options);
+        var service = new ExpenseService(context);
+
+        var expense = new Expense
+        {
+            Guid = Guid.NewGuid(),
+            Sum = 100,
+            Description = "Old Description"
+        };
+
+        await context.Expenses.AddAsync(expense);
+        await context.SaveChangesAsync();
+
+        var updatedExpense = new Expense
+        {
+            Guid = expense.Guid,
+            Sum = 200,
+            Description = "Updated Description",
+            Date = DateTime.Now
+        };
+
+        // Act
+        var editedExpense = await service.Edit(expense.Guid, updatedExpense);
+
+        // Assert
+        Assert.Equal(updatedExpense.Sum, editedExpense.Sum);
+        Assert.Equal(updatedExpense.Description, editedExpense.Description);
+    }
+
+
+
+}
